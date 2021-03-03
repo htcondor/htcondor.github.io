@@ -1,6 +1,0 @@
-1
-worker.exe ((OPSYS=="LINUX")&&(ARCH=="INTEL"))
-150
-200
-150
-
