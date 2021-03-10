@@ -257,6 +257,7 @@ GEM
 
 PLATFORMS
   x86_64-linux
+  x86_64-linux-musl
 
 DEPENDENCIES
   github-pages
@@ -264,4 +265,4 @@ DEPENDENCIES
   jekyll-environment-variables
 
 BUNDLED WITH
-   2.2.13
+   2.2.11
