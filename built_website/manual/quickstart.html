@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTCondor Quick Start Guide</title>
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+        <meta name="description" content="HTCondor Homepage">
+        <script src="/assets/js/sitewide.js" type="text/javascript"></script>
+        <link href="/assets/css/style.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    </head>
+<body>
+
+    <!-- For non-visual user agents: -->
+    <div id="top"><a href="#main-copy" class="doNotDisplay doNotPrint">Skip to main content.</a></div>
+
+    <div id="container">
+
+    <!-- ##### Header ##### -->
+
+    <div id="header">
+    <div class="midHeader">
+        <div class="iconHeader">
+            <a href="/index.html"><img height="75" alt="Condor High Throughput Computing" src="/assets/images/CondorTitle.gif" style="border:0"></a>
+        </div>
+
+        <div class="navAndSearch">
+            <div class="navBar">
+                <span class="doNotDisplay">Navigation:</span>
+                <a href="/index.html">Home</a> |
+                <a href="/new.html">News</a> |
+                <a href="/downloads">Download</a> |
+                <a href="/publications.html">Publications</a> |
+                <a href="mailto:htcondor-admin@cs.wisc.edu">Contact Us</a>
+            </div>
+
+            <div class="searchForm" >
+                <script>
+                (function() {
+                    var cx = '010754594835990937497:xijuwhbknew';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                        '//www.google.com/cse/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                })();
+                </script>
+                <gcse:searchbox-only></gcse:searchbox-only>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="main-copy">
+        <h1>HTCondor Quick Start Guide</h1>
+
+
+<!-- Page body -->
+
+<p>
+To users,
+<a href="http://research.cs.wisc.edu/htcondor">HTCondor</a>
+is a job scheduler.
+You give HTCondor a file
+containing commands that tell it how to run jobs. 
+HTCondor locates a machine that can run
+each job within the pool of machines,
+packages up the job and ships it off to this execute machine.
+The jobs run, and output is returned to the machine that
+submitted the jobs.</p>
+
+<p>This guide provides enough guidance to 
+submit and observe the successful completion of a first job. 
+It then suggests extensions that you can apply to your
+individual jobs.</p>
+
+<p>This guide presumes that 
+
+<ul>
+
+<li>HTCondor is running</li>
+
+<li> that you have access to a machine within the pool that may submit jobs,
+termed a submit machine
+
+<li> that you are logged in to and working on the submit machine
+
+<li> that your program executable, your submit description file,
+and any needed input files are all on the file system of the 
+submit machine
+
+<li> that your job (the program executable) 
+is able to run without any interactive input.
+Standard input (from the keyboard), standard output (seen on the display),
+and standard error (seen on the display)
+may still be used, 
+but their contents will be redirected from/to files.
+
+</ul>
+
+
+<h2>A First HTCondor Job</h2>
+
+<p> For HTCondor to run a job, it must be given details such
+as the names and location of the executable and all needed
+input files.  These details are specified in a submit description
+file.</p>
+
+<h3>The executable</h3>
+
+<p>
+Before presenting the details of the submit description
+file, consider this first HTCondor job. 
+It is a sleep job that waits for 6 seconds and then exits.
+While most aspects of HTCondor are identical on 
+Unix and Windows machines,
+awareness of the platform of the submit machine will lead to 
+a better understanding of jobs and job submission. </p>
+
+<p>
+This first executable program is a
+shell script (Unix) or batch file (Windows).
+The file that represents this differs based on operating system;
+the 
+<span class="UnixHL">
+Unix version is shown on the left
+</span>
+, and 
+<span class="WindowsHL">
+the Windows version is shown on the right
+</span>
+.
+To try this example, 
+log in to the submit machine,
+and use an editor to type in or copy and paste the file contents. 
+Name the resulting file <code>sleep.sh</code> if the submit machine
+is running a Unix operating system,
+and name the resulting file <code>sleep.bat</code> if the submit machine
+is running Windows.
+Note that you will need to know whether the operating system on your
+submit machine is a Unix operating system or Windows.</p>
+
+<div class="TwoColHolder">
+<!-- Unix on the left         -->
+<div class="UnixHL TwoColLeft">
+<h3>Unix executable,<br>a shell script</h3>
+<pre>
+#!/bin/bash
+# file name: sleep.sh
+
+TIMETOWAIT="6"
+echo "sleeping for $TIMETOWAIT seconds"
+/bin/sleep $TIMETOWAIT 
+</pre>
+
+</div>
+
+<!-- Windows on the right     -->
+<div class="WindowsHL TwoColRight">
+<h3>Windows executable,<br>a batch file</h3>
+<pre>
+:: file name: sleep.bat
+@echo off
+
+set TIMETOWAIT=6
+echo sleeping for %TIMETOWAIT% seconds
+choice /D Y /T %TIMETOWAIT% &gt; NUL
+</pre>
+</div>
+
+</div>
+
+<p>
+For a Unix submit machine only,
+change the <code>sleep.sh</code> file to be executable by running
+the Unix command 
+
+<pre>
+chmod u+x sleep.sh
+</pre></p>
+
+<h3>The contents of the submit description file</h3>
+
+<p>
+The submit description file describes the job.
+To submit this sample job,
+again use an editor to create the file <code>sleep.sub</code>.
+The submit description file contents for this job differs on Unix and Windows
+machines only in the name of the script or batch file:</p>
+
+<div class="TwoColHolder">
+<!-- Unix on the left         -->
+<div class="UnixHL TwoColLeft">
+<pre>
+# Unix submit description file
+# sleep.sub -- simple sleep job
+
+executable              = sleep.sh
+log                     = sleep.log
+output                  = outfile.txt
+error                   = errors.txt
+should_transfer_files   = Yes
+when_to_transfer_output = ON_EXIT
+queue
+</pre>
+</div>
+
+<!-- Windows on the right     -->
+<div class="WindowsHL TwoColRight">
+<pre>
+# Windows submit description file
+# sleep.sub -- simple sleep job
+
+executable              = sleep.bat
+log                     = sleep.log
+output                  = outfile.txt
+error                   = errors.txt
+should_transfer_files   = Yes
+when_to_transfer_output = ON_EXIT
+queue
+</pre>
+
+</div>
+
+</div>
+
+<p>
+The first two lines of this submit description file are comments.
+Comments begin with the <code>#</code> character.
+Comments do not span lines.</p>
+
+<p>
+Each line of the submit description file has the form
+
+<pre>
+command name = value
+</pre></p>
+
+<p>The command name is case insensitive and precedes an equals sign.
+Values to right of the equals sign are likely to be case sensitive,
+especially in the case that they specify paths and file names.</p>
+
+
+<p>
+Next in this file is a specification of the <code>executable</code> 
+to run.
+It specifies the program that becomes the HTCondor job.
+For this example, it is the file name of the Unix script or Windows batch file.
+A full path and executable name,
+or a path and executable relative to the current working directory
+may be specified.</p>
+
+<p>
+The <code>log</code> command causes 
+a job event log file named <code>sleep.log</code> to be created
+on the submit machine once the job is submitted.
+A log is not necessary, but it can be incredibly useful in figuring
+out what happened or is happening with a job.</p>
+
+<p>
+If this script/batch file were to to be invoked from the command
+line, and outside of HTCondor,
+its single line of output
+
+<pre>
+sleeping for 6 seconds
+</pre></p>
+
+<p>
+would be sent to standard output (the display).
+When submitted as an HTCondor job, standard output of the execute
+machine is on that execute machine, and thus unavailable.
+HTCondor captures standard output in a file
+due to the <code>output</code> command in the submit description file. 
+This example names the redirected standard output file
+<code>outfile.txt</code>,
+and this file is returned to the submit machine when the job completes.
+The same structure is specified for standard error,
+as specified with the <code>error</code> command.</p>
+
+<p>
+The commands
+
+<pre>
+should_transfer_files   = Yes
+when_to_transfer_output = ON_EXIT
+</pre></p>
+
+<p>direct HTCondor to explicitly send the needed files,
+including the executable,
+to the machine where the job executes.
+These commands will likely not be necessary for jobs in which the submit
+machine and the execute machine access a shared file system. 
+However, including these commands will allow this first sample
+job to work under a large variety of pool configurations.</p>
+
+<p>
+The <code>queue</code> command tells HTCondor to run one instance of this job.</p>
+
+<h3>Submitting the job</h3>
+<p>
+With this submit description file, all that remains is to hand off
+the job to HTCondor.  With the current working directory being
+the one that contains the <code>sleep.sub</code> submit description file
+and the executable (<code>sleep.sh</code> or <code>sleep.bat</code>),
+this job submission is accomplished with the command line
+<pre>
+condor_submit sleep.sub
+</pre>
+If the submission is successful, the terminal will display a response
+that identifies the job, of the form
+<pre>
+Submitting job(s).
+1 job(s) submitted to cluster 6.
+</pre></p>
+<h3>Monitoring the job</h3>
+<p>
+Once the job has been submitted, command line tools may help follow
+along with the progress of the job.
+The <code>condor_q</code> command prints a listing of all the jobs currently in
+the queue.
+For example,
+a short time after Kris submits the sleep job from a Unix submit machine
+on a pool that has no other queued jobs,
+output appears as
+<pre>
+&#37; condor_q
+-- Submitter: example.wisc.edu : <128.105.14.44:56550> : example.wisc.edu
+ ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD               
+   6.0   kris            2/13 10:49   0+00:00:03 R  0   97.7 sleep.sh          
+
+1 jobs; 0 completed, 0 removed, 0 idle, 1 running, 0 held, 0 suspended
+</pre></p>
+
+<p>
+The queue might contain many jobs.
+To see only Kris' jobs, add an option to the <code>condor_q</code> command
+that specifies to only print Kris' jobs:
+<pre>
+&#37; condor_q -submitter kris
+</pre></p>
+<p>
+The first column of output from <code>condor_q</code> identifies the job; 
+the identifier is composed of two integers separated by a period.
+The first integer is known as a cluster number,
+and it will be the same for each of the potentially many jobs
+submitted by this single invocation of <code>condor_submit</code>.
+The second integer in the identifier is known as a process ID,
+and it distinguishes between distinct job instances that have
+the same cluster number.  These values start at 0.</p>
+
+<p>
+Of interest in this output,
+the job is running, and it has used 3 seconds of time so far.</p>
+
+<p>
+At job completion, the log file contains
+
+<pre style="background-color:PaleTurquoise ; ">
+000 (006.000.000) 02/13 10:49:04 Job submitted from host: <128.105.14.44:46062>
+...
+001 (006.000.000) 02/13 10:49:24 Job executing on host: <128.105.15.5:43051?PrivNet=cs.wisc.edu>
+...
+006 (006.000.000) 02/13 10:49:30 Image size of job updated: 100000
+        0  -  MemoryUsage of job (MB)
+        0  -  ResidentSetSize of job (KB)
+...
+005 (006.000.000) 02/13 10:49:31 Job terminated.
+        (1) Normal termination (return value 0)
+                Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+                Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+                Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+                Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+        23  -  Run Bytes Sent By Job
+        113  -  Run Bytes Received By Job
+        23  -  Total Bytes Sent By Job
+        113  -  Total Bytes Received By Job
+        Partitionable Resources :    Usage  Request Allocated
+           Cpus                 :                 1         1
+           Disk (KB)            :   100000   100000   2033496
+           Memory (MB)          :        0       98      2001
+...
+</pre></p>
+
+<p>
+Each event in the job event log file is separated by a line containing
+three periods.
+For each event, the first 3-digit value is an event number.</p>
+
+<h3>Removing a job</h3>
+<p>
+Successfully submitted jobs will occasionally need to be removed 
+from the queue.
+Invoke the <code>condor_rm</code> command  specifying the job identifier
+as a command line argument.
+Kris' job may be removed from the queue with
+
+<pre>
+condor_rm 6.0
+</pre></p>
+
+<p>
+Specification of the cluster number only as with the command
+
+<pre>
+condor_rm 6
+</pre>
+
+will cause all jobs within
+that cluster to be removed.</p>
+
+<h2>The <code>science</code> Job Example</h2> 
+
+<p>
+A second example job illustrates aspects of file specification for the job.
+Assume that the program executable is called <code>science.exe</code>.
+This program does not use standard input or output;
+instead,
+the command line to invoke this program
+specifies two input files and one output file.
+For this example, the command line to invoke <code>science.exe</code>
+(not as an HTCondor job) will be
+
+<pre>
+science.exe infile-A.txt infile-B.txt outfile.txt
+</pre></p>
+
+<p>
+While the name of the executable is specified in the submit description
+file with the <code>executable</code> command,
+the remainder of the command line will be specified with
+the <code>arguments</code> command.</p>
+
+<p>
+Here is the submit description file for this job:
+
+<pre>
+# science1.sub -- run one instance of science.exe
+executable              = science.exe
+arguments               = "infile-A.txt infile-B.txt outfile.txt"
+transfer_input_files    = infile-A.txt,infile-B.txt
+should_transfer_files   = IF_NEEDED
+when_to_transfer_output = ON_EXIT
+log                     = science1.log
+queue
+</pre></p>
+
+<p>
+The input files <code>infile-A.txt</code> and <code>infile-B.txt</code> 
+will need to be available
+on the execute machine within the pool where the job runs.
+HTCondor cannot interpret command line arguments,
+so it cannot know that these command line arguments for this job
+specify input and output files.
+The submit command <code>transfer_input_files</code> instructs 
+HTCondor to transfer these input files
+from the machine where the job is submitted to the machine chosen
+to execute the job.
+The default operation of HTCondor is to transfer all files created
+by the job on the execute machine back to the submit machine.
+Therefore, there is no specification of the <code>outfile.txt</code>
+output file.</p>
+
+<p>
+This example submit description file modifies the commands
+that direct the transfer of files from submit machine to execute machine
+and back again.
+
+<pre>
+should_transfer_files   = IF_NEEDED
+when_to_transfer_output = ON_EXIT
+</pre></p>
+
+<p>These values are the HTCondor defaults,
+so are not needed in this example.
+They are included to direct attention to the capabilities of HTCondor.
+<code>should_transfer_files</code> specifies whether HTCondor should assume
+the existence of a shared file system by the
+submit machine and the execute machine.
+Where there is a shared file system, a correctly configured
+pool of machines will not need to transfer
+the files from one machine to the other, as both can access the
+shared file system.
+Where there is not a shared file system, HTCondor must transfer
+the files from one machine to the other.
+The specification <code>IF_NEEDED</code> asks HTCondor to use
+a shared file system when one is detected,
+but to transfer the files when no shared file system is detected.
+When files are to be transferred, HTCondor automatically sends the
+executable as well as a file representing standard input; 
+this file would be specified by the <code>input</code> submit command,
+and it is not relevant to this example.
+Other files are specified in a comma separated list
+with <code>transfer_input_files</code>, as they are in this example.</p>
+
+<p>
+When the job completes, all files created by the executable
+as it ran are transferred back to the submit machine.</p>
+
+<h2>Expanding the <code>science</code> Job and the Organization of Files</h2> 
+
+<p>
+A further example promotes understanding of how HTCondor makes
+the submission of lots of jobs easy.
+Assume that the <code>science.exe</code> job is to be run 40 times.
+If the input and output files were exactly the same for each run,
+then only the last line of the given submit description file
+changes from
+
+<pre>
+queue
+</pre>
+
+to
+
+<pre>
+queue 40
+</pre></p>
+
+
+<p>
+It is likely that this does not produce the desired outcome,
+as the output file created, <code>outfile.txt</code>, has the same name
+for each queued instance of the job,
+and thus this file of results for each run conflicts.
+Chances are that the input files also must be distinct for each
+of the 40 separate instances of the job.
+HTCondor offers the use of a macro that can uniquely name
+each run's input and output file names.
+The <code>$(Process)</code> macro causes substitution by the process ID from
+the job identifier.
+The submit description file for this proposed solution
+uniquely names the files:
+
+<pre>
+# science2.sub -- run 40 instances of science.exe
+executable              = science.exe
+arguments               = "infile-$(Process)A.txt infile-$(Process)B.txt outfile$(Process).txt"
+transfer_input_files    = infile-$(Process)A.txt,infile-$(Process)B.txt
+should_transfer_files   = IF_NEEDED
+when_to_transfer_output = ON_EXIT
+log                     = science2.log
+queue 40
+</pre></p>
+
+<p>
+The 40 instances of this job will have process ID values that
+run from 0 to 39.
+The two input files for process ID 0 are <code>infile-0A.txt</code>,
+and <code>infile-0B.txt</code>,
+the ones for process ID 1 will
+<code>infile-1A.txt</code>, and <code>infile-1B.txt</code>,
+and so on,
+all the way to process ID 39, which will
+be files <code>infile-39A.txt</code>, and <code>infile-39B.txt</code>.
+Using this macro also for the output file naming of each
+of the 40 jobs creates <code>outfile0.txt</code> for process ID 0,
+<code>outfile1.txt</code> for process ID 1,
+and so on, to <code>outfile39.txt</code> for process ID 39.</p>
+
+<p>
+This example does not scale well as the number of jobs increases,
+because the number of files in the same directory becomes unwieldy.
+Assume now that there will be 100 instances of the <code>science.exe</code> job,
+and each instance has distinct input files, and produces an output file.
+A recommended organization introduces a unique directory for each
+job instance.
+The submit description file facilitates this organization by
+specifying the directory with the <code>initialdir</code> command.
+The directories for this example are named <code>run0</code>, <code>run1</code>, etc.
+all the way to <code>run99</code> for the 100 instances of this example,
+specified in the submit description file:
+
+<pre>
+# science3.sub -- run 100 instances of science.exe, with
+#  unique directories named by the $(Process) macro
+executable              = science.exe
+arguments               = "infile-A.txt infile-B.txt outfile.txt"
+should_transfer_files   = IF_NEEDED
+when_to_transfer_output = ON_EXIT
+initialdir              = run$(Process)
+transfer_input_files    = infile-A.txt,infile-B.txt
+log                     = science3.log
+queue 100
+</pre></p>
+
+<p>
+The input and output files for each job instance can again
+be the initial simple names that do not incorporate  
+the <code>$(Process)</code> macro.
+These files are distinct for each run due to their placement
+within a uniquely named directory.
+This organization also works well for executables that
+do not facilitate command line naming of input or output files. 
+
+<p>
+Here is a listing of the files and directories on the
+submit machine within this suggested directory structure.
+The files and directories that are present <em>before</em> the
+jobs are submitted using <code>condor_submit</code> are shown
+in regular text font.
+The files created due to submitting and running the jobs
+are shown in <b>bold</b> text font.
+Only a subset of the 100 directories are shown.
+Directories are identified using the Unix convention of appending
+the directory name with a slash character (<code>/</code>).
+
+<pre>
+science.exe
+science3.sub
+run0/
+  infile-A.txt
+  infile-B.txt
+  <b>outfile.txt</b>
+  <b>science3.log</b>
+run1/
+  infile-A.txt
+  infile-B.txt
+  <b>outfile.txt</b>
+  <b>science3.log</b>
+run2/
+  infile-A.txt
+  infile-B.txt
+  <b>outfile.txt</b>
+  <b>science3.log</b>
+</pre>
+</p>
+    </div>
+
+    
+    <div id="footer">
+        For comments or questions about this website, please
+	<a href="mailto:htcondor-admin@cs.wisc.edu">email htcondor-admin@cs.wisc.edu</a><br />
+	This work was supported in part by NSF grants MCS-8105904, OCI-0437810, OCI-0850745, and/or ACI-1321762. <br />
+      <script type="text/javascript">
+	      document.write("Updated &raquo; "+lastMod(document.lastModified))
+      </script>
+    </div>
+
+
+
+    </body>
+</html>

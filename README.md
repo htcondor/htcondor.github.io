@@ -15,7 +15,7 @@ Many versions of Linux do not have repository support for the required versions 
 
 Grab the **htcondor-web** image from our Docker Hub:
 ```
-docker pull htcondor/htcondor-web
+docker pull dockerreg.chtc.wisc.edu:443/htcondor/web
 ```
 
 ## Setting up a GitHub SSH key
@@ -28,7 +28,7 @@ To deploy changes to the live site, you'll need to set up a GitHub SSH key as de
 After making changes to the source files, use the Docker image to preview your changes. Run the following from your computer while inside the checked-out copy of the website source:
 
 ```
-docker run -p 8000:8000 --rm --volume $PWD:/srv/jekyll:Z -it htcondor-web
+docker run -p 8000:8000 --rm --volume $PWD:/srv/jekyll:Z -it dockerreg.chtc.wisc.edu:443/htcondor/web
 ```
 
 This will utilize the latest Jekyll version and map port `8000` to your host.  Within the container, a small HTTP server can be started with the following command:
@@ -47,7 +47,7 @@ With the `--watch` flag set, any changes you make to the website source will cau
 Start by building the website. This needs to happen using the Docker container:
 
 ```
-docker run -p 8000:8000 --rm --volume $PWD:/srv/jekyll:Z -it htcondor-web /srv/jekyll/script/cibuild
+docker run -p 8000:8000 --rm --volume $PWD:/srv/jekyll:Z -it dockerreg.chtc.wisc.edu:443/htcondor/web /srv/jekyll/script/cibuild
 ```
 
 From outside the container, run the *cideploy* script to deploy your changes to the live website. Note this must be run from the *htcondor-web* root folder:
