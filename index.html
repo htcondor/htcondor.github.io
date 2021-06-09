@@ -83,99 +83,148 @@ div.hotnews {
     </div>
 
     <div class="half">
-        <h2>Latest News</h2>
+        <h2>Latest News <a href="index.rss"><img src="/assets/images/rssicon.gif" alt="[RSS]" /></a></h2>
 
         
-            <a class="newsHeading" onclick="expandcontent(this,'nn0')"><span class="showstate"></span> HTCondor Security Release: 8.9.11</a>
-            <p class="newsDate">January 27, 2021</p>
-            <div id="nn0" class="newsSummary"> The HTCondor team is pleased to announce the release of HTCondor 8.9.11.
+            <a class="newsHeading" onclick="expandcontent(this,'nn0')"><span class="showstate"></span> HTCondor-CE 5.1.1 released!</a>
+            <p class="newsDate"> May 27, 2021 </p>
+            <div id="nn0" class="newsSummary"> The HTCondor team is pleased to announce the release of HTCondor-CE 5.1.1.
 
-These releases contain important fixes for security issues.
-Affected users should update as soon as possible.
+Highlights of this release are:
+Improved restart time of HTCondor-CE View;
+Fixed bug that caused HTCondor-CE to ignore incoming BatchRuntime requests;
+Fixed RPM dependency issue when installing for non-HTCondor batch systems.
 
-More details on the security issues are in the Vulnerability Reports:
-<ul>
-<li> <a href="http://htcondor.org/security/vulnerabilities/HTCONDOR-2021-0001.html">HTCONDOR-2021-01</a>
-</li>
-<li> <a href="http://htcondor.org/security/vulnerabilities/HTCONDOR-2021-0002.html">HTCONDOR-2021-02</a>
-</li>
-</ul>
+Please refer to the
+<a href="https://htcondor.github.io/htcondor-ce/v5/releases/#updating-to-htcondor-ce-5">
+update instructions</a> to update to this version:
 
-HTCondor binaries and source code are available from our
-<a href="http://htcondor.org/downloads/">Downloads</a> page.</div>
-        
-            <a class="newsHeading" onclick="expandcontent(this,'nn1')"><span class="showstate"></span> Come find us on Twitter!</a>
-            <p class="newsDate">December 23, 2020</p>
-            <div id="nn1" class="newsSummary"> After a long social media absence, we’ve resuscitated our Twitter acount where we’ve been posting about HTCondor news, events, philosophy and other distributed systems related banter. Come find us and chime in! <a href="https://twitter.com/HTCondor" target="_blank">https://twitter.com/HTCondor</a></div>
-        
-            <a class="newsHeading" onclick="expandcontent(this,'nn2')"><span class="showstate"></span> Campus Workshop on distributed high-throughput computing (dHTC) February 8-9, 2021</a>
-            <p class="newsDate">December 18, 2020</p>
-            <div id="nn2" class="newsSummary"> Save the date and register now for another <a href="https://indico.fnal.gov/e/dHTCWorkshopFeb2021" target="_blank">Campus Workshop on distributed high-throughput computing (dHTC)</a>, February 8-9, 2021, offered by the <a href="https://path-cc.io/" target="_blank">Partnership to Advance Throughput computing (PATh)</a>. All campus cyberinfrastructure (CI) staff are invited to attend!<br /><br />
-
-<b>Feb 8:</b> Training on Using and Facilitating the Use of dHTC and the Open Science Grid (OSG), 2-5pm ET. seats limited; register ASAP!<br />
-<b>Feb 9:</b> dHTC Virtual Office Hours with breakout rooms for discussion on all things dHTC, including OSG services for campuses and CC* awards, 2-5pm ET. unlimited seats<br /><br />
-
-While there is no fee for either day, <a href="https://indico.fnal.gov/event/46925/registrations">registration is required</a> for participants to receive virtual meeting room details and instructions for training accounts via email. Please feel free to send any questions about the event to <a href="mailto:events@opensciencegrid.org">events@opensciencegrid.org</a>.
+A complete list of new features and fixed bugs can be found in the
+<a href="https://htcondor.github.io/htcondor-ce/v5/releases/#511">
+version history</a>.
+HTCondor-CE 5.1.1 binaries are available from our
+<a href="http://htcondor.org/yum/">YUM Repository</a>.
 </div>
         
-            <a class="newsHeading" onclick="expandcontent(this,'nn3')"><span class="showstate"></span> HTCondor 8.9.10 released!</a>
-            <p class="newsDate"> November 24, 2020 </p>
-            <div id="nn3" class="newsSummary"> The HTCondor team is pleased to announce the release of HTCondor 8.9.10.
+            <a class="newsHeading" onclick="expandcontent(this,'nn1')"><span class="showstate"></span> HTCondor 9.1.0 released!</a>
+            <p class="newsDate"> May 20, 2021 </p>
+            <div id="nn1" class="newsSummary"> The HTCondor team is pleased to announce the release of HTCondor 9.1.0.
 This development series release contains new features that are under
-development. This release contains all of the bug fixes from the 8.8.12
+development. This release contains all of the bug fixes from the 9.0.1
 stable release.
 
 Enhancements in the release include:
-Fix bug where negotiator stopped making matches when group quotas are used;
-Support OAuth, SciTokens, and Kerberos credentials in local universe jobs;
-The Python schedd.submit method now takes a Submit object;
-DAGMan can now optionally run a script when a job goes on hold;
-DAGMan now provides a method for inline jobs to share submit descriptions;
-Can now add arbitrary tags to condor annex instances;
-Runs the "singularity test" before running the a singularity job.
+Support for submitting to ARC-CE via the REST interface;
+DAGMan can put failed jobs on hold (user can correct problems and release);
+Can run gdb and ptrace within Docker containers;
+A small Docker test job is run on the execute node to verify functionality;;
+The number of instructions executed is reported in the job Ad on Linux.
+
+A complete list of new features and fixed bugs can be found in the version
+history.
+
+Try out our 
+<a href="https://htcondor.readthedocs.io/en/v9_1/getting-htcondor/index.html">
+new helpful installation scripts</a>.
 
 Further details can be found in the
-<a href="https://htcondor.readthedocs.io/en/latest/version-history/development-release-series-89.html#version-8-9-10">
+<a href="https://htcondor.readthedocs.io/en/v9_1/version-history/development-release-series-91.html#version-9-1-0">
 Development Version History</a> and the
-<a href="https://htcondor.readthedocs.io/en/latest/version-history/stable-release-series-88.html#version-8-8-12">
+<a href="https://htcondor.readthedocs.io/en/v9_1/version-history/stable-release-series-90.html#version-9-0-1">
 Stable Version History</a>.
-HTCondor 8.9.10 binaries and source code are available from our
+HTCondor 9.1.0 binaries and source code are available from our
 <a href="http://htcondor.org/downloads/">Downloads</a> page.
 </div>
         
-            <a class="newsHeading" onclick="expandcontent(this,'nn4')"><span class="showstate"></span> HTCondor 8.8.12 released!</a>
-            <p class="newsDate"> November 23, 2020 </p>
-            <div id="nn4" class="newsSummary"> The HTCondor team is pleased to announce the release of HTCondor 8.8.12.
+            <a class="newsHeading" onclick="expandcontent(this,'nn2')"><span class="showstate"></span> HTCondor 9.0.1 released!</a>
+            <p class="newsDate"> May 18, 2021 </p>
+            <div id="nn2" class="newsSummary"> The HTCondor team is pleased to announce the release of HTCondor 9.0.1.
 A stable series release contains significant bug fixes.
 
 Highlights of this release are:
-Added a family of version comparison functions to ClassAds;
-Increased default Globus proxy key length to meet current NIST guidance.
+Fix problem where X.509 proxy refresh kills job when using AES encryption;
+Fix problem when jobs require a different machine after a failure;
+Fix problem where a job matched a machine it can't use, delaying job start;
+Fix exit code and retry checking when a job exits because of a signal;
+Fix a memory leak in the job router when a job is removed via job policy;
+Fixed the back-end support for the 'bosco_cluster --add' command;
+An updated Windows installer that supports IDTOKEN authentication.
 
 More details about the fixes can be found in the
-<a href="https://htcondor.readthedocs.io/en/v8_8/version-history/stable-release-series-88.html#version-8-8-12">
+<a href="https://htcondor.readthedocs.io/en/v9_0/version-history/stable-release-series-90.html#version-9-0-1">
 Version History</a>.
 
-HTCondor 8.8.12 binaries and source code are available from our
+HTCondor 9.0.1 binaries and source code are available from our
 <a href="http://htcondor.org/downloads/">Downloads</a> page.
 </div>
         
-            <a class="newsHeading" onclick="expandcontent(this,'nn5')"><span class="showstate"></span> National Science Foundation establishes a partnership to advance throughput computing</a>
-            <p class="newsDate"> October 26, 2020 </p>
-            <div id="nn5" class="newsSummary"> Recognizing the University of Wisconsin-Madisonâs leadership role in 
-research computing, the National Science Foundation announced this month 
-that the Madison campus will be home to a five-year, 22.5 million dollar 
-initiative to advance high-throughput computing.
+            <a class="newsHeading" onclick="expandcontent(this,'nn3')"><span class="showstate"></span> HTCondor Week 2021 Preliminary Schedule, Registration Reminder</a>
+            <p class="newsDate"> April 30, 2021 </p>
+            <div id="nn3" class="newsSummary"> HTCondor Week 2021 is just over three weeks away! We are pleased to announce a preliminary schedule:
+<a href="https://agenda.hep.wisc.edu/event/1579/timetable/#20210524.detailed">https://agenda.hep.wisc.edu/event/1579/timetable/#20210524.detailed</a>
+This will likely have some adjustments before the actual event, but it should still give people an overall sense of what to expect.
+Also, a reminder that registration is free but mandatory. Only registered users will be sent the meeting URL and password. You can sign up from our website:
+<a href="https://agenda.hep.wisc.edu/event/1579/registrations/239/">https://agenda.hep.wisc.edu/event/1579/registrations/239/</a>
+</div>
+        
+            <a class="newsHeading" onclick="expandcontent(this,'nn4')"><span class="showstate"></span> HTCondor-CE 5.1.0 released!</a>
+            <p class="newsDate"> April 14, 2021 </p>
+            <div id="nn4" class="newsSummary"> The HTCondor team is pleased to announce the release of HTCondor-CE 5.1.0.
 
-The Partnership to Advance Throughput Computing (PATh) is driven by 
-the growing need for throughput computing across the entire spectrum 
-of research institutions and disciplines. The partnership will advance 
-computing technologies and extend adoption of these technologies by 
-researchers and educators.
+Highlights of this release are:
+Add support for ClassAd transforms to the JobRouter;
+Add mapped user and X.509 attribute to local HTCondor pool AccountingGroup mappings to Job Routers configured to use the ClassAd transform syntax;
+Accept BatchRuntime attributes from incoming jobs to set their maximum walltime;
+Update the HTCondor-CE registry to Python 3;
+Enable SSL authentication by default for READ/WRITE authorization levels;
+APEL reporting scripts now use history files in the local HTCondor PER_JOB_HISTORY_DIR to collect job data;
+Use the GlobalJobID attribute as the APEL record lrmsID.
 
-Read the full article:
-<a href="https://morgridge.org/story/national-science-foundation-establishes-a-partnership-to-advance-throughput-computing/">
-https://morgridge.org/story/national-science-foundation-establishes-a-partnership-to-advance-throughput-computing/</a>
+Please refer to the
+<a href="https://htcondor.github.io/htcondor-ce/v5/releases/#updating-to-htcondor-ce-5">
+update instructions</a> to update to this version:
+
+A complete list of new features and fixed bugs can be found in the
+<a href="https://htcondor.github.io/htcondor-ce/v5/releases/#510">
+version history</a>.
+HTCondor-CE 5.1.0 binaries are available from our
+<a href="http://htcondor.org/yum/">YUM Repository</a>.
+</div>
+        
+            <a class="newsHeading" onclick="expandcontent(this,'nn5')"><span class="showstate"></span> HTCondor 9.0.0 released!</a>
+            <p class="newsDate"> April 14, 2021 </p>
+            <div id="nn5" class="newsSummary"> The HTCondor team is pleased to announce the release of HTCondor 9.0.0.
+After two years of development, this is the first release of the new stable
+series. It includes all the enhancements and bug fixes in the 8.9 series.
+Many of these changes have focused on improving the security of HTCondor
+and improving the utility of the file transfer plugins.
+
+Highlights of this release are:
+Absent any configuration, a new HTCondor installation denies authorization to all users;
+AES encryption is used for all communication and file transfers by default (Hardware accelerated when available);
+New IDTOKEN authentication method enables fine-grained authorization control designed to replace GSI authentication;
+Improved support for GPUs, including machines with multiple GPUs;
+New condor_watch_q tool that efficiently provides live job status updates;
+Many improvements to the Python bindings, including new bindings for DAGMan and chirp;
+Improved curl, https, box, Amazon S3, and google drive file transfer plugins supporting uploads and authentication;
+File transfer times are now recorded in the job log;
+Added support for jobs that need to acquire and use OAUTH tokens;
+Many memory footprint and performance improvements in DAGMan;
+Submitter ceilings allow administrators to set limits on the number of running jobs per user across the pool.
+
+More details about the new features can be found in the
+<a href="https://htcondor.readthedocs.io/en/v9_0/version-history/upgrading-from-88-to-90-series.html">Upgrade Section</a>
+
+For a full list of changes, please consult the
+<a href="https://htcondor.readthedocs.io/en/v9_0/version-history/development-release-series-89.html">8.9 version history</a>
+
+
+Try out our 
+<a href="https://htcondor.readthedocs.io/en/latest/getting-htcondor/index.html">
+new helpful installation scripts</a>.
+
+HTCondor 9.0.0 binaries and source code are available from our
+<a href="http://htcondor.org/downloads/">Downloads</a> page.
 </div>
         
 
@@ -246,15 +295,14 @@ https://morgridge.org/story/national-science-foundation-establishes-a-partnershi
 
     </div>
 
-    
     <div id="footer">
-        For comments or questions about this website, please
-	<a href="mailto:htcondor-admin@cs.wisc.edu">email htcondor-admin@cs.wisc.edu</a><br />
-	This work was supported in part by NSF grants MCS-8105904, OCI-0437810, OCI-0850745, and/or ACI-1321762. <br />
-      <script type="text/javascript">
-	      document.write("Updated &raquo; "+lastMod(document.lastModified))
-      </script>
-    </div>
+    For comments or questions about this website, please
+<a href="mailto:htcondor-admin@cs.wisc.edu">email htcondor-admin@cs.wisc.edu</a><br />
+    This work is supported by <a href="https://www.nsf.gov/div/index.jsp?div=OAC">NSF</a> under Cooperative Agreement <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2030508">OAC-2030508</a> as part of the <a href="https://path-cc.io/">PATh Project</a>. <br />
+  <script type="text/javascript">
+      document.write("Updated &raquo; "+lastMod(document.lastModified))
+  </script>
+</div>
 
 
 
