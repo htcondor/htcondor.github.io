@@ -111,6 +111,8 @@ img.scaled { width: 100%; }
 
 .newsHeading:hover { color: #7590ae; background-color: transparent; text-decoration: underline; cursor: pointer; }
 
+#news-container .newsDate { font-style: italic; color: grey; margin: 0 !important; padding: 0; }
+
 .newsDate { font-style: italic; margin: 0 !important; font-size: 80%; padding: 0; }
 
 .newsSummary { margin: 1.5ex 0 2.5ex 0.75ex !important; padding: 0; text-align: left; }

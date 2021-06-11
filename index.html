@@ -86,146 +86,24 @@ div.hotnews {
         <h2>Latest News <a href="index.rss"><img src="/assets/images/rssicon.gif" alt="[RSS]" /></a></h2>
 
         
-            <a class="newsHeading" onclick="expandcontent(this,'nn0')"><span class="showstate"></span> HTCondor-CE 5.1.1 released!</a>
-            <p class="newsDate"> May 27, 2021 </p>
-            <div id="nn0" class="newsSummary"> The HTCondor team is pleased to announce the release of HTCondor-CE 5.1.1.
-
-Highlights of this release are:
-Improved restart time of HTCondor-CE View;
-Fixed bug that caused HTCondor-CE to ignore incoming BatchRuntime requests;
-Fixed RPM dependency issue when installing for non-HTCondor batch systems.
-
-Please refer to the
-<a href="https://htcondor.github.io/htcondor-ce/v5/releases/#updating-to-htcondor-ce-5">
-update instructions</a> to update to this version:
-
-A complete list of new features and fixed bugs can be found in the
-<a href="https://htcondor.github.io/htcondor-ce/v5/releases/#511">
-version history</a>.
-HTCondor-CE 5.1.1 binaries are available from our
-<a href="http://htcondor.org/yum/">YUM Repository</a>.
-</div>
         
-            <a class="newsHeading" onclick="expandcontent(this,'nn1')"><span class="showstate"></span> HTCondor 9.1.0 released!</a>
-            <p class="newsDate"> May 20, 2021 </p>
-            <div id="nn1" class="newsSummary"> The HTCondor team is pleased to announce the release of HTCondor 9.1.0.
-This development series release contains new features that are under
-development. This release contains all of the bug fixes from the 9.0.1
-stable release.
-
-Enhancements in the release include:
-Support for submitting to ARC-CE via the REST interface;
-DAGMan can put failed jobs on hold (user can correct problems and release);
-Can run gdb and ptrace within Docker containers;
-A small Docker test job is run on the execute node to verify functionality;;
-The number of instructions executed is reported in the job Ad on Linux.
-
-A complete list of new features and fixed bugs can be found in the version
-history.
-
-Try out our 
-<a href="https://htcondor.readthedocs.io/en/v9_1/getting-htcondor/index.html">
-new helpful installation scripts</a>.
-
-Further details can be found in the
-<a href="https://htcondor.readthedocs.io/en/v9_1/version-history/development-release-series-91.html#version-9-1-0">
-Development Version History</a> and the
-<a href="https://htcondor.readthedocs.io/en/v9_1/version-history/stable-release-series-90.html#version-9-0-1">
-Stable Version History</a>.
-HTCondor 9.1.0 binaries and source code are available from our
-<a href="http://htcondor.org/downloads/">Downloads</a> page.
-</div>
+            <a class="newsHeading" href="/news/HTCondor-CE_5.1.1_released!/">HTCondor-CE 5.1.1 released!</a>
+            <p class="newsDate">May 27, 2021</p>
         
-            <a class="newsHeading" onclick="expandcontent(this,'nn2')"><span class="showstate"></span> HTCondor 9.0.1 released!</a>
-            <p class="newsDate"> May 18, 2021 </p>
-            <div id="nn2" class="newsSummary"> The HTCondor team is pleased to announce the release of HTCondor 9.0.1.
-A stable series release contains significant bug fixes.
-
-Highlights of this release are:
-Fix problem where X.509 proxy refresh kills job when using AES encryption;
-Fix problem when jobs require a different machine after a failure;
-Fix problem where a job matched a machine it can't use, delaying job start;
-Fix exit code and retry checking when a job exits because of a signal;
-Fix a memory leak in the job router when a job is removed via job policy;
-Fixed the back-end support for the 'bosco_cluster --add' command;
-An updated Windows installer that supports IDTOKEN authentication.
-
-More details about the fixes can be found in the
-<a href="https://htcondor.readthedocs.io/en/v9_0/version-history/stable-release-series-90.html#version-9-0-1">
-Version History</a>.
-
-HTCondor 9.0.1 binaries and source code are available from our
-<a href="http://htcondor.org/downloads/">Downloads</a> page.
-</div>
+            <a class="newsHeading" href="/news/HTCondor_9.1.0_released!/">HTCondor 9.1.0 released!</a>
+            <p class="newsDate">May 20, 2021</p>
         
-            <a class="newsHeading" onclick="expandcontent(this,'nn3')"><span class="showstate"></span> HTCondor Week 2021 Preliminary Schedule, Registration Reminder</a>
-            <p class="newsDate"> April 30, 2021 </p>
-            <div id="nn3" class="newsSummary"> HTCondor Week 2021 is just over three weeks away! We are pleased to announce a preliminary schedule:
-<a href="https://agenda.hep.wisc.edu/event/1579/timetable/#20210524.detailed">https://agenda.hep.wisc.edu/event/1579/timetable/#20210524.detailed</a>
-This will likely have some adjustments before the actual event, but it should still give people an overall sense of what to expect.
-Also, a reminder that registration is free but mandatory. Only registered users will be sent the meeting URL and password. You can sign up from our website:
-<a href="https://agenda.hep.wisc.edu/event/1579/registrations/239/">https://agenda.hep.wisc.edu/event/1579/registrations/239/</a>
-</div>
+            <a class="newsHeading" href="/news/HTCondor_9.0.1_released!/">HTCondor 9.0.1 released!</a>
+            <p class="newsDate">May 18, 2021</p>
         
-            <a class="newsHeading" onclick="expandcontent(this,'nn4')"><span class="showstate"></span> HTCondor-CE 5.1.0 released!</a>
-            <p class="newsDate"> April 14, 2021 </p>
-            <div id="nn4" class="newsSummary"> The HTCondor team is pleased to announce the release of HTCondor-CE 5.1.0.
-
-Highlights of this release are:
-Add support for ClassAd transforms to the JobRouter;
-Add mapped user and X.509 attribute to local HTCondor pool AccountingGroup mappings to Job Routers configured to use the ClassAd transform syntax;
-Accept BatchRuntime attributes from incoming jobs to set their maximum walltime;
-Update the HTCondor-CE registry to Python 3;
-Enable SSL authentication by default for READ/WRITE authorization levels;
-APEL reporting scripts now use history files in the local HTCondor PER_JOB_HISTORY_DIR to collect job data;
-Use the GlobalJobID attribute as the APEL record lrmsID.
-
-Please refer to the
-<a href="https://htcondor.github.io/htcondor-ce/v5/releases/#updating-to-htcondor-ce-5">
-update instructions</a> to update to this version:
-
-A complete list of new features and fixed bugs can be found in the
-<a href="https://htcondor.github.io/htcondor-ce/v5/releases/#510">
-version history</a>.
-HTCondor-CE 5.1.0 binaries are available from our
-<a href="http://htcondor.org/yum/">YUM Repository</a>.
-</div>
+            <a class="newsHeading" href="/news/HTCondor_Week_2021_Preliminary_Schedule,_Registration_Reminder/">HTCondor Week 2021 Preliminary Schedule, Registration Reminder</a>
+            <p class="newsDate">April 30, 2021</p>
         
-            <a class="newsHeading" onclick="expandcontent(this,'nn5')"><span class="showstate"></span> HTCondor 9.0.0 released!</a>
-            <p class="newsDate"> April 14, 2021 </p>
-            <div id="nn5" class="newsSummary"> The HTCondor team is pleased to announce the release of HTCondor 9.0.0.
-After two years of development, this is the first release of the new stable
-series. It includes all the enhancements and bug fixes in the 8.9 series.
-Many of these changes have focused on improving the security of HTCondor
-and improving the utility of the file transfer plugins.
-
-Highlights of this release are:
-Absent any configuration, a new HTCondor installation denies authorization to all users;
-AES encryption is used for all communication and file transfers by default (Hardware accelerated when available);
-New IDTOKEN authentication method enables fine-grained authorization control designed to replace GSI authentication;
-Improved support for GPUs, including machines with multiple GPUs;
-New condor_watch_q tool that efficiently provides live job status updates;
-Many improvements to the Python bindings, including new bindings for DAGMan and chirp;
-Improved curl, https, box, Amazon S3, and google drive file transfer plugins supporting uploads and authentication;
-File transfer times are now recorded in the job log;
-Added support for jobs that need to acquire and use OAUTH tokens;
-Many memory footprint and performance improvements in DAGMan;
-Submitter ceilings allow administrators to set limits on the number of running jobs per user across the pool.
-
-More details about the new features can be found in the
-<a href="https://htcondor.readthedocs.io/en/v9_0/version-history/upgrading-from-88-to-90-series.html">Upgrade Section</a>
-
-For a full list of changes, please consult the
-<a href="https://htcondor.readthedocs.io/en/v9_0/version-history/development-release-series-89.html">8.9 version history</a>
-
-
-Try out our 
-<a href="https://htcondor.readthedocs.io/en/latest/getting-htcondor/index.html">
-new helpful installation scripts</a>.
-
-HTCondor 9.0.0 binaries and source code are available from our
-<a href="http://htcondor.org/downloads/">Downloads</a> page.
-</div>
+            <a class="newsHeading" href="/news/HTCondor_9.0.0_released!/">HTCondor 9.0.0 released!</a>
+            <p class="newsDate">April 14, 2021</p>
+        
+            <a class="newsHeading" href="/news/HTCondor-CE_5.1.0_released!/">HTCondor-CE 5.1.0 released!</a>
+            <p class="newsDate">April 14, 2021</p>
         
 
         <div class="more"><a href="new.html">More News &raquo;</a></div>
@@ -237,11 +115,6 @@ HTCondor 9.0.0 binaries and source code are available from our
 <div class="rowOfBoxes">
 <!-- This is "hotnews" template, used for relatively short lived news we
      want to emphasize, like Condor Week.  Keep it brief and use with care. -->
-
-       <div class="hotnews">
-               <p><b>Save the Date! HTCondor Week 2021</b></p>
-               <p>HTCondor Week 2021 will be a free, virtual event taking place the week of May 24-28, 2021. Please save the dates on your calendars; we'll follow up with a detailed schedule and more information soon.</p>
-       </div>
 
 </div>
 
