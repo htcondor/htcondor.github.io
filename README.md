@@ -3,29 +3,20 @@
 This git repository contains the source code for the refactored HTCondor website.If you want to learn more about HTCondor, [visit the website itself](https://htcondor.org).
 
 
-# Installation
+# Development
 
-## Installing Ruby & Jekyll
- 
-If this is your first time using Jekyll, please follow the [Jekyll docs](https://jekyllrb.com/docs/installation/) and make sure your local environment (including Ruby) is setup correctly.
-
-Many versions of Linux do not have repository support for the required versions of ruby and gem. For this reason, we encourage using our Docker container to build and deploy the Jekyll website.
+The HTCondor website is implemented in [Jekyll](https://jekyllrb.com/). We've provided a Docker image which contains all the necessary libraries to build the website and preview it in a web browser.
 
 ## Obtaining Docker image
 
-Grab the **htcondor-web** image from our Docker Hub:
+Grab the **htcondor/web** image from our Docker Hub:
 ```
 docker pull dockerreg.chtc.wisc.edu:443/htcondor/web
 ```
 
-## Setting up a GitHub SSH key
+## Building the website
 
-To deploy changes to the live site, you'll need to set up a GitHub SSH key as described here: https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-
-
-# Development
-
-After making changes to the source files, use the Docker image to preview your changes. Run the following from your computer while inside the checked-out copy of the website source:
+After making changes to the Jekyll source files, use the Docker image to preview your changes. Run the following from your computer while inside the checked-out copy of the website source:
 
 ```
 docker run -p 8000:8000 --rm --volume $PWD:/srv/jekyll:Z -it dockerreg.chtc.wisc.edu:443/htcondor/web
@@ -44,14 +35,10 @@ With the `--watch` flag set, any changes you make to the website source will cau
 
 # Deploying
 
-Start by building the website. This needs to happen using the Docker container:
+To deploy any changes you've made to the website, simply commit them to your local git repo, then push the changes to master:
 
 ```
-docker run -p 8000:8000 --rm --volume $PWD:/srv/jekyll:Z -it dockerreg.chtc.wisc.edu:443/htcondor/web /srv/jekyll/script/cibuild
+git push origin master
 ```
 
-From outside the container, run the *cideploy* script to deploy your changes to the live website. Note this must be run from the *htcondor-web* root folder:
-
-```
-script/cideploy
-```
+From there, a combination of GitHub actions and cron jobs will take care of the rest. You should see your changes appear on http://htcondor.org within the next 10 minutes.
