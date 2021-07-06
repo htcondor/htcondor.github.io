@@ -33,12 +33,18 @@ This will build and serve the website; it can be viewed by navigating your web b
 With the `--watch` flag set, any changes you make to the website source will cause a new version of the website to be built; it usually takes 4-5 seconds between hitting "Save" and then "Refresh" on the website.
 
 
-# Deploying
+# Making Website Changes
 
-To deploy any changes you've made to the website, simply commit them to your local git repo, then push the changes to master:
+This repository uses [GitHub Actions](https://github.com/htcondor/htcondor-web/blob/master/.github/workflows/)
+to deploy a website preview from the `master` branch to the [web-preview repository](https://htcondor.github.io/).
+The [production website](https://research.cs.wisc.edu/htcondor/) is built automatically by GitHub Pages from the `production` branch.
 
-```
-git push origin master
-```
+To make changes to the website, use the following workflow:
 
-From there, a combination of GitHub actions and cron jobs will take care of the rest. You should see your changes appear on http://htcondor.org within the next 10 minutes.
+1.  Submit a pull request with website updates to the `master` branch (the default) and request a review
+2.  Upon approval and merge of the pull request, changes can be previewed at https://htcondor.github.io/
+3.  If additional changes are necessary, repeat steps 1 and 2.
+4.  When satisfied with the preview website, submit a
+    [pull request](https://github.com/htcondor/htcondor-web/compare/production...master)
+    from `production` to `master`
+5.  After the pull request from step 4 has been merged, verify the changes at https://research.cs.wisc.edu/htcondor/
