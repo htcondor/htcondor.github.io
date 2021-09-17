@@ -35,9 +35,18 @@ With the `--watch` flag set, any changes you make to the website source will cau
 
 # Making Website Changes
 
-This repository uses [GitHub Actions](https://github.com/htcondor/htcondor-web/blob/master/.github/workflows/)
-to deploy a website preview from the `master` branch to the [web-preview repository](https://htcondor.github.io/).
-The [production website](https://research.cs.wisc.edu/htcondor/) is built automatically by GitHub Pages from the `production` branch.
+:exclamation: **New workflow will be implemented soon based on dev comments.**
+Email will go out and README will be updated when these changes go live
+
+This repository has to ability to use [GitHub Actions](https://github.com/htcondor/htcondor-web/blob/master/.github/workflows/)
+to deploy a website preview from the `master` branch to the [web-preview repository](https://htcondor.github.io/web-preview/).
+
+To use this feature prepend your branch name with "preview-" then push that branch to htcondor-web. 
+You will now find your new branch on the web-preview page under the url "https://htcondor.github.io/web-preview/preview-...".
+
+For instance if you push "preview-helloworld", you will find your dev preview at "https://htcondor.github.io/web-preview/preview-helloworld"
+
+The production websites (htcondor.com, https://research.cs.wisc.edu/htcondor/) are built automatically by GitHub Pages from the `production` branch.
 
 To make changes to the website, use the following workflow:
 
