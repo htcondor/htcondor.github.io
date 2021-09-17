@@ -73,6 +73,25 @@
     
 
     
+        <dt><a href="/htcondor/security/vulnerabilities/HTCONDOR-2021-0004/">HTCONDOR-2021-0004</a></dt>
+        <dd>
+            When authenticating to an HTCondor daemon using a SciToken,
+a user may be granted authorizations beyond what the token should allow.
+
+        </dd>
+    
+
+    
+        <dt><a href="/htcondor/security/vulnerabilities/HTCONDOR-2021-0003/">HTCONDOR-2021-0003</a></dt>
+        <dd>
+            Using standard command-line tools, a user with only READ access
+to a SchedD or Collector can discover secrets that could allow them
+to control other users jobs and/or read their data.
+
+        </dd>
+    
+
+    
         <dt><a href="/htcondor/security/vulnerabilities/HTCONDOR-2021-0002/">HTCONDOR-2021-0002</a></dt>
         <dd>
             A running condor_credd daemon can be instructed to create or write certain files as root that are outside of the directory specified by the parameter "SEC_CREDENTIAL_DIRECTORY_OAUTH".
