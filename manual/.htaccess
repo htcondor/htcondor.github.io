@@ -1,0 +1,5 @@
+<IfModule mod_headers.c>
+  <DirectoryMatch "^v">
+    Header set X-Robots-Tag "noindex"
+  </DirectoryMatch>
+</IfModule>
