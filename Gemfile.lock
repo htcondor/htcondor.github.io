@@ -276,6 +276,7 @@ DEPENDENCIES
   github-pages
   jekyll (~> 3.9.0)
   jekyll-environment-variables
+  jekyll-sitemap
 
 BUNDLED WITH
    2.2.27
