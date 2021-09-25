@@ -153,6 +153,42 @@ A Long Term Support (LTS) release contains significant bug fixes.</p>
 
 <!-- News item -->
 <dl class="p-3 bg-light">
+<dt><a href="/htcondor/news/New_HTCondor_Version_Scheme/">(September 22, 2021) <strong>New HTCondor Version Scheme</strong></a></dt>
+<dd><p>Starting with HTCondor 9.2.0, HTCondor will adopt a new version scheme to
+facilitate quicker patch releases.  The version number will still retain the
+MAJOR.MINOR.PATCH form with slightly different meanings.</p>
+
+<ul>
+  <li>
+    <p>The MAJOR number increments for each new Long Term Support (LTS) release.
+A new LTS release may have backward-incompatible changes and may require
+updates to configuration files.  The current LTS release is 9.0.6.
+The next one will be 10.0.0.</p>
+  </li>
+  <li>
+    <p>The MINOR number increments during the development of new features. This
+number stays at 0 for LTS releases. The current release is 9.2.0.</p>
+  </li>
+  <li>
+    <p>The PATCH number increments when we have targeted fixes.  If there is a
+specific need to be addressed before 9.3.0 is tested and ready, we would
+issue a 9.2.1 patch release.  Patch releases for the LTS are fully reviewed
+and tested for a seamless upgrade.</p>
+  </li>
+</ul>
+
+<p>These releases will be served out of three repositories.</p>
+<ul>
+  <li>The LTS release and its patches (X.0.Z) are in the existing Stable channel.</li>
+  <li>The development releases (X.Y.0) are in the existing Current channel.</li>
+  <li>A new Updates channel will contain development patch releases (X.Y.Z).</li>
+</ul>
+
+</dd>
+</dl>
+
+<!-- News item -->
+<dl class="p-3 bg-light">
 <dt><a href="/htcondor/news/European_HTCondor_Workshop_2021_Next_Week/">(September 13, 2021) <strong>European HTCondor Workshop 2021 Next Week</strong></a></dt>
 <dd><p>The European HTCondor Workshop 2021 will be held next week, Monday Sept 20 
 through Friday Sept 24 as a purely online event via videoconference.
