@@ -2,6 +2,10 @@
 
 This git repository contains the source code for the refactored HTCondor website.If you want to learn more about HTCondor, [visit the website itself](https://htcondor.org).
 
+- [Development](#development)
+- [Creating Preview Branches](#previewing-branches)
+- [Making Website Changes](#making-website-changes)
+
 
 # Development
 
