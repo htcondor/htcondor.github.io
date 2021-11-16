@@ -33,27 +33,24 @@ This will build and serve the website; it can be viewed by navigating your web b
 With the `--watch` flag set, any changes you make to the website source will cause a new version of the website to be built; it usually takes 4-5 seconds between hitting "Save" and then "Refresh" on the website.
 
 
-# Making Website Changes
+## NEW - Previewing Branches
 
-:exclamation: **New workflow will be implemented soon based on dev comments.**
-Email will go out and README will be updated when these changes go live
+If you would like to preview your branch or test it with the website production build you have the option now. 
 
-This repository has to ability to use [GitHub Actions](https://github.com/htcondor/htcondor-web/blob/master/.github/workflows/)
-to deploy a website preview from the `master` branch to the [web-preview repository](https://htcondor.github.io/web-preview/).
+To create a preview branch:
+1. Prepend the name of your branch with "preview-"
+    - Example: "preview-helloworld"
+2. Push this branch to https://github.com/htcondor/htcondor-web.git  
+3. Check for your preview branch @ https://htcondor.com/web-preview/<preview-branch-name>
+   - Example: [https://htcondor.com/web-preview/preview-helloworld/](https://htcondor.com/web-preview/preview-helloworld/)
+4. When you merge in the branch or no longer need it, delete the branch and Github will delete the web preview   
+   
+This is a great way to demo your changes to others easily. 
 
-To use this feature prepend your branch name with "preview-" then push that branch to htcondor-web. 
-You will now find your new branch on the web-preview page under the url "https://htcondor.github.io/web-preview/preview-...".
+## Making Website Changes
 
-For instance if you push "preview-helloworld", you will find your dev preview at "https://htcondor.github.io/web-preview/preview-helloworld"
+:exclamation: **New workflow is live making master the production branch.**
 
-The production websites (htcondor.com, https://research.cs.wisc.edu/htcondor/) are built automatically by GitHub Pages from the `production` branch.
-
-To make changes to the website, use the following workflow:
-
-1.  Submit a pull request with website updates to the `master` branch (the default) and request a review
-2.  Upon approval and merge of the pull request, changes can be previewed at https://htcondor.github.io/
-3.  If additional changes are necessary, repeat steps 1 and 2.
-4.  When satisfied with the preview website, submit a
-    [pull request](https://github.com/htcondor/htcondor-web/compare/production...master)
-    from `production` to `master`
-5.  After the pull request from step 4 has been merged, verify the changes at https://research.cs.wisc.edu/htcondor/
+1.  Submit a pull request with website updates to the `master` branch (the default) and request a review.
+2.  If the PR is approved you can merge into master.
+3.  Check that your intended changes populate at [htcondor.org](https://htcondor.org)
