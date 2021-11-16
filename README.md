@@ -33,7 +33,7 @@ This will build and serve the website; it can be viewed by navigating your web b
 With the `--watch` flag set, any changes you make to the website source will cause a new version of the website to be built; it usually takes 4-5 seconds between hitting "Save" and then "Refresh" on the website.
 
 
-## NEW - Previewing Branches
+## Previewing Branches
 
 If you would like to preview your branch or test it with the website production build you have the option now. 
 
