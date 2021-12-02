@@ -36,7 +36,7 @@
     <meta property="twitter:description" content="HTCondor is a specialized workload management system for compute-intensive jobs. Built to be flexible, expressive, and compatible with Grid and Cloud computing environments HTCondor made to increase your Computational Throughput.">
     <meta property="twitter:image" content="https://htcondor.org/assets/images/HTC.png">
 
-    <title>Home</title>
+    <title>HTCondor 9.0.8 released!</title>
 
     <script src="/htcondor/assets/js/sitewide.js" type="text/javascript" defer></script>
     <script src="/htcondor/assets/js/header.js" type="text/javascript" defer></script>
@@ -47,7 +47,7 @@
 
     <meta name="google-site-verification" content="lCkv5T7d4arQ-RPy5tUh6QyB5b3g6dlYtGxotDj1anQ" />
     
-        <link rel="canonical" href="https://htcondor.org/">
+        <link rel="canonical" href="https://htcondor.org/news/HTCondor_9.0.8_released/">
     
 
     
@@ -520,245 +520,36 @@
 </header>
 
 <main id="main-copy" tabindex="-1">
-    <div class="">
-    <div class="container-xxl py-4 py-lg-5">
-        <div class="row">
-            <div class="col-12 col-md-8">
-                <h2>Computing with HTCSS</h2>
-                <p>
-                    <b>HTCSS provides an array of services for automating and managing batch workloads and computing resources.</b>
-                </p>
-                <p>
-                    Whether your idea of large scale computing is your desktop or a planet-wide pool of resources, HTCSS provides the technologies for managing workloads and all your computing resources.  HTCSS consists of four main components: the Access Point (AP), the Central Manager (CM), the Execution Point (EP), and the Compute Element (CE).
-                </p>
-                <p>
-                    <span class="text-danger">
-                        Note: The HTCondor Software Suite (HTCSS) was known as 'Condor' from 1988 <a href="https://lists.cs.wisc.edu/archive/condor-users/2012-October/msg00110.shtml">until its name changed</a> in 2012.
-                    </span>
-                    <span>
-                        If you are looking for Phoenix Software International's software development and library management system for z/VSE or z/OS, click <a href="http://www.phoenixsoftware.com">here</a>.
-                    </span>
-                </p>
-            </div>
-            <div id="#new-container" class="news col-12 col-md-4 mb-2">
-                <div class="p-2 bg-light">
-                    <h4 class="d-flex flex-row flex-md-column flex-lg-row">
-                        Latest News
-                        <a class="d-flex me-0 m-auto m-md-0 me-lg-0 m-lg-auto text-decoration-none" href="https://twitter.com/HTCondor?ref_src=twsrc%5Etfw">
-                            <div id="follow-twitter">
-                                <div id="twitter-icon">
-                                    <img height="12px" src="/htcondor/assets/images/twitter.svg" alt="Twitter Logo"/>
-                                </div>
-                                <div>
-                                    Follow @HTCondor
-                                </div>
-                            </div>
-                        </a>
-                    </h4>
-                    
-                    
-                    
+    <div class="container-xxl p-4">
+    <div id="news-container" class="row justify-content-center">
+    <div class="col-12 col-lg-10 col-xl-9 col-xxl-8">
+        <h1>HTCondor 9.0.8 released!</h1>
+        <h4 class="text-muted">December  2, 2021</h4>
+        
+        <p><p>The HTCondor Team is pleased to announce the HTCondor 9.0.8 LTS release.
+A Long Term Support (LTS) release contains significant bug fixes.</p>
 
+<p>Highlights of this release are:</p>
+<ul>
+  <li>Fix bug where huge values of ImageSize and others would end up negative</li>
+  <li>Fix bug in how MAX_JOBS_PER_OWNER applied to late materialization jobs</li>
+  <li>Fix bug where the schedd could choose a slot with insufficient disk space</li>
+  <li>Fix crash in ClassAd substr() function when the offset is out of range</li>
+  <li>Fix bug in Kerberos code that can crash on macOS and could leak memory</li>
+  <li>Fix bug where a job is ignored for 20 minutes if the startd claim fails</li>
+</ul>
 
+<p>More details about the fixes can be found in the <a href="https://htcondor.readthedocs.io/en/v9_0/version-history/stable-release-series-90.html#version-9-0-8"> Version History</a>.</p>
 
-
-<div class="event mb-1">
-  <a class="newsHeading" href="/htcondor/news/HTCondor_9.4.0_released/">HTCondor 9.4.0 released!</a>
-  <div class="newsDate">
-    <small class="text-muted">December  2, 2021</small>
-  </div>
-</div>
-
-
-                    
-                    
-
-
-
-
-<div class="event mb-1">
-  <a class="newsHeading" href="/htcondor/news/HTCondor_9.0.8_released/">HTCondor 9.0.8 released!</a>
-  <div class="newsDate">
-    <small class="text-muted">December  2, 2021</small>
-  </div>
-</div>
-
-
-                    
-                    
-
-
-
-
-<div class="event mb-1">
-  <a class="newsHeading" href="/htcondor/news/2021-11-30-banq/">Centuries of newspapers are now easily searchable thanks to HTCSS</a>
-  <div class="newsDate">
-    <small class="text-muted">November 30, 2021</small>
-  </div>
-</div>
-
-
-                    
-                    
-
-
-
-
-<div class="event mb-1">
-  <a class="newsHeading" href="/htcondor/news/2021-11-29-usgs/">Protecting ecosystems with HTC</a>
-  <div class="newsDate">
-    <small class="text-muted">November 29, 2021</small>
-  </div>
-</div>
-
-
-                    
-                    
-
-
-
-
-<div class="event mb-1">
-  <a class="newsHeading" href="/htcondor/news/HTCondor_9.3.0_released/">HTCondor 9.3.0 released!</a>
-  <div class="newsDate">
-    <small class="text-muted">November  3, 2021</small>
-  </div>
-</div>
-
-
-                    
-
-                    <div class="more"><a href="new.html">More News &raquo;</a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="pb-5">
-    <div class="container-xxl py-4 p-md-5 px-xxl-0">
-        <h2 class="mb-4">HTCondor Software Suite</h2>
-        <div class="accordion accordion-flush" id="htcss-suite-accordion">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="htcondor-header">
-                    <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#htcondor-body" aria-expanded="false" aria-controls="htcondor-body">
-                        <div>
-                            <h3>HTCondor</h3>
-                            <p>
-                                HTCondor provides you with the ability to effectively utilize all the computing resources at your disposal.
-                            </p>
-                        </div>
-                    </button>
-                </h2>
-                <div id="htcondor-body" class="accordion-collapse collapse" aria-labelledby="htcondor-header" data-bs-parent="#htcss-suite-accordion">
-                    <div class="accordion-body">
-                        <p>
-                            HTCondor is a software system that creates a High-Throughput Computing (HTC) environment. It
-                            effectively uses the computing power of machines connected over a network, be they a single
-                            cluster, a set of clusters on a campus, cloud resources either standalone or temporarily
-                            joined to a local cluster, or international grids. Power comes from the ability to effectively
-                            harness shared resources with distributed ownership.
-                        </p>
-                        <p>
-                            <a class="btn btn-primary" href="/htcondor/overview">
-                                Learn More About HTCondor
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="htcondor-ce-header">
-                    <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#htcondor-ce-body" aria-expanded="false" aria-controls="htcondor-ce-body">
-                        <div>
-                            <h3>HTCondor-CE</h3>
-                            <p>
-                                The entry point to remote computing resources.
-                            </p>
-                        </div>
-                    </button>
-                </h2>
-                <div id="htcondor-ce-body" class="accordion-collapse collapse" aria-labelledby="htcondor-ce-header" data-bs-parent="#htcss-suite-accordion">
-                    <div class="accordion-body">
-                        <div class="row justify-content-between py-3">
-                            <div class="col-12 col-lg-5">
-                                <p>
-                                    The <a href="#what-is-htcondor-ce">HTCondor-CE</a> software is a <em>Compute Entrypoint</em> (CE) based on <a href="http://htcondor.org">HTCondor</a> for sites
-                                    that are part of a larger computing grid
-                                    (e.g. <a href="https://www.egi.eu/">European Grid Infrastructure</a>, <a href="https://opensciencegrid.org/">Open Science Grid</a>).
-                                    As such, HTCondor-CE serves as a "door" for incoming resource allocation requests (RARs) — it handles authorization and
-                                    delegation of these requests to a grid site's local batch system.
-                                    Supported batch systems include
-                                    <a href="http://www.univa.com/products/">Grid Engine</a>,
-                                    <a href="http://htcondor.org">HTCondor</a>,
-                                    <a href="https://www.ibm.com/us-en/marketplace/hpc-workload-management">LSF</a>,
-                                    <a href="https://www.altair.com/pbs-professional/">PBS Pro</a>/<a href="https://adaptivecomputing.com/cherry-services/torque-resource-manager/">Torque</a>,
-                                    and <a href="https://slurm.schedmd.com/">Slurm</a>.
-                                </p>
-                                <p>
-                                    For an introduction to HTCondor-CE, watch our <a href="https://www.youtube.com/embed/6IWaMbofG7M">recorded webinar</a> from the EGI
-                                    Community Webinar Programme.
-                                </p>
-                                <p>
-                                    <a class="btn btn-primary" href="/htcondor-ce/overview">
-                                        Learn More About HTCondor-CE
-                                    </a>
-                                </p>
-                            </div>
-                            <div class="col d-none d-lg-flex">
-                                <div class="mx-auto">
-                                    <iframe class="mb-4" width="480" height="315" src="https://www.youtube.com/embed/6IWaMbofG7M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container-xxl py-0 px-4">
-
-    
-    
-    
-
-
-    <div class="row my-5">
-        <div class="col-12 col-md-4 py-2 ps-4 p-2">
-            <h3>Software</h3>
-            <ul>
-                <li><a href="description.html">What is the HTCondor Software Suite (HTCSS)?</a></li>
-                <li><a href="downloads.html"><strong>Downloads</strong></a> including HTCondor and HTCondor-CE source and binaries.</li>
-                <li><a href="manual/"><strong>Documentation</strong></a> includes the Quick Start Guides and Manuals.</li>
-                <li><a href="htcondor-support/">Support Options</a> include community and professional solutions.</li>
-                <li><a href="https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=DeveloperReleasePlan">Forthcoming release plans</a></li>
-                <li><a href="license.html">License Information</a></li>
-                <li><a href="security/">Security Information</a></li>
-            </ul>
-        </div>
-
-        <div class="col-12 col-md-4 py-2 ps-4 p-2 border-start border-end">
-            <h3>Community</h3>
-            <ul>
-                <li><a href="mail-lists/"><strong>Email Lists</strong></a> - ask questions and share experiences with users worldwide.</li>
-                <li><a href="https://agenda.hep.wisc.edu/event/1579/">HTCondor Week</a> is our annual community meeting in Madison, and we often have an annual meeting in Europe as well. <a href="past_condor_weeks.html">Materials from past meetings</a> include talks from science and industry, plus <strong>useful tutorials</strong>.</li>
-                <li><a href="http://condor-wiki.cs.wisc.edu/index.cgi/wiki">HTCondor Wiki</a> contains <a href="https://condor-wiki.cs.wisc.edu/index.cgi/wiki?p=HowToAdminRecipes">FAQs</a>, bug tickets, and more. </li>
-                <li><a href="logos/">Official Logos</a></li>
-            </ul>
-        </div>
-
-        <div class="col-12 col-md-4 py-2 ps-4 p-2">
-            <h3>Research and Development</h3>
-            <ul>
-                <li><a href="http://chtc.cs.wisc.edu/jobs">Jobs</a> available in support of distributed computing at UW-Madison</li>
-                <li><a href="people.html">The CHTC Team</a> at the UW-Madison, and <a href="https://condor-wiki.cs.wisc.edu/index.cgi/wiki?p=DeveloperHomePages">a list of code contributors and maintainers.</a></li>
-            </ul>
-        </div>
+<p>HTCondor 9.0.8 binaries and source code are available from our <a href="http://htcondor.org/downloads/">Downloads</a> page.</p>
+</p>
     </div>
 </div>
 
 
 
+
+</div>
 </main>
 <footer id="footer" class="bg-light pt-4 mt-auto">
     <div class="container-xxl">
