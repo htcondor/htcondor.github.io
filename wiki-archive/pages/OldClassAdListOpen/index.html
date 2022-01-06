@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="description" content="HTCondor Homepage">
@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/htcondor/assets/images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/htcondor/assets/images/favicons/favicon-16x16.png">
     <link rel="manifest" href="/htcondor/assets/images/favicons/site.webmanifest">
-    <link rel="mask-icon" href="/htcondor/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="mask-icon" href="/htcondor/assets/images/favicons/safari-pinned-tab.svg" color="#d31145">
     <link rel="shortcut icon" href="/htcondor/assets/images/favicons/favicon.ico">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="/htcondor/assets/images/favicons/browserconfig.xml">
@@ -66,8 +66,8 @@
 <a id="skip-link" href="#main-copy">Skip to main content.</a>
 
 
-<header id="header" class="bg-light">
-    <div class="container-xxl px-xxl-0">
+<header id="header" class="">
+    <div class="container-xxl">
         <nav id="mobile-header" class="py-3 d-flex d-lg-none navbar navBar navbar-expand-lg navbar-light w-100">
             <a href="/htcondor/index.html"><img height="50" alt="Condor High Throughput Computing" src="/htcondor/assets/images/HTCondor_red_blk.svg" style="border:0"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobile-navbar" aria-controls="mobile-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,17 +75,6 @@
             </button>
             <div class="collapse navbar-collapse" id="mobile-navbar">
                 <ul class="navbar-nav mb-2 mb-lg-0 ms-auto mt-auto">
-                    
-                        
-
-
-
-
-<li class="nav-item ">
-    
-        <a class="nav-link" href="/htcondor/new.html">News</a>
-    
-</li>
                     
                         
 
@@ -102,6 +91,7 @@
                 
 
 <li class="dropdown">
+    
     <a class="dropdown-item dropdown-toggle" href="#" id="-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         HTCondor
     </a>
@@ -113,14 +103,18 @@
         
             <li><a class="dropdown-item" href="/htcondor/htcondor/documentation/">Documentation</a></li>
         
-            <li><a class="dropdown-item" href="https://htcondor.readthedocs.io/en/latest/version-history/index.html">Release Notes&#11023;</a></li>
+            <li><a class="dropdown-item" href="/htcondor/htcondor/release-highlights">Release Highlights</a></li>
+        
+            <li><a class="dropdown-item" href="/htcondor/htcondor/release-plan">Release Schedule</a></li>
         
     </ul>
+    
 </li>
             
                 
 
 <li class="dropdown">
+    
     <a class="dropdown-item dropdown-toggle" href="#" id="-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         HTCondor-CE
     </a>
@@ -132,28 +126,31 @@
         
             <li><a class="dropdown-item" href="/htcondor/htcondor-ce/documentation/">Documentation</a></li>
         
-            <li><a class="dropdown-item" href="https://htcondor.com/htcondor-ce/v5/releases/#htcondor-ce-5-version-history">Release Notes&#11023;</a></li>
+            <li><a class="dropdown-item" href="/htcondor/htcondor-ce/release-highlights">Release Highlights</a></li>
         
     </ul>
+    
 </li>
             
                 
 
 <li class="dropdown">
+    
     <a class="dropdown-item dropdown-toggle" href="#" id="-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         General
     </a>
     <ul class="dropdown-menu" aria-labelledby="-toggle">
         
+            <li><a class="dropdown-item" href="/htcondor/new">News</a></li>
+        
+            <li><a class="dropdown-item" href="/htcondor/security/">Security</a></li>
+        
             <li><a class="dropdown-item" href="/htcondor/manual/">Documentation</a></li>
         
             <li><a class="dropdown-item" href="/htcondor/downloads/">Download</a></li>
         
-            <li><a class="dropdown-item" href="/htcondor/security/">Security</a></li>
-        
-            <li><a class="dropdown-item" href="/htcondor/license">License</a></li>
-        
     </ul>
+    
 </li>
             
         </ul>
@@ -175,6 +172,7 @@
                 
 
 <li class="dropdown">
+    
     <a class="dropdown-item dropdown-toggle" href="#" id="-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         Documentation
     </a>
@@ -185,40 +183,26 @@
             <li><a class="dropdown-item" href="/htcondor/htcondor-ce/documentation">HTCondor-CE</a></li>
         
     </ul>
+    
 </li>
             
                 
 
 <li class="dropdown">
-    <a class="dropdown-item dropdown-toggle" href="#" id="-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Email Lists
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="-toggle">
-        
-            <li><a class="dropdown-item" href="https://lists.cs.wisc.edu/mailman/listinfo/htcondor-users">Users&#11023;</a></li>
-        
-            <li><a class="dropdown-item" href="https://lists.cs.wisc.edu/mailman/listinfo/htcondor-world">World&#11023;</a></li>
-        
-            <li><a class="dropdown-item" href="https://lists.cs.wisc.edu/mailman/listinfo/htcondor-devel">Developers&#11023;</a></li>
-        
-    </ul>
-</li>
-            
-                
-
-<li class="dropdown">
+    
     <a class="dropdown-item dropdown-toggle" href="#" id="-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         Support
     </a>
     <ul class="dropdown-menu" aria-labelledby="-toggle">
         
-            <li><a class="dropdown-item" href="mailto:htcondor-admin@cs.wisc.edu">Support Email&#11023;</a></li>
+            <li><a class="dropdown-item" href="/htcondor/uw-support/">HTCSS Contract Support</a></li>
         
-            <li><a class="dropdown-item" href="/htcondor/uw-support/">Internal Contract Support</a></li>
+            <li><a class="dropdown-item" href="/htcondor/mail-lists#user">Community Mailing List</a></li>
         
-            <li><a class="dropdown-item" href="/htcondor/htcondor-support#external-support/">Outside Support</a></li>
+            <li><a class="dropdown-item" href="/htcondor/htcondor-support#external-support-options">External Support Organizations</a></li>
         
     </ul>
+    
 </li>
             
         </ul>
@@ -240,6 +224,26 @@
                 
 
 <li class="dropdown">
+    
+    <a class="dropdown-item dropdown-toggle" href="#" id="-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Email Lists
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="-toggle">
+        
+            <li><a class="dropdown-item" href="/htcondor/mail-lists#user">Users</a></li>
+        
+            <li><a class="dropdown-item" href="/htcondor/mail-lists#world">World</a></li>
+        
+            <li><a class="dropdown-item" href="/htcondor/mail-lists#developer">Developers</a></li>
+        
+    </ul>
+    
+</li>
+            
+                
+
+<li class="dropdown">
+    
     <a class="dropdown-item dropdown-toggle" href="#" id="-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         HTCondor Week
     </a>
@@ -249,12 +253,59 @@
         
             <li><a class="dropdown-item" href="/htcondor/past_condor_weeks.html">Content Archives</a></li>
         
+            <li><a class="dropdown-item" href="https://youtube.com/playlist?list=PLO7gMRGDPNulf_yK_9Ue6yARxJh0gQXQI">Youtube Playlist  &#11023;</a></li>
+        
     </ul>
+    
 </li>
             
                 
 
 <li class="dropdown">
+    
+    <a class="dropdown-item" href="/htcondor/featured-users" >
+        Featured Users
+    </a>
+    
+</li>
+            
+        </ul>
+    
+</li>
+                    
+                        
+
+
+
+
+<li class="nav-item dropdown">
+    
+        <a class="nav-link dropdown-toggle" href="#" id="about-toggle" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            About
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="about-toggle">
+            
+                
+
+<li class="dropdown">
+    
+    <a class="dropdown-item dropdown-toggle" href="#" id="-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        HTCSS
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="-toggle">
+        
+            <li><a class="dropdown-item" href="/htcondor/description">What is HTCSS?</a></li>
+        
+            <li><a class="dropdown-item" href="/htcondor/logos">Logos</a></li>
+        
+    </ul>
+    
+</li>
+            
+                
+
+<li class="dropdown">
+    
     <a class="dropdown-item dropdown-toggle" href="#" id="-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         CHTC
     </a>
@@ -265,6 +316,7 @@
             <li><a class="dropdown-item" href="https://chtc.cs.wisc.edu/jobs">Jobs &#11023;</a></li>
         
     </ul>
+    
 </li>
             
         </ul>
@@ -299,23 +351,9 @@
         </nav>
         <div id="desktop-header" class="d-none d-lg-block">
             <nav class="navbar py-3 navBar navbar-expand-lg navbar-light w-100">
-                <a href="/htcondor/index.html"><img height="50" alt="Condor High Throughput Computing" src="/htcondor/assets/images/CondorTitle.png"></a>
+                <a href="/htcondor/index.html"><img height="50" alt="Condor High Throughput Computing" src="/htcondor/assets/images/HTCondor_red_blk.svg"></a>
                 <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav mb-2 mb-lg-0 ms-auto mt-auto">
-                        
-                            
-
-
-
-    <li class="nav-item">
-        <a class="nav-link" href="/htcondor/new.html">
-            News
-        </a>
-    </li>
-
-
-
-
+                    <ul class="navbar-nav mb-2 mb-lg-0 ms-2 mt-auto">
                         
                             
 
@@ -359,6 +397,22 @@
 
 
                         
+                            
+
+
+
+    <li class="nav-item">
+        <a class="nav-link drawer-toggle dropdown-toggle" href="#" id="about-desktop-toggle" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            About
+        </a>
+    </li>
+
+
+
+
+                        
+                    </ul>
+                    <ul class="navbar-nav mb-2 mb-lg-0 ms-auto mt-auto">
                         <li class="nav-item ms-2">
                             <div style="height:40px; width: 250px;">
                                 
@@ -392,54 +446,92 @@
             <div id="software-desktop-drawer" class="drawer row justify-content-center" hidden>
 
                 
+
+
+
+
+
+                
+
                 
                 
+                
 
-    <div class="col-auto mx-4 my-2">
-        <table>
-            <tr><th>HTCondor</th></tr>
-            
-                <tr><td><a href="/htcondor/htcondor/overview/">Overview</a></td></tr>
-            
-                <tr><td><a href="/htcondor/htcondor/download/">Download</a></td></tr>
-            
-                <tr><td><a href="/htcondor/htcondor/documentation/">Documentation</a></td></tr>
-            
-                <tr><td><a href="https://htcondor.readthedocs.io/en/latest/version-history/index.html">Release Notes&#11023;</a></td></tr>
-            
-        </table>
-    </div>
+    
+        <div class="col-auto mx-4 my-2 z-99">
+            <table>
+                <tr><th>HTCondor</th></tr>
+                
+                    <tr><td><a href="/htcondor/htcondor/overview/">Overview</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/htcondor/download/">Download</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/htcondor/documentation/">Documentation</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/htcondor/release-highlights">Release Highlights</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/htcondor/release-plan">Release Schedule</a></td></tr>
+                
+            </table>
+        </div>
+    
 
-    <div class="col-auto mx-4 my-2">
-        <table>
-            <tr><th>HTCondor-CE</th></tr>
-            
-                <tr><td><a href="/htcondor/htcondor-ce/overview/">Overview</a></td></tr>
-            
-                <tr><td><a href="/htcondor/htcondor-ce/download/">Download</a></td></tr>
-            
-                <tr><td><a href="/htcondor/htcondor-ce/documentation/">Documentation</a></td></tr>
-            
-                <tr><td><a href="https://htcondor.com/htcondor-ce/v5/releases/#htcondor-ce-5-version-history">Release Notes&#11023;</a></td></tr>
-            
-        </table>
-    </div>
+    
+        <div class="col-auto mx-4 my-2 z-99">
+            <table>
+                <tr><th>HTCondor-CE</th></tr>
+                
+                    <tr><td><a href="/htcondor/htcondor-ce/overview/">Overview</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/htcondor-ce/download/">Download</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/htcondor-ce/documentation/">Documentation</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/htcondor-ce/release-highlights">Release Highlights</a></td></tr>
+                
+            </table>
+        </div>
+    
 
-    <div class="col-auto mx-4 my-2">
-        <table>
-            <tr><th>General</th></tr>
-            
-                <tr><td><a href="/htcondor/manual/">Documentation</a></td></tr>
-            
-                <tr><td><a href="/htcondor/downloads/">Download</a></td></tr>
-            
-                <tr><td><a href="/htcondor/security/">Security</a></td></tr>
-            
-                <tr><td><a href="/htcondor/license">License</a></td></tr>
-            
-        </table>
-    </div>
+    
+        <div class="col-auto mx-4 my-2 z-99">
+            <table>
+                <tr><th>General</th></tr>
+                
+                    <tr><td><a href="/htcondor/new">News</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/security/">Security</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/manual/">Documentation</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/downloads/">Download</a></td></tr>
+                
+            </table>
+        </div>
+    
 
+
+                <div class="d-none d-lg-block col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h3><a class="text-decoration-none" href="/htcondor/news/New_Job_Posting/">New Full-Time Position: Software Engineer</a></h3>
+                            <div>
+                                <span class="text-muted">December  8, 2021</span>
+                            </div>
+                            <hr/>
+                            <a href="/htcondor/new">
+                                <div class="row">
+                                    <div class="col-auto d-flex">
+                                        <img class="my-auto" height="30" src="/htcondor/assets/images/arrow-up-right-circle.svg" />
+                                    </div>
+                                    <div class="col">
+                                        View All Software News
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div id="help-and-support-desktop-drawer" class="drawer row justify-content-center" hidden>
@@ -448,81 +540,228 @@
                 
                 
 
-    <div class="col-auto mx-4 my-2">
-        <table>
-            <tr><th>Documentation</th></tr>
-            
-                <tr><td><a href="/htcondor/htcondor/documentation">HTCondor</a></td></tr>
-            
-                <tr><td><a href="/htcondor/htcondor-ce/documentation">HTCondor-CE</a></td></tr>
-            
-        </table>
-    </div>
+    
+        <div class="col-auto mx-4 my-2 z-99">
+            <table>
+                <tr><th>Documentation</th></tr>
+                
+                    <tr><td><a href="/htcondor/htcondor/documentation">HTCondor</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/htcondor-ce/documentation">HTCondor-CE</a></td></tr>
+                
+            </table>
+        </div>
+    
 
-    <div class="col-auto mx-4 my-2">
-        <table>
-            <tr><th>Email Lists</th></tr>
-            
-                <tr><td><a href="https://lists.cs.wisc.edu/mailman/listinfo/htcondor-users">Users&#11023;</a></td></tr>
-            
-                <tr><td><a href="https://lists.cs.wisc.edu/mailman/listinfo/htcondor-world">World&#11023;</a></td></tr>
-            
-                <tr><td><a href="https://lists.cs.wisc.edu/mailman/listinfo/htcondor-devel">Developers&#11023;</a></td></tr>
-            
-        </table>
-    </div>
-
-    <div class="col-auto mx-4 my-2">
-        <table>
-            <tr><th>Support</th></tr>
-            
-                <tr><td><a href="mailto:htcondor-admin@cs.wisc.edu">Support Email&#11023;</a></td></tr>
-            
-                <tr><td><a href="/htcondor/uw-support/">Internal Contract Support</a></td></tr>
-            
-                <tr><td><a href="/htcondor/htcondor-support#external-support/">Outside Support</a></td></tr>
-            
-        </table>
-    </div>
+    
+        <div class="col-auto mx-4 my-2 z-99">
+            <table>
+                <tr><th>Support</th></tr>
+                
+                    <tr><td><a href="/htcondor/uw-support/">HTCSS Contract Support</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/mail-lists#user">Community Mailing List</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/htcondor-support#external-support-options">External Support Organizations</a></td></tr>
+                
+            </table>
+        </div>
+    
 
 
             </div>
             <div id="community-desktop-drawer" class="drawer row justify-content-center" hidden>
 
                 
+
+
+
+
+
+
                 
                 
+                
 
-    <div class="col-auto mx-4 my-2">
-        <table>
-            <tr><th>HTCondor Week</th></tr>
-            
-                <tr><td><a href="https://agenda.hep.wisc.edu/event/1579/">Most Recent</a></td></tr>
-            
-                <tr><td><a href="/htcondor/past_condor_weeks.html">Content Archives</a></td></tr>
-            
-        </table>
+    
+        <div class="col-auto mx-4 my-2 z-99">
+            <table>
+                <tr><th>Email Lists</th></tr>
+                
+                    <tr><td><a href="/htcondor/mail-lists#user">Users</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/mail-lists#world">World</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/mail-lists#developer">Developers</a></td></tr>
+                
+            </table>
+        </div>
+    
+
+    
+        <div class="col-auto mx-4 my-2 z-99">
+            <table>
+                <tr><th>HTCondor Week</th></tr>
+                
+                    <tr><td><a href="https://agenda.hep.wisc.edu/event/1579/">Most Recent</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/past_condor_weeks.html">Content Archives</a></td></tr>
+                
+                    <tr><td><a href="https://youtube.com/playlist?list=PLO7gMRGDPNulf_yK_9Ue6yARxJh0gQXQI">Youtube Playlist  &#11023;</a></td></tr>
+                
+            </table>
+        </div>
+    
+
+    
+
+
+                <div class="d-none d-md-block col-lg-4 my-2">
+                    <a href="/htcondor/featured-users"><b>Featured Users</b></a>
+                    
+                    
+                    <div class="my-2">
+                        
+
+<a class="text-decoration-none d-block hover-border rounded h-100" href="/htcondor/featured-users/2021-12-16-precision-mental-health">
+
+
+    <div class="card border-0 ">
+        <div class="p-2 d-flex flex-column">
+            <h6 class="text-decoration-none mb-1">
+                Harnessing HTC-enabled precision mental health to capture the complexity of smoking cessation
+            </h6>
+            <div>
+                <span class="text-muted text-decoration-none">December 16, 2021</span>
+            </div>
+        </div>
     </div>
 
-    <div class="col-auto mx-4 my-2">
-        <table>
-            <tr><th>CHTC</th></tr>
-            
-                <tr><td><a href="https://chtc.cs.wisc.edu/people">Staff &#11023;</a></td></tr>
-            
-                <tr><td><a href="https://chtc.cs.wisc.edu/jobs">Jobs &#11023;</a></td></tr>
-            
-        </table>
+
+</a>
+
+                    </div>
+                    
+                    <div class="my-2">
+                        
+
+<a class="text-decoration-none d-block hover-border rounded h-100" href="/htcondor/featured-users/2021-11-30-banq">
+
+
+    <div class="card border-0 ">
+        <div class="p-2 d-flex flex-column">
+            <h6 class="text-decoration-none mb-1">
+                Centuries of newspapers are now easily searchable thanks to HTCSS
+            </h6>
+            <div>
+                <span class="text-muted text-decoration-none">November 30, 2021</span>
+            </div>
+        </div>
     </div>
 
 
+</a>
+
+                    </div>
+                    
+                    <div class="my-2">
+                        
+
+<a class="text-decoration-none d-block hover-border rounded h-100" href="/htcondor/featured-users/2021-11-29-usgs">
+
+
+    <div class="card border-0 ">
+        <div class="p-2 d-flex flex-column">
+            <h6 class="text-decoration-none mb-1">
+                Protecting ecosystems with HTC
+            </h6>
+            <div>
+                <span class="text-muted text-decoration-none">November 29, 2021</span>
+            </div>
+        </div>
+    </div>
+
+
+</a>
+
+                    </div>
+                    
+                </div>
+                <div class="d-none d-xl-block col-xl-4 my-2">
+                    <div class="card h-100">
+                        <img src="/htcondor/assets/images/banq-mw.jpg" class="card-img-top" alt="Card Image">
+                        <div class="card-body d-flex flex-column">
+                            <h5><a class="text-decoration-none" href="/htcondor/featured-users/2021-11-30-banq">Centuries of newspapers are now easily searchable thanks to HTCSS</a></h5>
+                            <hr/>
+                            <a href="/htcondor/featured-users">
+                                <div class="row">
+                                    <div class="col-auto d-flex">
+                                        <img class="my-auto" height="30" src="/htcondor/assets/images/arrow-up-right-circle.svg" />
+                                    </div>
+                                    <div class="col">
+                                        View All Featured Users
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="about-desktop-drawer" class="drawer row justify-content-center" hidden>
+
+
+
+                
+                
+                
+
+    
+        <div class="col-auto mx-4 my-2 z-99">
+            <table>
+                <tr><th>HTCSS</th></tr>
+                
+                    <tr><td><a href="/htcondor/description">What is HTCSS?</a></td></tr>
+                
+                    <tr><td><a href="/htcondor/logos">Logos</a></td></tr>
+                
+            </table>
+        </div>
+    
+
+    
+        <div class="col-auto mx-4 my-2 z-99">
+            <table>
+                <tr><th>CHTC</th></tr>
+                
+                    <tr><td><a href="https://chtc.cs.wisc.edu/people">Staff &#11023;</a></td></tr>
+                
+                    <tr><td><a href="https://chtc.cs.wisc.edu/jobs">Jobs &#11023;</a></td></tr>
+                
+            </table>
+        </div>
+    
+
+
+                <div class="d-none d-lg-block col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5><a class="text-decoration-none" href="/htcondor/description.html">What is HTCSS?</a></h5>
+                            <hr class="mb-2">
+                            <div>
+                                HTCondor Software Suite (HTCSS) provides an array of services for automating
+                                and managing batch workloads and computing resources.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </header>
 
 <main id="main-copy" tabindex="-1">
-    <div class="container-xxl p-4">
+    <div class="container-xxl py-4">
     <h1>Old Class Ad List Open</h1>
 <div id="content">
  This call sets the pointer of the classadlist to the head of the queue.
@@ -572,24 +811,59 @@ With new classads, we use STL iterators taken from
                     <div class="col-auto my-2">
                         <table>
                             <tr><th>Support</th></tr>
-                            <tr><td><a href="mailto:htcondor-admin@cs.wisc.edu">Support Email</a></td></tr>
-                            <tr><td><a href="/htcondor/mail-lists/">Email Lists</a></td></tr>
-                            <tr><td><a href="/htcondor/uw-support/">Contract Support</a></td></tr>
-                            <tr><td><a href="/htcondor/htcondor-support#external-support/">Outside Support</a></td></tr>
+                            <tr><td><a href="/htcondor/uw-support/">Internal Contract</a></td></tr>
+                            <tr><td><a href="/htcondor/htcondor-support#external-support-options">External Organizations</a></td></tr>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row my-4 justify-content-center">
+            <div class="col-auto d-flex">
+                <a class="d-block m-auto" href="https://ls.wisc.edu/">
+                    
+
+<div style="height:75px;">
+    <picture>
+        <source type="image/webp" srcset="/htcondor/assets/images/UW_Madison_Logo.webp">
+        <img class="h-100" src="/htcondor/assets/images/UW_Madison_Logo.png" alt="UW-Madison Logo">
+    </picture>
+</div>
+
+                </a>
+            </div>
+            <div class="col-auto d-flex">
+                <a class="px-3 d-block m-auto" href="https://www.nsf.org">
+                    
+
+<div style="height:100px;">
+    <picture>
+        <source type="image/webp" srcset="/htcondor/assets/images/NSF_Logo.webp">
+        <img class="h-100" src="/htcondor/assets/images/NSF_Logo.jpg" alt="NSF Logo">
+    </picture>
+</div>
+
+                </a>
+            </div>
+            <div class="col-auto d-flex">
+                <a class="d-block m-auto" href="https://morgridge.org/">
+                    <img class="" height="40" src="/htcondor/assets/images/Morgridge_Logo.svg" alt="Morgridge Logo" />
+                </a>
+            </div>
+        </div>
         <hr>
-        <div class="row py-4">
+        <div class="row py-3">
             <div class="col text-center">
                 For comments or questions about this website, please email
                 <a href="mailto:htcondor-admin@cs.wisc.edu">htcondor-admin@cs.wisc.edu</a><br />
                 This work is supported by <a href="https://www.nsf.gov/div/index.jsp?div=OAC">NSF</a> under Cooperative Agreement <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2030508">OAC-2030508</a> as part of the <a href="https://path-cc.io/">PATh Project</a>. <br />
-                <script type="text/javascript">
-                    document.write("Updated &raquo; "+lastMod(document.lastModified))
-                </script>
+            </div>
+        </div>
+        <div class="row justify-content-center pb-4">
+            <div class="col-lg-8 text-center">
+                <span class="text-center">
+                    If you are looking for Phoenix Software International's software development and library management system for z/VSE or z/OS, you can find more information on their <a href="http://www.phoenixsoftware.com">website</a>.
+                </span>
             </div>
         </div>
     </div>
