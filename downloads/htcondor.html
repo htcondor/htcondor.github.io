@@ -861,19 +861,16 @@
 
 <div id="feature-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">9.5.0</span> Feature Release</h3>
-        <p>January 13, 2022</p>
+        <h3><span class="text-secondary">9.7.0</span> Feature Release</h3>
+        <p>March 15, 2022</p>
         <div>
             <ul>
-  <li>Initial implementation of Container Universe
-    <ul>
-      <li>HTCondor will automatically detect container type and where it can run</li>
-    </ul>
-  </li>
-  <li>The blahp is no longer separate, it is now an integral part of HTCondor</li>
-  <li>Docker Universe jobs can now self-checkpoint</li>
-  <li>Added Debian 11 (bullseye) as a supported platform</li>
-  <li>Since CentOS 8 has reached end of life, we build and test on Rocky Linux 8</li>
+  <li>Support environment variables, other application elements in ARC REST jobs</li>
+  <li>Container universe supports Singularity jobs with hard-coded command</li>
+  <li>DAGMan submits jobs directly (does not shell out to condor_submit)</li>
+  <li>Meaningful error message and sub-code for file transfer failures</li>
+  <li>Add file transfer statistics for file transfer plugins</li>
+  <li>Add named list policy knobs for SYSTEM_PERIODIC_ policies</li>
 </ul>
 
         </div>
@@ -891,13 +888,15 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">9.0.9</span> Long Term Support Release</h3>
-        <p>January 13, 2022</p>
+        <h3><span class="text-secondary">9.0.11</span> Long Term Support Release</h3>
+        <p>March 15, 2022</p>
         <div>
             <ul>
-  <li>Added Debian 11 (bullseye) as a supported platform</li>
-  <li>Since CentOS 8 has reached end of life, we build and test on Rocky Linux 8</li>
-  <li>The OAUTH credmon is now packaged for Enterprise Linux 8</li>
+  <li>The Job Router can now create an IDTOKEN for use by the job</li>
+  <li>Fix bug where a self-checkpointing job may erroneously be held</li>
+  <li>Fix bug where the Job Router could erroneously substitute a default value</li>
+  <li>Fix bug where a file transfer error may identify the wrong file</li>
+  <li>Fix bug where condor_ssh_to_job may fail to connect</li>
 </ul>
 
         </div>
