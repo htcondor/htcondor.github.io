@@ -20,6 +20,8 @@ docker pull dockerreg.chtc.wisc.edu:443/htcondor/web
 
 ## Building the website
 
+**Make sure you have pulled submodules before building, otherwise you will be missing files and your build will break.**
+
 After making changes to the Jekyll source files, use the Docker image to preview your changes. Run the following from your computer while inside the checked-out copy of the website source:
 
 ```
