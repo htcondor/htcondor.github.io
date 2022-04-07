@@ -35,6 +35,12 @@
 
     <link href="/htcondor/assets/css/style-v1.css" media="screen, tv, projection" title="Default" rel="stylesheet">
     
+        <link href="/htcondor/assets/css/cvstrac.10.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
+        <link href="/htcondor/assets/css/cvstrac.tj.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
+        <link href="/htcondor/assets/css/diff2html.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
 
     
 
@@ -766,9 +772,15 @@
 </header>
 
 <main id="main-copy" tabindex="-1">
-    <div class="container-xxl py-4">
-    <h1>Why Windows Floats Fail Parsing</h1>
-<div id="content">
+    <div class="bg-light mb-4">
+    <hr class="m-0">
+    <div class="container-xxl py-2">
+        <span class="fs-3">Why Windows Floats Fail Parsing</span>
+    </div>
+    <hr class="m-0">
+</div>
+<div class="container-xxl pb-4">
+    <div id="content">
  HTCondor assumes that all floating point numbers are of the form x.y, which,
 depending on a computer's current locale, may not always be the case. This
 problem occurs even if HTCondor is running under an account that has had the

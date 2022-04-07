@@ -35,6 +35,12 @@
 
     <link href="/htcondor/assets/css/style-v1.css" media="screen, tv, projection" title="Default" rel="stylesheet">
     
+        <link href="/htcondor/assets/css/cvstrac.10.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
+        <link href="/htcondor/assets/css/cvstrac.tj.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
+        <link href="/htcondor/assets/css/diff2html.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
 
     
 
@@ -766,9 +772,15 @@
 </header>
 
 <main id="main-copy" tabindex="-1">
-    <div class="container-xxl py-4">
-    <h1>Windows Installer Config</h1>
-<div id="content">
+    <div class="bg-light mb-4">
+    <hr class="m-0">
+    <div class="container-xxl py-2">
+        <span class="fs-3">Windows Installer Config</span>
+    </div>
+    <hr class="m-0">
+</div>
+<div class="container-xxl pb-4">
+    <div id="content">
  The Windows installer overrides a set of configuration parameters when setting up HTCondor.  If these parameters are changed, the installer must be updated to deal with this.  These changes can range from the name of the configuration knob being changed to the possible values associated with a configuration knob being changed.  Examples of configuration name changes are how ALLOW_READ was originally HOST_ALLOW_READ.  Examples of value changes would be what is considered a valid value for HDFS_SERVICES, which apparently is being changed from HDFS_NAMENODE or HDFS_DATANODE to additional options.
  <p>
   This is a list of the parameters that the installer touches.  If you change any of them or intend to change any of them, let the developer responsible for the installer know.  Currently the person responsible is Ziliang Guo, though Todd Tannebaum or TJ can also be approached.

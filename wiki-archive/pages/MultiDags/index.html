@@ -35,6 +35,12 @@
 
     <link href="/htcondor/assets/css/style-v1.css" media="screen, tv, projection" title="Default" rel="stylesheet">
     
+        <link href="/htcondor/assets/css/cvstrac.10.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
+        <link href="/htcondor/assets/css/cvstrac.tj.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
+        <link href="/htcondor/assets/css/diff2html.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
 
     
 
@@ -766,9 +772,15 @@
 </header>
 
 <main id="main-copy" tabindex="-1">
-    <div class="container-xxl py-4">
-    <h1>Multi Dags</h1>
-<div id="content">
+    <div class="bg-light mb-4">
+    <hr class="m-0">
+    <div class="container-xxl py-2">
+        <span class="fs-3">Multi Dags</span>
+    </div>
+    <hr class="m-0">
+</div>
+<div class="container-xxl pb-4">
+    <div id="content">
  Note: not yet complete!
  <p>
   Because there's no requirement that all nodes in a given DAG file be connected, it's pretty simple to allow multiple DAG files to be run by a single DAGMan invocation.  The main issue is making sure that you don't have name collisions between nodes in different DAG files (if there are name collisions

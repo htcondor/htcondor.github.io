@@ -35,6 +35,12 @@
 
     <link href="/htcondor/assets/css/style-v1.css" media="screen, tv, projection" title="Default" rel="stylesheet">
     
+        <link href="/htcondor/assets/css/cvstrac.10.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
+        <link href="/htcondor/assets/css/cvstrac.tj.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
+        <link href="/htcondor/assets/css/diff2html.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
 
     
 
@@ -766,9 +772,15 @@
 </header>
 
 <main id="main-copy" tabindex="-1">
-    <div class="container-xxl py-4">
-    <h1>Dag Final Node</h1>
-<div id="content">
+    <div class="bg-light mb-4">
+    <hr class="m-0">
+    <div class="container-xxl py-2">
+        <span class="fs-3">Dag Final Node</span>
+    </div>
+    <hr class="m-0">
+</div>
+<div class="container-xxl pb-4">
+    <div id="content">
  The final node implementation is trickier than you might think.  The big thing, actually, is deciding when the final node should actually be run.  If all of the "normal" nodes finish successfully, it's pretty easy.  But if that's not the case, it's harder.
  <p>
   Also, when you're going to run the final node, the DAG is in kind of a weird state -- it's not fully completed, but no "normal" nodes should run, either.  A result of this is that there are a lot of methods in the Dag object that have a flag for whether a final node (if one exists) should be considered or not.

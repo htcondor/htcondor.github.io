@@ -35,6 +35,12 @@
 
     <link href="/htcondor/assets/css/style-v1.css" media="screen, tv, projection" title="Default" rel="stylesheet">
     
+        <link href="/htcondor/assets/css/cvstrac.10.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
+        <link href="/htcondor/assets/css/cvstrac.tj.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
+        <link href="/htcondor/assets/css/diff2html.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
 
     
 
@@ -766,9 +772,15 @@
 </header>
 
 <main id="main-copy" tabindex="-1">
-    <div class="container-xxl py-4">
-    <h1>How To Auto Retry Elsewhere</h1>
-<div id="content">
+    <div class="bg-light mb-4">
+    <hr class="m-0">
+    <div class="container-xxl py-2">
+        <span class="fs-3">How To Auto Retry Elsewhere</span>
+    </div>
+    <hr class="m-0">
+</div>
+<div class="container-xxl pb-4">
+    <div id="content">
  Imagine that you knew your job will never run for longer than 20 minutes, and if your job does run for more than 20 minutes, you want to presume something is wrong with the machine. Here is an example of a condor_submit file that tells HTCondor to restart the job on a different machine if the job ran for more than 20 minutes.
  <p>
  </p>

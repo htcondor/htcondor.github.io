@@ -35,6 +35,12 @@
 
     <link href="/htcondor/assets/css/style-v1.css" media="screen, tv, projection" title="Default" rel="stylesheet">
     
+        <link href="/htcondor/assets/css/cvstrac.10.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
+        <link href="/htcondor/assets/css/cvstrac.tj.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
+        <link href="/htcondor/assets/css/diff2html.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
 
     
 
@@ -766,9 +772,15 @@
 </header>
 
 <main id="main-copy" tabindex="-1">
-    <div class="container-xxl py-4">
-    <h1>Dag Submit Retries</h1>
-<div id="content">
+    <div class="bg-light mb-4">
+    <hr class="m-0">
+    <div class="container-xxl py-2">
+        <span class="fs-3">Dag Submit Retries</span>
+    </div>
+    <hr class="m-0">
+</div>
+<div class="container-xxl pb-4">
+    <div id="content">
  It's important to note that submit retries are entirely separate from node retries.  Submit retries handle the case where the condor_submit command for a node job failed (because of the schedd being too heavily loaded and timing out, for example); in other words, the node job never even gets into the HTCondor queue.  Node retries, on the other hand, handle the case where the node as a whole has failed (the HTCondor job runs but fails, for example).
  <p>
   If a node job submit fails, the submit is re-tried without this being considered a node failure.  By default, a submit will be re-tried up to 6 times, with an exponential backoff on the time between retries, so as to not overload the schedd.  If all of the submit retries fail, that is considered a single node failure.  So if, for example, a node had 3 retries set, up to 24 attempts to submit the node job could be made.

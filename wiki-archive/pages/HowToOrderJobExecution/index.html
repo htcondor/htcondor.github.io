@@ -35,6 +35,12 @@
 
     <link href="/htcondor/assets/css/style-v1.css" media="screen, tv, projection" title="Default" rel="stylesheet">
     
+        <link href="/htcondor/assets/css/cvstrac.10.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
+        <link href="/htcondor/assets/css/cvstrac.tj.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
+        <link href="/htcondor/assets/css/diff2html.css" media="screen, tv, projection" title="Default" rel="stylesheet">
+    
 
     
 
@@ -766,9 +772,15 @@
 </header>
 
 <main id="main-copy" tabindex="-1">
-    <div class="container-xxl py-4">
-    <h1>How To Order Job Execution</h1>
-<div id="content">
+    <div class="bg-light mb-4">
+    <hr class="m-0">
+    <div class="container-xxl py-2">
+        <span class="fs-3">How To Order Job Execution</span>
+    </div>
+    <hr class="m-0">
+</div>
+<div class="container-xxl pb-4">
+    <div id="content">
  Negotiation identifies a queued set of jobs from a particular user that may be executed. If the user has more jobs queued, waiting to be executed, than there are machines available and offered, it may be convenient to specify the order in which these jobs are to be chosen for execution. This may be accomplished by setting a job priority.  A higher job priority job goes before a lower priority job. A job priority can be any integer, and larger values are of higher priority. So, 0 is a higher job priority than -3, and 6 is a higher job priority than 5.
  <p>
   Jobs may be categorized under six different levels of prioritization. For the simple case where each job can be given a distinct priority, and no categories are required, an already queued job's priority may be set with the condor_prio command; see the example in the manual section 2.6.4, or the condor_prio manual page for details. This single category changes the value of job
