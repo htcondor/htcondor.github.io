@@ -25,7 +25,7 @@ docker pull dockerreg.chtc.wisc.edu:443/htcondor/web
 After making changes to the Jekyll source files, use the Docker image to preview your changes. Run the following from your computer while inside the checked-out copy of the website source:
 
 ```
-docker run -p 8000:8000 --rm --volume $PWD:/srv/jekyll:Z -it dockerreg.chtc.wisc.edu:443/htcondor/web
+docker run -p 8000:8000 --rm --volume $PWD:/srv/jekyll -it jekyll/jekyll:latest /bin/sh
 ```
 
 This will utilize the latest Jekyll version and map port `8000` to your host.  Within the container, a small HTTP server can be started with the following command:
@@ -36,7 +36,7 @@ jekyll serve --watch -H 0.0.0.0 -P 8000
 
 This will build and serve the website; it can be viewed by navigating your web browser to <http://localhost:8000>.
 
-With the `--watch` flag set, any changes you make to the website source will cause a new version of the website to be built; it usually takes 4-5 seconds between hitting "Save" and then "Refresh" on the website.
+With the `--watch` flag set, any changes you make to the website source will cause a new version of the website to be built; it takes 500 seconds on a M1 processor between hitting "Save" and then "Refresh" on the website.
 
 
 ## Previewing Branches
@@ -47,9 +47,10 @@ To create a preview branch:
 1. Prepend the name of your branch with "preview-"
     - Example: "preview-helloworld"
 2. Push this branch to https://github.com/htcondor/htcondor-web.git  
-3. Check for your preview branch @ https://htcondor.com/web-preview/<preview-branch-name>
+3. Check for your preview branch @ https://htcondor.com/web-preview/\<preview-branch-name>
    - Example: [https://htcondor.com/web-preview/preview-helloworld/](https://htcondor.com/web-preview/preview-helloworld/)
-4. When you merge in the branch or no longer need it, delete the branch and Github will delete the web preview   
+4. You can monitor the preview branch build here ( time to complete is typically ~20 minutes ) -> https://github.com/htcondor/web-preview/actions
+5. When you merge in the branch or no longer need it, delete the branch and Github will delete the web preview   
    
 This is a great way to demo your changes to others easily. 
 
