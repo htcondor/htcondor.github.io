@@ -1010,12 +1010,15 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">9.0.12</span> Long Term Support Release</h3>
-        <p>April 19, 2022</p>
+        <h3><span class="text-secondary">9.0.13</span> Long Term Support Release</h3>
+        <p>May 27, 2022</p>
         <div>
             <ul>
-  <li>Fix bug in parallel universe that could cause the schedd to crash</li>
-  <li>Fix rare crash where a daemon tries to use a discarded security session</li>
+  <li>Schedd and startd cron jobs can now log output upon non-zero exit</li>
+  <li>condor_config_val now produces correct syntax for multi-line values</li>
+  <li>The condor_run tool now reports submit errors and warnings to the terminal</li>
+  <li>Fix issue where Kerberos authentication would fail within DAGMan</li>
+  <li>Fix HTCondor startup failure with certain complex network configurations</li>
 </ul>
 
         </div>
