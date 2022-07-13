@@ -1006,15 +1006,16 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">9.0.13</span> Long Term Support Release</h3>
-        <p>May 27, 2022</p>
+        <h3><span class="text-secondary">9.0.14</span> Long Term Support Release</h3>
+        <p>July 13, 2022</p>
         <div>
             <ul>
-  <li>Schedd and startd cron jobs can now log output upon non-zero exit</li>
-  <li>condor_config_val now produces correct syntax for multi-line values</li>
-  <li>The condor_run tool now reports submit errors and warnings to the terminal</li>
-  <li>Fix issue where Kerberos authentication would fail within DAGMan</li>
-  <li>Fix HTCondor startup failure with certain complex network configurations</li>
+  <li>SciToken mapping failures are now recorded in the daemon logs</li>
+  <li>Fix bug that stopped file transfers when output and error are the same</li>
+  <li>Ensure that the Python bindings version matches the installed HTCondor</li>
+  <li>$(OPSYSANDVER) now expand properly in job transforms</li>
+  <li>Fix bug where context managed Python htcondor.SecMan sessions would crash</li>
+  <li>Fix bug where remote CPU times would rarely be set to zero</li>
 </ul>
 
         </div>
