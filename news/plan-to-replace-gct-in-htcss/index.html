@@ -26,7 +26,7 @@
         
 
         
-            <link rel="canonical" href="https://htcondor.org/news/plan-to-replace-gst-in-htcss/">
+            <link rel="canonical" href="https://htcondor.org/news/plan-to-replace-gct-in-htcss/">
         
 
         
@@ -496,7 +496,7 @@
                 <div class="d-none d-lg-block col-lg-4">
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column">
-                            <h3><a class="text-decoration-none" href="/htcondor/news/plan-to-replace-gst-in-htcss/">Plan to replace Grid Community Toolkit functionality in the HTCondor Software Suite</a></h3>
+                            <h3><a class="text-decoration-none" href="/htcondor/news/plan-to-replace-gct-in-htcss/">Plan to replace Grid Community Toolkit functionality in the HTCondor Software Suite</a></h3>
                             <div>
                                 <span class="text-muted">July 14, 2022</span>
                             </div>
@@ -812,11 +812,10 @@ The HTCondor Software Suite (HTCSS) is working to retire the use of the Grid Com
   <li>Grid jobs submitted to CREAM endpoints</li>
   <li>Grid jobs submitted to the ARC CE</li>
   <li>GSI authentication</li>
-  <li>
-    <p>Proxy delegation</p>
-  </li>
-  <li>The Center for High Throughput Computing plans to gradually reduce use of GCT with support fully ending by March 2023 (6 months after the release of HTCondor 10.0.0); at that point, only proxy delegation and ARC CE submission (through the REST API) will be supported.</li>
+  <li>Proxy delegation</li>
 </ul>
+
+<p>The Center for High Throughput Computing plans to gradually reduce use of GCT with support fully ending by March 2023 (6 months after the release of HTCondor 10.0.0); at that point, only proxy delegation and ARC CE submission (through the REST API) will be supported.</p>
 
 <p><strong>NOTE</strong>: This primarily impacts the submission of “pilot jobs” in grid computing setups; payload jobs that include an X509 credential that needs to be delegated (for access to data sources, for instance) is still supported as HTCondor now implements proxy delegation independently of the GCT.</p>
 
