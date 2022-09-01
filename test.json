@@ -9,6 +9,12 @@
 
   
 
+  Run a Job on Anvil Using an XRAC Allocation
+
+  Run a Job on Bridges 2 Using an XRAC Allocation
+
+  Bringing Your Own Resources
+
   C== Tutorial
 
   Checkpointing
@@ -20,6 +26,10 @@
   What is HTCondor?
 
   
+
+  an example job
+
+  Run a Job on Expanse Using an Expanse Allocation
 
   HTCSS Featured Users
 
@@ -64,6 +74,8 @@
   
 
   Wiki Archive
+
+  Bringing Your Own Resources
 
   HTCSS Security
 
@@ -128,6 +140,8 @@
   HTCondor Quick Start Guide
 
   Research
+
+  Run a Job on Stampede 2 Using an XRAC Allocation
 
   
 
