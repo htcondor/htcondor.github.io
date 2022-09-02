@@ -29,7 +29,7 @@
         
 
         
-            <link rel="canonical" href="https://htcondor.org/experimental/ospool/byor/byor.html">
+            <link rel="canonical" href="https://htcondor.org/experimental/ospool/byoc/bridges2.html">
         
 
         
@@ -775,23 +775,217 @@
     <div class="bg-light mb-4">
     <hr class="m-0">
     <div class="container-xxl py-2">
-        <span class="fs-3">Bringing Your Own Resources</span>
+        <span class="fs-3">Run a Job on Bridges-2 Using an Allocation</span>
     </div>
     <hr class="m-0">
 </div>
 <div class="container-xxl pb-4">
-    <p>
-You can bring your own resources to an OS Pool access point.  This can be more
-convenient than taking your jobs to those resources.
-</p>
+    <div class="row">
+        <div  class="col-12 col-lg-10 col-xl-9 col-xxl-8">
+            <p>This recipe assumes that you have decided to use your allocation
+for Bridges-2 to run one of your HTCondor jobs.  It takes you step by
+step through the process of Bringing Your Own Capacity (BYOC) in the
+form of an allocation to an OSG Connect access point and using that
+resource to run your HTCondor job.  In what follows, we refer to the set
+of resources leased from that allocation as an “annex.”</p>
 
-<h3>Bring an XSEDE (XRAC) Allocation to the OS Pool</h3>
+<p>In this recipe, we assume that the job has not yet been placed at an
+OSG Connect access point when we begin.</p>
 
-If you have an XSEDE (XRAC) Allocation for time on the Stampede 2, Anvil,
-Bridge 2, or Expanse systems, you can use the <pre>
+<h5 id="ingredients">Ingredients</h5>
 
-<div>
+<ul>
+  <li>An OSG Connect account and password</li>
+  <li>An HTCondor job submit file (example.submit).</li>
+  <li>An allocation for Bridges-2.</li>
+  <li>Command-line login access to Bridges-2 (see <a href="https://www.psc.edu/resources/bridges-2/user-guide-2-2/#connecting-to-bridges-2">PSC’s instructions for gaining access</a>).
+  We’ll use <code>LOGIN_NAME</code> to refer to your login name on Bridges-2</li>
+  <li>A name for your Bridges-2 annex (example).  By convention,
+this is the name of the submit file you want to run, without its extension.</li>
+</ul>
 
+<h4 id="assumptions">Assumptions</h4>
+
+<ul>
+  <li>You want to run the job described above on Bridges-2.</li>
+  <li>The job described above fits within the capabilities of the Bridges-2 queue
+  you wish to run it on.</li>
+</ul>
+
+<h4 id="preparation">Preparation</h4>
+
+<p>First, you will need to determine the project ID of your allocation on
+Bridges-2.  If you already know your project ID, you can skip this
+section.  If not, log in to <code>bridges2.psc.edu</code> in a terminal and run the
+following command.  (Don’t copy the <code>$</code>; in this and other examples
+further down the page, the <code>$</code> just signifies something you type in,
+rather than something that the computer prints out.)</p>
+
+<pre><code>$ projects
+</code></pre>
+
+<p>There will be one or more lines starting with <code>Project:</code> in the output.
+Pick one, and remember the value to the right of the colon.  For the rest of
+these instructions, we’ll use <code>PROJECT_ID</code> where you need to put that
+value.</p>
+
+<h4 id="instructions">Instructions</h4>
+
+<h5 id="1-log-into-the-osg-connect-access-point">1. Log into the OSG Connect Access Point</h5>
+
+<p>Log into an OSG Connect access point (e.g., <code>login04.osgconnect.net</code> or
+<code>login05.osgconnect.net</code>) using your OSG Connect account and password.</p>
+
+<h5 id="2-submit-the-job">2. Submit the Job</h5>
+
+<p>Submit the job on the access point, indicating that you want it to run
+on your own resource (the Bridges-2 allocation, in this case) with the
+<code>--annex-name</code> option:</p>
+
+<pre><code>$ htcondor job submit example.submit \
+  --annex-name example
+Job 123 was submitted and will run only on the annex 'example'.
+</code></pre>
+
+<p>Notes on the output of this command:</p>
+<ul>
+  <li>123 is the JOB_ID assigned by the access point to the placed job.</li>
+  <li>Placing the job with the annex name specified means that the job
+won’t run anywhere other than the annex.</li>
+  <li>Note that the annex name does say anything about Bridges-2; it is simply
+a label for the Bridges-2 resources we will be provisioning
+in the next step.</li>
+</ul>
+
+<h5 id="3-lease-the-resources">3. Lease the Resources</h5>
+
+<p>To run your job on Bridges-2, you will need to create an “annex” there;
+an annex is a named set of leased resources.  The following command will
+submit a request to lease an annex named <code>example</code> to the queue named <code>RM</code>
+on Bridges-2.  Project <code>PROJECT_ID</code> will be charged for resources used (by
+default, two machines).  The <strong>text in bold</strong> is emphasized to distinguish
+it from Bridges-2’s log-in prompt.</p>
+
+<pre><code>$ htcondor annex create example RM@bridges2 --project PROJECT_ID --login-name LOGIN_NAME
+<b>This command will access the system named 'Bridges 2' via SSH.  To proceed, follow the
+prompts from that system below; to cancel, hit CTRL-C.</b>
+</code></pre>
+
+<p>You will need to log into Bridges-2 at this prompt.</p>
+
+<pre><code><b>Thank you.</b>
+
+Requesting annex named 'example' from queue 'RM' on Bridges 2...
+</code></pre>
+
+<p>The tool will display an indented log of the request progress, because
+it may take a while.  Once the request is done, it will display:</p>
+
+<pre><code>... requested.
+</code></pre>
+
+<p>It may take some time for Bridges-2 to establish the requested annex.</p>
+
+<h5 id="4-confirm-that-the-resources-are-available">4. Confirm that the Resources are Available</h5>
+
+<p>Check on the status of the annex to make sure it has started up correctly.</p>
+
+<pre><code>$ htcondor annex status example
+Annex 'example' is not established.
+You requested 2 machines for this annex, of which 0 are in established
+annexes.
+There are 0 CPUs in the established machines, of which 0 are busy.
+1 jobs must run on this annex, and 0 currently are.
+You made 1 resource request(s) for this annex, of which 1 are pending, 0
+are established, and 0 have retired.
+</code></pre>
+
+<p>Give Bridges-2 a few more minutes to grant your request and then check again.</p>
+
+<pre><code>$ htcondor annex status example
+Annex 'example' is established.
+Its oldest established request is about 0.29 hours old and will retire in
+0.71 hours.
+You requested 2 machines for this annex, of which 2 are in established
+annexes.
+There are 136 CPUs in the established machines, of which 0 are busy.
+1 jobs must run on this annex, and 0 currently are.
+You made 1 resource request(s) for this annex, of which 0 are pending, 1
+are established, and 0 have retired.
+</code></pre>
+
+<h5 id="5-confirm-job-is-running-on-the-resources">5. Confirm Job is Running on the Resources</h5>
+
+<p>After some time has passed, check the status of the job to make sure
+that it started running.</p>
+
+<pre><code>$ htcondor job status 123
+Job will only run on your annex named 'example'.
+Job has been running for 0 hour(s), 2 minute(s), and 21 second(s).
+</code></pre>
+
+<p>We want to make sure the job is indeed running on the correct annex
+resources.  There are two different ways we could do this.  We could ask
+the annex itself:</p>
+
+<pre><code>$ htcondor annex status example
+Annex 'example' is established.
+Its oldest established request is about 0.69 hours old and will retire in
+0.31 hours.
+You requested 2 machines for this annex, of which 2 are in established
+annexes.
+There are 136 CPUs in the established machines, of which 1 are busy.
+1 jobs must run on this annex, and 1 currently are.
+You made 1 resource request(s) for this annex, of which 0 are pending,
+1 are established, and 0 have retired.
+</code></pre>
+
+<p>This indicates that the annex is running jobs, but we don’t know for
+sure that it’s the one we just submitted.  Instead, let’s ask the job
+itself what resources it is running on.</p>
+
+<pre><code>$ htcondor job resources 123
+Job is using annex 'example', resource slot1_1@br011.ib.bridges2.psc.edu
+</code></pre>
+
+<h5 id="6-terminate-the-resource-lease">6. Terminate the Resource Lease</h5>
+
+<p>At this point we know that our job is running on the correct resources,
+so we can wait for it to finish running.  After some time has passed, we
+ask for its status again:</p>
+
+<pre><code>$ htcondor job status 123
+Job is completed.
+</code></pre>
+
+<p>Now that the job has finished running, we want to shut down the annex.
+When the annex finishes shutting down, the resource lease will be
+terminated.  We could just wait for the annex time out automatically
+(after 20 minutes of being idle), but we would rather shut the annex down
+explicitly to avoid wasting our allocation.</p>
+
+<pre><code>$ htcondor annex shutdown example
+Shutting down annex 'example'...
+... each resource in 'example' has been commanded to shut down.
+It may take some time for each resource to finish shutting down.
+Annex requests that are still in progress have not been affected.
+</code></pre>
+
+<p>At this point our workflow is completed, and our job has run
+successfully on our allocation.</p>
+
+<h5 id="reference">Reference</h5>
+
+<p>You can run either of the following commands for an up-to-date summary
+of their corresponding options.</p>
+
+<pre><code>$ htcondor job --help
+$ htcondor annex --help
+</code></pre>
+
+        </div>
+    </div>
+</div>
 </main>
 <footer id="footer" class="bg-light pt-4 mt-auto">
     <div class="container-xxl">

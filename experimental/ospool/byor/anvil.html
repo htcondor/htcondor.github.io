@@ -775,17 +775,17 @@
     <div class="bg-light mb-4">
     <hr class="m-0">
     <div class="container-xxl py-2">
-        <span class="fs-3">Run a Job on Anvil Using an XRAC Allocation</span>
+        <span class="fs-3">Run a Job on Anvil Using an Allocation</span>
     </div>
     <hr class="m-0">
 </div>
 <div class="container-xxl pb-4">
     <div class="row">
         <div  class="col-12 col-lg-10 col-xl-9 col-xxl-8">
-            <p>This recipe assumes that you have decided to use your XRAC allocation
+            <p>This recipe assumes that you have decided to use your allocation
 for Anvil to run one of your HTCondor jobs.  It takes you step by
-step through the process of Bringing Your Own Resource (BYOR) in the
-form of an XRAC allocation to an OSG Connect access point and using that
+step through the process of Bringing Your Own Capacity (BYOC) in the
+form of an allocation to an OSG Connect access point and using that
 resource to run your HTCondor job.  In what follows, we refer to the set
 of resources leased from that allocation as an “annex.”</p>
 
@@ -797,8 +797,9 @@ OSG Connect access point when we begin.</p>
 <ul>
   <li>An OSG Connect account and password</li>
   <li>An HTCondor job submit file (example.submit).</li>
-  <li>An XRAC allocation for Anvil.</li>
-  <li>An XSEDE account and password.</li>
+  <li>An allocation for Anvil.</li>
+  <li>Command-line login access to Anvil (see <a href="https://www.rcac.purdue.edu/knowledge/anvil/access">Purdue’s instructions for gaining access</a>.
+We’ll use <code>LOGIN_NAME</code> to refer to your login name on Anvil.</li>
   <li>A name for your Anvil annex (example).  By convention,
 this is the name of the submit file you want to run, without its extension.</li>
 </ul>
@@ -815,17 +816,17 @@ this is the name of the submit file you want to run, without its extension.</li>
 
 <p>First, you will need to determine the project ID of your allocation on
 Anvil.  If you already know your project ID, you can skip this
-section.  If not, log in to login.xsede.org in a terminal and run the
+section.  If not, log in to <code>anvil.rcac.purdue.edu</code> in a terminal and run the
 following command.  (Don’t copy the <code>$</code>; in this and other examples
 further down the page, the <code>$</code> just signifies something you type in,
 rather than something that the computer prints out.)</p>
 
-<pre><code>$ gsissh anvil mybalance
+<pre><code>$ mybalance
 </code></pre>
 
 <p>Choose one of the rows in the top half of the table (there may be only
 one row) and remember the entry in the NAME column.  For the rest of
-these instructions, we’ll use PROJECT_ID where you need to put that
+these instructions, we’ll use <code>PROJECT_ID</code> where you need to put that
 entry.</p>
 
 <h4 id="instructions">Instructions</h4>
@@ -863,15 +864,14 @@ an annex is a named set of leased resources.  The following command will
 submit a request to lease an annex named <code>example</code> to the queue named <code>standard</code>
 on Anvil.  Project <code>PROJECT_ID</code> will be charged for resources used (by
 default, two nodes).  The <strong>text in bold</strong> is emphasized to distinguish
-it from XSEDE’s log-in prompt.</p>
+it from Anvil’s log-in prompt.</p>
 
-<pre><code>$ htcondor annex create example standard@anvil --project PROJECT_ID
-<b>This command will access Anvil via XSEDE.  To proceed, enter your
-XSEDE user name and password at the prompt below; to cancel, hit CTRL-C.</b>
+<pre><code>$ htcondor annex create example standard@anvil --project PROJECT_ID --login-name LOGIN_NAME
+<b>This command will access the system named 'Anvil' via SSH.  To proceed, follow the
+prompts from that system below; to cancel, hit CTRL-C.</b>
 </code></pre>
 
-<p>You will need to log into XSEDE at this prompt.  Logging into XSEDE will
-grant you access to Anvil.</p>
+<p>You will need to log into Anvil at this prompt.</p>
 
 <pre><code><b>Thank you.</b>
 
@@ -972,7 +972,7 @@ Annex requests that are still in progress have not been affected.
 </code></pre>
 
 <p>At this point our workflow is completed, and our job has run
-successfully on our XSEDE allocation.</p>
+successfully on our allocation.</p>
 
 <h5 id="reference">Reference</h5>
 
@@ -980,7 +980,7 @@ successfully on our XSEDE allocation.</p>
 of their corresponding options.</p>
 
 <pre><code>$ htcondor job --help
-$ htcodnor annex --help
+$ htcondor annex --help
 </code></pre>
 
         </div>

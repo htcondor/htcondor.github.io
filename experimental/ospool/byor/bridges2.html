@@ -775,17 +775,17 @@
     <div class="bg-light mb-4">
     <hr class="m-0">
     <div class="container-xxl py-2">
-        <span class="fs-3">Run a Job on Bridges 2 Using an XRAC Allocation</span>
+        <span class="fs-3">Run a Job on Bridges-2 Using an Allocation</span>
     </div>
     <hr class="m-0">
 </div>
 <div class="container-xxl pb-4">
     <div class="row">
         <div  class="col-12 col-lg-10 col-xl-9 col-xxl-8">
-            <p>This recipe assumes that you have decided to use your XRAC allocation
-for Bridges 2 to run one of your HTCondor jobs.  It takes you step by
-step through the process of Bringing Your Own Resource (BYOR) in the
-form of an XRAC allocation to an OSG Connect access point and using that
+            <p>This recipe assumes that you have decided to use your allocation
+for Bridges-2 to run one of your HTCondor jobs.  It takes you step by
+step through the process of Bringing Your Own Capacity (BYOC) in the
+form of an allocation to an OSG Connect access point and using that
 resource to run your HTCondor job.  In what follows, we refer to the set
 of resources leased from that allocation as an “annex.”</p>
 
@@ -797,40 +797,41 @@ OSG Connect access point when we begin.</p>
 <ul>
   <li>An OSG Connect account and password</li>
   <li>An HTCondor job submit file (example.submit).</li>
-  <li>An XRAC allocation for Bridges 2.</li>
-  <li>An XSEDE account and password.</li>
-  <li>A name for your Bridges 2 annex (example).  By convention,
+  <li>An allocation for Bridges-2.</li>
+  <li>Command-line login access to Bridges-2 (see <a href="https://www.psc.edu/resources/bridges-2/user-guide-2-2/#connecting-to-bridges-2">PSC’s instructions for gaining access</a>).
+  We’ll use <code>LOGIN_NAME</code> to refer to your login name on Bridges-2</li>
+  <li>A name for your Bridges-2 annex (example).  By convention,
 this is the name of the submit file you want to run, without its extension.</li>
 </ul>
 
 <h4 id="assumptions">Assumptions</h4>
 
 <ul>
-  <li>You want to run the job described above on Bridges 2.</li>
-  <li>The job described above does not require more than XX GB of RAM, more than
-XX cores, a GPU, or more than XX hours to complete when run on Bridges 2.</li>
+  <li>You want to run the job described above on Bridges-2.</li>
+  <li>The job described above fits within the capabilities of the Bridges-2 queue
+  you wish to run it on.</li>
 </ul>
 
 <h4 id="preparation">Preparation</h4>
 
 <p>First, you will need to determine the project ID of your allocation on
-Bridges 2.  If you already know your project ID, you can skip this
-section.  If not, log in to login.xsede.org in a terminal and run the
+Bridges-2.  If you already know your project ID, you can skip this
+section.  If not, log in to <code>bridges2.psc.edu</code> in a terminal and run the
 following command.  (Don’t copy the <code>$</code>; in this and other examples
 further down the page, the <code>$</code> just signifies something you type in,
 rather than something that the computer prints out.)</p>
 
-<pre><code>$ gsissh bridges2 projects
+<pre><code>$ projects
 </code></pre>
 
 <p>There will be one or more lines starting with <code>Project:</code> in the output.
 Pick one, and remember the value to the right of the colon.  For the rest of
-these instructions, we’ll use PROJECT_ID where you need to put that
+these instructions, we’ll use <code>PROJECT_ID</code> where you need to put that
 value.</p>
 
 <h4 id="instructions">Instructions</h4>
 
-<h5 id="1-log-into-the-os-connect-access-point">1. Log into the OS Connect Access Point</h5>
+<h5 id="1-log-into-the-osg-connect-access-point">1. Log into the OSG Connect Access Point</h5>
 
 <p>Log into an OSG Connect access point (e.g., <code>login04.osgconnect.net</code> or
 <code>login05.osgconnect.net</code>) using your OSG Connect account and password.</p>
@@ -838,7 +839,7 @@ value.</p>
 <h5 id="2-submit-the-job">2. Submit the Job</h5>
 
 <p>Submit the job on the access point, indicating that you want it to run
-on your own resource (the Bridges 2 allocation, in this case) with the
+on your own resource (the Bridges-2 allocation, in this case) with the
 <code>--annex-name</code> option:</p>
 
 <pre><code>$ htcondor job submit example.submit \
@@ -851,27 +852,26 @@ Job 123 was submitted and will run only on the annex 'example'.
   <li>123 is the JOB_ID assigned by the access point to the placed job.</li>
   <li>Placing the job with the annex name specified means that the job
 won’t run anywhere other than the annex.</li>
-  <li>Note that the annex name does say anything about Bridges 2; it is simply
-a label for the Bridges 2 resources we will be provisioning
+  <li>Note that the annex name does say anything about Bridges-2; it is simply
+a label for the Bridges-2 resources we will be provisioning
 in the next step.</li>
 </ul>
 
 <h5 id="3-lease-the-resources">3. Lease the Resources</h5>
 
-<p>To run your job on Bridges 2, you will need to create an “annex” there;
+<p>To run your job on Bridges-2, you will need to create an “annex” there;
 an annex is a named set of leased resources.  The following command will
 submit a request to lease an annex named <code>example</code> to the queue named <code>RM</code>
-on Bridges 2.  Project <code>PROJECT_ID</code> will be charged for resources used (by
+on Bridges-2.  Project <code>PROJECT_ID</code> will be charged for resources used (by
 default, two machines).  The <strong>text in bold</strong> is emphasized to distinguish
-it from XSEDE’s log-in prompt.</p>
+it from Bridges-2’s log-in prompt.</p>
 
-<pre><code>$ htcondor annex create example RM@bridges2 --project PROJECT_ID
-<b>This command will access Bridges 2 via XSEDE.  To proceed, enter your
-XSEDE user name and password at the prompt below; to cancel, hit CTRL-C.</b>
+<pre><code>$ htcondor annex create example RM@bridges2 --project PROJECT_ID --login-name LOGIN_NAME
+<b>This command will access the system named 'Bridges 2' via SSH.  To proceed, follow the
+prompts from that system below; to cancel, hit CTRL-C.</b>
 </code></pre>
 
-<p>You will need to log into XSEDE at this prompt.  Logging into XSEDE will
-grant you access to Bridges 2.</p>
+<p>You will need to log into Bridges-2 at this prompt.</p>
 
 <pre><code><b>Thank you.</b>
 
@@ -884,7 +884,7 @@ it may take a while.  Once the request is done, it will display:</p>
 <pre><code>... requested.
 </code></pre>
 
-<p>It may take some time for Bridges 2 to establish the requested annex.</p>
+<p>It may take some time for Bridges-2 to establish the requested annex.</p>
 
 <h5 id="4-confirm-that-the-resources-are-available">4. Confirm that the Resources are Available</h5>
 
@@ -900,7 +900,7 @@ You made 1 resource request(s) for this annex, of which 1 are pending, 0
 are established, and 0 have retired.
 </code></pre>
 
-<p>Give Bridges 2 a few more minutes to grant your request and then check again.</p>
+<p>Give Bridges-2 a few more minutes to grant your request and then check again.</p>
 
 <pre><code>$ htcondor annex status example
 Annex 'example' is established.
@@ -972,7 +972,7 @@ Annex requests that are still in progress have not been affected.
 </code></pre>
 
 <p>At this point our workflow is completed, and our job has run
-successfully on our XSEDE allocation.</p>
+successfully on our allocation.</p>
 
 <h5 id="reference">Reference</h5>
 
@@ -980,7 +980,7 @@ successfully on our XSEDE allocation.</p>
 of their corresponding options.</p>
 
 <pre><code>$ htcondor job --help
-$ htcodnor annex --help
+$ htcondor annex --help
 </code></pre>
 
         </div>
