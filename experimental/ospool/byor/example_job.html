@@ -787,7 +787,7 @@
 the <code>busybox.sif</code> file to run; see below.</p>
 
 <pre><code>universe                = container
-# wget https://htcondor.org/ospool/byor/busybox.sif
+# singularity pull busybox.sif docker://busybox:latest
 container_image         = busybox.sif
 executable              = /bin/sleep
 arguments               = 1200
@@ -800,11 +800,12 @@ log                     = example.log
 queue 1
 </code></pre>
 
-<p>You can download <code>busybox.sif</code> using <code>wget</code>; run this command in the same
-directory that you created the submit file in.</p>
+<p>You can use <code>singularity pull</code> to obtain <code>busybox.sif</code> from Docker Hub;
+run this command in the same directory that you created the submit file in:</p>
 
-<pre><code>$ wget https://htcondor.org/ospool/byor/busybox.sif
+<pre><code>$ singularity pull busybox.sif docker://busybox:latest
 </code></pre>
+
 
         </div>
     </div>
