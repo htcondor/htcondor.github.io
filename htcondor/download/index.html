@@ -1036,14 +1036,16 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">9.0.16</span> Long Term Support Release</h3>
-        <p>August 16, 2022</p>
+        <h3><span class="text-secondary">9.0.17</span> Long Term Support Release</h3>
+        <p>September 29, 2022</p>
         <div>
             <ul>
-  <li>Singularity now mounts /tmp and /var/tmp under the scratch directory</li>
-  <li>Fix bug where Singularity jobs go on hold at the first checkpoint</li>
-  <li>Fix bug where gridmanger deletes the X.509 proxy file instead of the copy</li>
-  <li>Fix file descriptor leak when using SciTokens for authentication</li>
+  <li>Fix file descriptor leak when schedd fails to launch scheduler jobs</li>
+  <li>Fix failure to forward batch grid universe job’s refreshed X.509 proxy</li>
+  <li>Fix DAGMan failure when the DONE keyword appeared in the JOB line</li>
+  <li>Fix HTCondor’s handling of extremely large UIDs on Linux</li>
+  <li>Fix bug where OAUTH tokens lose their scope and audience upon refresh</li>
+  <li>Support for Apptainer in addition to Singularity</li>
 </ul>
 
         </div>
