@@ -825,16 +825,25 @@ The HTCondor Software Suite (HTCSS) is working to retire the use of the Grid Com
 
 <ul>
   <li>April 2021: HTCondor 9.0.0 is released marking the start of the a new release series, which will continue with full GCT support except that CREAM and GRAM support will be dropped.</li>
-  <li>May 2021: HTCondor 9.1.x is released with the following changes:</li>
-  <li>Enables the use of the new ARC CE REST interface without GCT.</li>
-  <li>July 2021: HTCondor 9.1.x will include the following changes:</li>
-  <li>Performs proxy delegation without GCT.</li>
-  <li>Removes GSI from default list of authentication methods in both HTCondor and HTCondor-CE (note: GSI will still be available via explicitly configuring AUTHENTICATION_METHODS)</li>
-  <li>Warnings printed to stderr if GSI used by tools.</li>
-  <li>Warnings printed in logs if GSI used by daemons.</li>
-  <li>November 2021: HTCondor 9.3.0 default build has GCT removed (i.e. binaries distributed will not include GCT).</li>
-  <li>GSI authentication between HTCondor daemons and tools will no longer work.</li>
-  <li>Submission to the ARC CE gridftp interface will no longer work (grid universe type ‘nordugrid’).</li>
+  <li>May 2021: HTCondor 9.1.x is released with the following changes:
+    <ul>
+      <li>Enables the use of the new ARC CE REST interface without GCT.</li>
+    </ul>
+  </li>
+  <li>July 2021: HTCondor 9.1.x will include the following changes:
+    <ul>
+      <li>Performs proxy delegation without GCT.</li>
+      <li>Removes GSI from default list of authentication methods in both HTCondor and HTCondor-CE (note: GSI will still be available via explicitly configuring AUTHENTICATION_METHODS)</li>
+      <li>Warnings printed to stderr if GSI used by tools.</li>
+      <li>Warnings printed in logs if GSI used by daemons.</li>
+    </ul>
+  </li>
+  <li>November 2021: HTCondor 9.3.0 default build has GCT removed (i.e. binaries distributed will not include GCT).
+    <ul>
+      <li>GSI authentication between HTCondor daemons and tools will no longer work.</li>
+      <li>Submission to the ARC CE gridftp interface will no longer work (grid universe type ‘nordugrid’).</li>
+    </ul>
+  </li>
   <li>September 2022: HTCondor 10.0.0 is released with GCT removed.</li>
   <li>March 2023: Support for HTCondor 9.0.x release series ends. No supported HTCondor code relies on GCT.</li>
 </ul>
