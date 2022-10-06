@@ -951,15 +951,17 @@
 
 <div class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">5.1.5</span> Latest Release</h3>
-        <p>June  6, 2022</p>
+        <h3><span class="text-secondary">5.1.6</span> Latest Release</h3>
+        <p>October  5, 2022</p>
         <div>
             
 <p>Highlights of this release are:</p>
 <ul>
-  <li>Rename AuthToken attributes in the routed job to better support accounting</li>
-  <li>Prevent GSI environment from pointing the job to the wrong certificates</li>
-  <li>Fix issue where HTCondor-CE would need port 9618 open to start up</li>
+  <li>HTCondor-CE now uses the C++ Collector plugin for payload job traceability</li>
+  <li>Fix HTCondor-CE mapfiles to be compliant with PCRE2 and HTCondor 9.10.0+</li>
+  <li>Add support for multiple APEL accounting scaling factors</li>
+  <li>Suppress spurious log message about a missing negotiator</li>
+  <li>Fix crash in HTCondor-CE View</li>
 </ul>
 
         </div>
