@@ -899,16 +899,23 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">9.0.17</span> Long Term Support Release</h3>
-        <p>September 29, 2022</p>
+        <h3><span class="text-secondary">10.0.0</span> Long Term Support Release</h3>
+        <p>November 11, 2022</p>
         <div>
             <ul>
-  <li>Fix file descriptor leak when schedd fails to launch scheduler jobs</li>
-  <li>Fix failure to forward batch grid universe job’s refreshed X.509 proxy</li>
-  <li>Fix DAGMan failure when the DONE keyword appeared in the JOB line</li>
-  <li>Fix HTCondor’s handling of extremely large UIDs on Linux</li>
-  <li>Fix bug where OAUTH tokens lose their scope and audience upon refresh</li>
-  <li>Support for Apptainer in addition to Singularity</li>
+  <li>Users can prevent runaway jobs by specifying an allowed duration</li>
+  <li>Able to extend submit commands and create job submit templates</li>
+  <li>Initial implementation of htcondor <noun> <verb> command line interface</verb></noun></li>
+  <li>Initial implementation of Job Sets in the htcondor CLI tool</li>
+  <li>Add Container Universe</li>
+  <li>Support for heterogeneous GPUs</li>
+  <li>Improved File transfer error reporting</li>
+  <li>GSI Authentication method has been removed</li>
+  <li>HTCondor now utilizes ARC-CE’s REST interface</li>
+  <li>Support for ARM and PowerPC for Enterprise Linux 8</li>
+  <li>For IDTOKENS, signing key not required on every execution point</li>
+  <li>Trust on first use ability for SSL connections</li>
+  <li>Improvements against replay attacks</li>
 </ul>
 
         </div>
