@@ -891,17 +891,17 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">10.0.1</span> Long Term Support Release</h3>
-        <p>January  5, 2023</p>
+        <h3><span class="text-secondary">10.0.2</span> Long Term Support Release</h3>
+        <p>March  2, 2023</p>
         <div>
             <ul>
-  <li>Add Ubuntu 22.04 (Jammy Jellyfish) support</li>
-  <li>Add file transfer plugin that supports stash:// and osdf:// URLs</li>
-  <li>Fix bug where cgroup memory limits were not enforced on Debian and Ubuntu</li>
-  <li>Fix bug where forcibly removing DAG jobs could crash the condor_schedd</li>
-  <li>Fix bug where Docker repository images cannot be run under Singularity</li>
-  <li>Fix issue where blahp scripts were missing on Debian and Ubuntu platforms</li>
-  <li>Fix bug where curl file transfer plugins would fail on Enterprise Linux 8</li>
+  <li>HTCondor can optionally create intermediate directories for output files</li>
+  <li>Improved condor_schedd scalability when a user runs more than 1,000 jobs</li>
+  <li>Fix issue where condor_ssh_to_job fails if the user is not in /etc/passwd</li>
+  <li>The Python Schedd.query() now returns the ServerTime attribute for Fifemon</li>
+  <li>VM Universe jobs pass through the host CPU model to support newer kernels</li>
+  <li>HTCondor Python wheel is now available for Python 3.11</li>
+  <li>Fix issue that prevented HTCondor installation on Ubuntu 18.04</li>
 </ul>
 
         </div>
