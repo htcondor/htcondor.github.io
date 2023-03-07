@@ -1011,11 +1011,15 @@
 
 <div id="feature-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">10.2.5</span> Feature Release</h3>
-        <p>March  2, 2023</p>
+        <h3><span class="text-secondary">10.3.0</span> Feature Release</h3>
+        <p>March  6, 2023</p>
         <div>
             <ul>
-  <li>Fix counting of unmaterialized jobs in the condor_schedd</li>
+  <li>Now evicts OOM killed jobs when they are under their requested memory</li>
+  <li>HTCondor glideins can now use cgroups if one has been prepared</li>
+  <li>Can write job information an AP history file for every execution attempt</li>
+  <li>Can now specify a lifetime for condor_gangliad metrics</li>
+  <li>The condor_schedd now advertises a count of unmaterialized jobs</li>
 </ul>
 
         </div>
