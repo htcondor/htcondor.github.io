@@ -34,7 +34,15 @@ async function get_spreadsheet_values(){
 
     let geocodes = data['data'].map(x => [parseFloat(x['Longitude']), parseFloat(x['Latitude'])])
 
-    return geocodes
+    let cleanGeocodes = geocodes.reduce((p, c) => {
+        if(isNaN(c[0]) || isNaN(c[1])){
+            return p
+        }
+        p.push(c)
+        return p
+    }, [])
+
+    return cleanGeocodes
 }
 
 async function get_manual_values() {
