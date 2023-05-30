@@ -26,7 +26,7 @@ function create_marker(location, iconScale){
 }
 
 async function get_spreadsheet_values(){
-    let res = await fetch("https://docs.google.com/spreadsheets/d/18dMo5d89HkyzFGnsQaCPw843LPUG-czAneBR7rVThHI/gviz/tq?tqx=out:csv&sheet=htcss_user_registry")
+    let res = await fetch("https://docs.google.com/spreadsheets/d/18dMo5d89HkyzFGnsQaCPw843LPUG-czAneBR7rVThHI/export?format=csv")
 
     let text = await res.text()
 
