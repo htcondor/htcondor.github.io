@@ -1039,14 +1039,18 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">10.0.3</span> Long Term Support Release</h3>
-        <p>April  6, 2023</p>
+        <h3><span class="text-secondary">10.0.4</span> Long Term Support Release</h3>
+        <p>May 30, 2023</p>
         <div>
             <ul>
-  <li>GPU metrics continues to be reported after the startd is reconfigured</li>
-  <li>Fixed issue where GPU metrics could be wildly over-reported</li>
-  <li>Fixed issue that kept jobs from running when installed on Debian or Ubuntu</li>
-  <li>Fixed DAGMan problem when retrying a proc failure in a multi-proc node</li>
+  <li>Provides script to assist updating from HTCondor version 9 to version 10</li>
+  <li>Fixes a bug where rarely an output file would not be transferred back</li>
+  <li>Fixes counting of submitted jobs, so MAX_JOBS_SUBMITTED works correctly</li>
+  <li>Fixes SSL Authentication failure when PRIVATE_NETWORK_NAME was set</li>
+  <li>Fixes rare crash when SSL or SCITOKENS authentication was attempted</li>
+  <li>Can allow client to present an X.509 proxy during SSL authentication</li>
+  <li>Fixes issue where a users jobs were ignored by the HTCondor-CE on restart</li>
+  <li>Fixes issues where some events that HTCondor-CE depends on were missing</li>
 </ul>
 
         </div>
