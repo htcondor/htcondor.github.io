@@ -5,12 +5,12 @@ const defaultIconScale = 42
 function getIcon(iconScale){
     let iconSize = [iconScale*2.8, iconScale]
     let iconConfig = {
-        iconUrl: "/htcondor/assets/images/HTCondor_Bird.svg",
+        iconUrl: "/htcondor/assets/images/icons/star_red.svg",
         iconSize: iconSize,
         iconAnchor: [iconSize[0]*.5, iconSize[1]],
-        shadowUrl: "/htcondor/assets/images/HTCondor_Bird_Shadow.svg",
-        shadowAnchor: [iconSize[1], iconSize[1]*.6],
-        shadowSize: iconSize
+        shadowUrl: "/htcondor/assets/images/icons/small_shadow.svg",
+        shadowAnchor: [iconSize[1]/2, (iconSize[1]*.6)/2],
+        shadowSize: [iconSize[0]*.55, iconSize[1]*.3]
     }
     return L.icon(iconConfig)
 }
@@ -68,7 +68,7 @@ class UserMap {
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 17,
-            id: 'mapbox/light-v11',
+            id: 'mapbox/satellite-streets-v12',
             tileSize: 512,
             zoomOffset: -1,
             accessToken: 'pk.eyJ1IjoidGFraW5nZHJha2UiLCJhIjoiY2wya3IyZGNvMDFyOTNsbnhyZjBteHRycSJ9.g6tRaqN8_iJxHgAQKNP6Tw',
