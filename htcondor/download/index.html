@@ -1014,11 +1014,18 @@
 
 <div id="feature-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">10.4.3</span> Feature Release</h3>
-        <p>May  9, 2023</p>
+        <h3><span class="text-secondary">10.5.0</span> Feature Release</h3>
+        <p>June  5, 2023</p>
         <div>
             <ul>
-  <li>Fix bug than could cause the collector audit plugin to crash</li>
+  <li>Can now define DAGMan save points to be able to rerun DAGs from there</li>
+  <li>Expand default list of environment variables passed to the DAGMan manager</li>
+  <li>Administrators can prevent users using “getenv = true” in submit files</li>
+  <li>Improved throughput when submitting a large number of ARC-CE jobs</li>
+  <li>Execute events contain the slot name, sandbox path, resource quantities</li>
+  <li>Can add attributes of the execution point to be recorded in the user log</li>
+  <li>Enhanced condor_transform_ads tool to ease offline job transform testing</li>
+  <li>Fixed a bug where memory limits over 2 GiB might not be correctly enforced</li>
 </ul>
 
         </div>
