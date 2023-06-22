@@ -1046,12 +1046,17 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">10.0.5</span> Long Term Support Release</h3>
-        <p>June  9, 2023</p>
+        <h3><span class="text-secondary">10.0.6</span> Long Term Support Release</h3>
+        <p>June 22, 2023</p>
         <div>
             <ul>
-  <li>Rename upgrade9to10checks.py script to condor_upgrade_check</li>
-  <li>Fix spurious warning from condor_upgrade_check about regexes with spaces</li>
+  <li>In SSL Authentication, use the identity instead of the X.509 proxy subject</li>
+  <li>Can use environment variable to locate the client’s SSL X.509 credential</li>
+  <li>ClassAd aggregate functions now tolerate undefined values</li>
+  <li>Fix Python binding bug where accounting ads were omitted from the result</li>
+  <li>The Python bindings now properly report the HTCondor version</li>
+  <li>remote_initial_dir works when submitting a grid batch job remotely via ssh</li>
+  <li>Add a ClassAd stringlist subset match function</li>
 </ul>
 
         </div>
