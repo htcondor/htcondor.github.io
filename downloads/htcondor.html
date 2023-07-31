@@ -869,16 +869,16 @@
 
 <div id="feature-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">10.6.0</span> Feature Release</h3>
-        <p>June 29, 2023</p>
+        <h3><span class="text-secondary">10.7.0</span> Feature Release</h3>
+        <p>July 31, 2023</p>
         <div>
             <ul>
-  <li>Administrators can enable and disable job submission for a specific user</li>
-  <li>Work around memory leak in libcurl on EL7 when using the ARC-CE GAHP</li>
-  <li>Container images may now be transferred via a file transfer plugin</li>
-  <li>Add ClassAd stringlist subset match function</li>
-  <li>Add submit file macro ‘$(JobId)’ which expands to full ID of the job</li>
-  <li>The job’s executable is no longer renamed to ‘condor_exec.exe’</li>
+  <li>Support for Debian 12 (Bookworm)</li>
+  <li>Can run defrag daemons with different policies on distinct sets of nodes</li>
+  <li>Added want_io_proxy submit command</li>
+  <li>Apptainer is now included in the HTCondor tarballs</li>
+  <li>Fix 10.5.0 bug where reported CPU time is very low when using cgroups v1</li>
+  <li>Fix 10.5.0 bug where .job.ad and .machine.ad were missing for local jobs</li>
 </ul>
 
         </div>
