@@ -869,11 +869,16 @@
 
 <div id="feature-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">10.7.1</span> Feature Release</h3>
-        <p>August  9, 2023</p>
+        <h3><span class="text-secondary">10.8.0</span> Feature Release</h3>
+        <p>September 14, 2023</p>
         <div>
             <ul>
-  <li>Fix performance problem detecting futile nodes in a large and bushy DAG</li>
+  <li>Fold the classads, blahp, and procd RPMs into the main condor RPM</li>
+  <li>Align the Debian packages and package names with the RPM packaging</li>
+  <li>On Linux, the default configuration enforces memory limits with cgroups</li>
+  <li>condor_status -gpus shows nodes with GPUs and the GPU properties</li>
+  <li>condor_status -compact shows a row for each slot type</li>
+  <li>New ENV command controls which environment variables are present in DAGMan</li>
 </ul>
 
         </div>
