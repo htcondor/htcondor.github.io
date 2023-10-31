@@ -1049,24 +1049,18 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">23.0.0</span> Long Term Support Release</h3>
-        <p>September 30, 2023</p>
+        <h3><span class="text-secondary">23.0.1</span> Long Term Support Release</h3>
+        <p>October 31, 2023</p>
         <div>
             <ul>
-  <li>Absent slot configuration, execution points will use a partitionable slot</li>
-  <li>Linux cgroups enforce maximum memory utilization by default</li>
-  <li>Can now define DAGMan save points to be able to rerun DAGs from there</li>
-  <li>Much better control over environment variables when using DAGMan</li>
-  <li>Administrators can enable and disable job submission for a specific user</li>
-  <li>Can set a minimum number of CPUs allocated to a user</li>
-  <li>condor_status -gpus shows nodes with GPUs and the GPU properties</li>
-  <li>condor_status -compact shows a row for each slot type</li>
-  <li>Container images may now be transferred via a file transfer plugin</li>
-  <li>Support for Enterprise Linux 9, Amazon Linux 2023, and Debian 12</li>
-  <li>Can write job information in AP history file for every execution attempt</li>
-  <li>Can run defrag daemons with different policies on distinct sets of nodes</li>
-  <li>Add condor_test_token tool to generate a short lived SciToken for testing</li>
-  <li>The job’s executable is no longer renamed to ‘condor_exec.exe’</li>
+  <li>Add HTCondor Python wheel in PyPI for Python 3.12</li>
+  <li>Update to apptainer version 1.2.4 in the HTCondor tarballs</li>
+  <li>Fix 10.6.0 bug that broke PID namespaces</li>
+  <li>Fix Debian and Ubuntu install bug when ‘condor’ user was in LDAP</li>
+  <li>Fix bug where execution times for ARC CE jobs were 60 times too large</li>
+  <li>Fix bug where a failed ‘Service’ node would crash DAGMan</li>
+  <li>Condor-C and Job Router jobs now get resources provisioned updates</li>
+  <li>Update Windows binaries to address curl CVE-2023-38545</li>
 </ul>
 
         </div>
