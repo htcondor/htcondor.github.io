@@ -28,7 +28,7 @@
         
 
         
-            <link rel="canonical" href="https://htcondor.org/instructions/ubuntu/20/development/">
+            <link rel="canonical" href="https://htcondor.org/featured-users/2023-11-27-adjacent-tissues-paper.html">
         
 
         
@@ -774,58 +774,106 @@
 </header>
 
 <main id="main-copy" tabindex="-1">
-    <div class="container-xxl py-4">
-    <p><span class="text-danger">This page is deprecated, visit <a href="https://htcondor.org/downloads/htcondor">the HTCondor download page</a> for updated instructions.</span></p>
-<hr />
+    
 
-<h1>Install Instructions</h1>
 
-<!-- Page body -->
 
-<h3>Ubuntu 20.04 (Focal Fossa)</h3>
-<ol>
-    <li>
-        Setup the repository
-        <ol type="a">
-            <li>
-                Install the HTCondor repository key
-                <pre>$ wget -qO - https://research.cs.wisc.edu/htcondor/ubuntu/HTCondor-Release.gpg.key | sudo apt-key add -</pre>
-            </li>
-            <li>
-                Add the HTCondor repository (running as the root user)
-                <pre># echo "deb http://research.cs.wisc.edu/htcondor/ubuntu/8.9/focal focal contrib" &gt;&gt; /etc/apt/sources.list
-# echo "deb-src http://research.cs.wisc.edu/htcondor/ubuntu/8.9/focal focal contrib" &gt;&gt; /etc/apt/sources.list</pre>
-            </li>
-        </ol>
-    </li>
-    <li>
-        Install HTCondor
-        <pre>$ sudo apt-get update
-$ sudo apt-get install condor</pre>
-    </li>
-    <li>
-        Check that it is running
-        <pre>$ ps ax | grep condor</pre>
-		Note that if condor is NOT running, the only output of this ps command will look like this:
-		<pre>$ ps auxww | grep condor
-user    1466  0.0  0.0  14736  1048 pts/1    S+   13:05   0:00 grep condor</pre>
-		If condor is running, you will see several lines of output, something like this:
-		<pre>user    1433  0.0  0.0  14736  1092 pts/1    S+   13:05   0:00 grep condor
-user    6404  0.0  0.0  72488 12956 ?        Ss    2020   0:55 condor_master -f
-user   27159  0.0  0.0  27888  6084 ?        S     2020   1:11 condor_procd -A /var/log/procd_pipe -L /var/log/ProcLog -R 1000000 -S 60 -D -C 28297
-user   27201  0.0  0.0  60744 12620 ?        Ss    2020   4:04 condor_collector
-user   27202  0.0  0.0  62016 14124 ?        Ss    2020   0:35 condor_schedd
-user   27203  0.0  0.0  60784 12576 ?        Ss    2020   2:20 condor_negotiator
-user   27204  0.0  0.3 103864 55784 ?        Ss    2020   3:14 condor_startd
-</pre>
-    </li>
-</ol>
-
-<p>
-    Instructions on how to install other Linux distributions can be found on the <a href="/htcondor/instructions">Install Instructions page</a>.
-</p>
-
+    <div class="bg-light">
+    <hr class="my-0">
+    <div class="container-xxl">
+        <div class="row">
+            <div class="col-auto">
+                <div class="d-flex my-2">
+                    <span class="fs-4 my-auto">Featured User</span>
+                </div>
+            </div>
+            <div class="col-auto d-flex">
+                <div class="d-flex my-2">
+                    <div class="mt-auto mb-1">
+                        <span class="fs-6 mt-auto"><a class="text-decoration-none" href="/htcondor/featured-users.html">View all</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="my-0">
 </div>
+
+<div class="container-xxl py-4">
+    <div id="news-container" class="row justify-content-center">
+        <div class="col-12 col-lg-10 col-xl-9 col-xxl-8">
+            <h1>Using HTC expanded scale of research using noninvasive measurements of tendons and ligaments</h1>
+            <div class="row justify-content-between">
+                
+                <div class="col-auto">
+                    <span class="fs-4 text-muted">Sarah Matysiak</span>
+                </div>
+                
+                <div class="col-auto">
+                    <span class="fs-4 text-muted">November 27, 2023</span>
+                </div>
+            </div>
+
+            
+            <div class="mt-4 fs-5"><p><strong>With this technique and the computing power of high throughput computing (HTC) combined, researchers can obtain thousands of simulations to study the pathology of tendons 
+and ligaments.</strong></p>
+
+<p>A recent paper published in the <a href="https://www.sciencedirect.com/science/article/abs/pii/S1751616123004915">Journal of the Mechanical Behavior of Biomedical Materials</a> by former Ph.D. 
+student in the Department of Mechanical Engineering (and current post-doctoral researcher at the University of Pennsylvania)
+<a href="https://www.med.upenn.edu/orl/personnel/jonathon-blank-ph-d.html">Jonathon Blank</a> and John Bollinger Chair of Mechanical Engineering
+<a href="https://directory.engr.wisc.edu/me/faculty/thelen_darryl/">Darryl Thelen</a> used the <a href="https://chtc.github.io/">Center for High Throughput Computing (CHTC)</a> to obtain their results. 
+Results that, Blank says, would not have been obtained at the same scale without HTC. “[This project], and a number of other projects, would have had a very small snapshot of the 
+problem at hand, which would not have allowed me to obtain the understanding of shear waves that I did. Throughout my time at UW, I ran tens of thousands of simulations — probably 
+even hundreds of thousands.”</p>
+
+<figure class="figure float-end" style="margin-left: 1em; width: 250px;">
+  <img src="https://raw.githubusercontent.com/CHTC/Articles/main/images/jonblank.jpg" class="figure-img img-fluid rounded" alt="Post-doctoral researcher at the University of Pennsylvania Jonathon Blank." width="250px" />
+  <figcaption class="figure-caption">Post-doctoral researcher at the University of Pennsylvania Jonathon Blank.<br /></figcaption>
+</figure>
+
+<p>Using noninvasive sensors called shear wave tensiometers, researchers on this project applied HTC to study tendon structure and function. Currently, research in this field is hard 
+to translate because most assessments of tendon and ligament structure-function relationships are performed on the benchtop in a lab, Blank explains. To translate the benchtop
+experiments into studying tendons in humans, the researchers use tensiometers as a measurement tool, and this study developed from trying to better understand these measurements 
+and how they can be applied to humans. “Tendons are very complex materials from an engineering perspective. When stretched, they can bear loads far exceeding your body weight, and 
+interestingly, even though they serve their roles in transmitting force from muscle to bone really well, the mechanisms that give rise to injury and pathology in these tissues aren’t 
+well understood.”</p>
+
+<figure class="figure float-end" style="margin-left: 1em; width: 250px;">
+  <img src="https://raw.githubusercontent.com/CHTC/Articles/main/images/darrylthelen.jpg" class="figure-img img-fluid rounded" alt="John Bollinger Chair of Mechanical Engineering Darryl Thelen." width="250px" />
+  <figcaption class="figure-caption">John Bollinger Chair of Mechanical Engineering Darryl Thelen.<br /></figcaption>
+</figure>
+
+<p>In living organisms, researchers have used tensiometers to study the loading of muscles and tendons, including the triceps surae, which connects to the Achilles tendon, Blank notes. 
+Since humans are variable regarding the size, stiffness, composition, and length of their tendons or ligaments, it’s “challenging to use a model to accurately represent a parameter 
+space of human biomechanics in the real world. High throughput computing is particularly useful for our field just because we can readily express that variability at a large scale” 
+through HTC. With Thelen and Orthopedics and Rehabilitation assistant professor <a href="https://directory.engr.wisc.edu/me/Faculty/Roth_Josh/">Josh Roth</a>, Blank developed a pipeline for 
+simulating shear wave propagation in tendons and ligaments with HTC, which Blank and Thelen used in the paper.</p>
+
+<p>With HTC, the researchers of this paper were able to further explore the mechanistic causes of changes in wave speed. “The advantage of this technique is being able to fully explore
+an input space of different stiffnesses, geometries, microstructures, and applied forces. The advantage of the capabilities offered by the CHTC is that we can fill the entire input
+space, not just between two data points, and thereby study changes in shear wave speed due to physiological factors and the mechanical underpinning driving those changes,” Blank 
+elaborates.</p>
+
+<p>It wasn’t challenging to implement, Blank states, since facilitators were readily available to help and meet with him. When he first started using HTC, Blank attended the CHTC 
+office hours to get answers to his questions, even during COVID-19; during this time, there were also numerous one-on-one meetings. Having this backbone of support from the CHTC 
+research facilitators propelled Blank’s research and made it much easier. “For a lot of modeling studies, you’ll have this sparse input space where you change a couple of parameters 
+and investigate the sensitivity of your model that way. But it’s hard to interpret what goes on in between, so the CHTC quite literally saved me a lot of time. There were some 
+1,000 simulations in the paper, and HTC by scaling out the workload turned a couple thousand hours of simulation time into two or three hours of wall clock time. It’s a unique tool 
+for this kind of research.”</p>
+
+<p>The next step from this paper’s findings, Blank describes, is providing subject-specific measurements of wave speeds. This involves “understanding if when we use a tensiometer on 
+someone’s Achilles tendon, for example, can we account for the tendon’s shape, size, injury status, etcetera — all of these variables matter when measuring shear wave speeds.” 
+Researchers from the lab can then use wearable tensiometers to measure tension in the Achilles and other tendons to study human movement in the real world.</p>
+
+<p>From his CHTC-supported studies, Blank learned how to design computational research, diagnose different parameter spaces, and manage data. “For my field, it [HTC] is very important
+because people are extremely variable — so our models should be too. The automation and capacity enabled by HTC makes it easy to understand whether our models are useful, and if 
+they are, how best to tune them to inform human biomechanics,” Blank says.</p>
+</div>
+        </div>
+    </div>
+</div>
+
+
 </main>
 <footer id="footer" class="bg-light pt-4 mt-auto">
     <div class="container-xxl">
