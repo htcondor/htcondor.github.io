@@ -906,16 +906,15 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">23.0.2</span> Long Term Support Release</h3>
-        <p>November 20, 2023</p>
+        <h3><span class="text-secondary">23.0.3</span> Long Term Support Release</h3>
+        <p>January  4, 2024</p>
         <div>
             <ul>
-  <li>Fixed a bug when Hashicorp Vault is configured to issue data transfer tokens (which is not the default), job submission could hang and then fail.</li>
-  <li>Improved sandbox and ssh-agent clean up for <code>batch</code> grid universe jobs</li>
-  <li>Fix bug where daemons with a private network address couldn’t communicate</li>
-  <li>Fix cgroup v2 memory enforcement for custom configurations</li>
-  <li>Add <code>DISABLE_SWAP_FOR_JOB</code> support on cgroup v2 systems</li>
-  <li>Fix log rotation for OAuth and Vault credmon daemons</li>
+  <li>Preliminary support for openSUSE LEAP 15</li>
+  <li>All non-zero exit values from file transfer plugins are now errors</li>
+  <li>Fix crash in Python bindings when job submission fails</li>
+  <li>Chirp uses a 5120 byte buffer and errors out for bigger messages</li>
+  <li>condor_adstash now recognizes GPU usage values as floating point numbers</li>
 </ul>
 
         </div>
