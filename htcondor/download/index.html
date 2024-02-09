@@ -1047,15 +1047,15 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">23.0.3</span> Long Term Support Release</h3>
-        <p>January  4, 2024</p>
+        <h3><span class="text-secondary">23.0.4</span> Long Term Support Release</h3>
+        <p>February  9, 2024</p>
         <div>
             <ul>
-  <li>Preliminary support for openSUSE LEAP 15</li>
-  <li>All non-zero exit values from file transfer plugins are now errors</li>
-  <li>Fix crash in Python bindings when job submission fails</li>
-  <li>Chirp uses a 5120 byte buffer and errors out for bigger messages</li>
-  <li>condor_adstash now recognizes GPU usage values as floating point numbers</li>
+  <li>NVIDIA_VISIBLE_DEVICES environment variable lists full uuid of slot GPUs</li>
+  <li>Fix problem where some container jobs would see GPUs not assigned to them</li>
+  <li>Restore condor keyboard monitoring that was broken since HTCondor 23.0.0</li>
+  <li>In condor_adstash, the search engine timeouts now apply to all operations</li>
+  <li>Ensure the prerequisite perl modules are installed for condor_gather_info</li>
 </ul>
 
         </div>
