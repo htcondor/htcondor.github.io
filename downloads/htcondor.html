@@ -906,15 +906,15 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">23.0.4</span> Long Term Support Release</h3>
-        <p>February  8, 2024</p>
+        <h3><span class="text-secondary">23.0.6</span> Long Term Support Release</h3>
+        <p>March 14, 2024</p>
         <div>
             <ul>
-  <li>NVIDIA_VISIBLE_DEVICES environment variable lists full uuid of slot GPUs</li>
-  <li>Fix problem where some container jobs would see GPUs not assigned to them</li>
-  <li>Restore condor keyboard monitoring that was broken since HTCondor 23.0.0</li>
-  <li>In condor_adstash, the search engine timeouts now apply to all operations</li>
-  <li>Ensure the prerequisite perl modules are installed for condor_gather_info</li>
+  <li>Fix DAGMan where descendants of removed retry-able jobs are marked futile</li>
+  <li>Ensure the <code>condor_test_token</code> works correctly when invoked as root</li>
+  <li>Fix bug where empty multi-line values could cause a crash</li>
+  <li><code>condor_qusers</code> returns proper exit code for errors in formatting options</li>
+  <li>Fix crash in job router when a job transform is missing an argument</li>
 </ul>
 
         </div>
