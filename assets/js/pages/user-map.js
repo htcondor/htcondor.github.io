@@ -19,11 +19,12 @@ function getScale(zoom){
     return defaultIconScale * (.5 + (.03*zoom))
 }
 
-function create_marker(location, iconScale, title){
+function create_marker([latitude, longitude], iconScale, title){
+
     // Define jitter in degrees, 10 miles is approximately 1/69 degrees of latitude
     const jitterRangeLat = 10 / 69;
     // Longitude varies, use the cosine of the latitude (in radians)
-    const jitterRangeLng = jitterRangeLat / Math.cos(location[0] * Math.PI / 180);
+    const jitterRangeLng = jitterRangeLat / Math.cos(latitude * Math.PI / 180);
 
     // Create an array to hold the markers
     let markers = [];
@@ -37,11 +38,11 @@ function create_marker(location, iconScale, title){
         const jitterLng = (Math.random() - 0.5) * jitterRangeLng;
 
         // Apply jitter and ensure the latitude and longitude are within bounds
-        const newLat = Math.min(Math.max(location[0] + jitterLat, -90), 90);
-        const newLng = ((location[1] + jitterLng + 180) % 360) - 180;
+        const newLat = Math.min(Math.max(latitude + jitterLat, -90), 90);
+        const newLng = ((longitude + jitterLng + 180) % 360) - 180;
 
         // Create a marker with jitter applied and add it to the array
-        const marker = L.marker([newLat, newLng], {icon: getIcon(iconScale)});
+        const marker = L.marker(L.latLng([newLat, newLng]), {icon: getIcon(iconScale)});
         if(title) {
             marker.bindPopup(title);
         }
@@ -90,8 +91,8 @@ async function get_manual_values() {
 
     let geocodes = data.map(x => {
         return {
-            longitude: parseFloat(x[0]),
-            latitude: parseFloat(x[1])
+            latitude: parseFloat(x[0]),
+            longitude: parseFloat(x[1])
         }
     })
 
@@ -141,7 +142,7 @@ class UserMap {
 
     async addIcons(getter) {
         let iconLocations = await getter()
-        iconLocations.forEach(x => this.addIcon([x['longitude'], x['latitude']], x['Organization Name ( Optional: Add if you want displayed ) ']))
+        iconLocations.forEach(x => this.addIcon([x['latitude'], x['longitude']], x['Organization Name ( Optional: Add if you want displayed ) ']))
         this.updateMarkerCount(iconLocations.length)
     }
 }
