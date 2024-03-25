@@ -99,6 +99,33 @@ async function get_manual_values() {
     return geocodes
 }
 
+async function updated() {
+
+    try {
+        const parentElement = document.getElementById("update-span")
+        let dateElement = document.getElementById("last-updated")
+
+        let response = await fetch("https://api.github.com/repos/CHTC/data-cache/actions/workflows/58845629/runs?status=success")
+        if (!response.ok) {
+            console.error('Failed to fetch data from GitHub API')
+        } else {
+            let data = await response.json()
+            let lastRun = data['workflow_runs'][0]['updated_at']
+
+            const date = new Date(lastRun).toLocaleString()
+
+            if(date === "Invalid Date") {
+                throw new Error("Invalid Date")
+            }
+
+            dateElement.textContent = new Date(lastRun).toLocaleString()
+            parentElement.style.display = "block"
+        }
+    } catch (e) {
+        console.error(e)
+    }
+}
+
 class UserMap {
     constructor() {
         let urlParams = new URLSearchParams(window.location.search)
@@ -153,4 +180,17 @@ function main(){
     map.addIcons(get_manual_values)
 }
 
+function registrationButton() {
+    // If the query parameter iframe is equal to 1, then the button is not shown
+    let url = new URL(window.location);
+    let iFrame = url.searchParams.get("iframe");
+    if (iFrame != "1") {
+        var button = document.getElementById('registration-button');
+        button.style.display = 'block';
+    }
+}
+
+
+updated()
+registrationButton()
 main()
