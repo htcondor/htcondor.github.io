@@ -913,15 +913,14 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">23.0.6</span> Long Term Support Release</h3>
-        <p>March 14, 2024</p>
+        <h3><span class="text-secondary">23.0.8</span> Long Term Support Release</h3>
+        <p>April 11, 2024</p>
         <div>
             <ul>
-  <li>Fix DAGMan where descendants of removed retry-able jobs are marked futile</li>
-  <li>Ensure the <code>condor_test_token</code> works correctly when invoked as root</li>
-  <li>Fix bug where empty multi-line values could cause a crash</li>
-  <li><code>condor_qusers</code> returns proper exit code for errors in formatting options</li>
-  <li>Fix crash in job router when a job transform is missing an argument</li>
+  <li>Fix bug where ssh-agent processes were leaked with grid universe jobs</li>
+  <li>Fix DAGMan crash when a provisioner node was given a parent</li>
+  <li>Fix bug that prevented use of <code>ftp:</code> URLs in file transfer</li>
+  <li>Fix bug where jobs that matched an offline slot never start</li>
 </ul>
 
         </div>
