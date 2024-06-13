@@ -1010,16 +1010,14 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">23.0.10</span> Long Term Support Release</h3>
-        <p>May  9, 2024</p>
+        <h3><span class="text-secondary">23.0.12</span> Long Term Support Release</h3>
+        <p>June 13, 2024</p>
         <div>
             <ul>
-  <li>Preliminary support for Ubuntu 22.04 (Noble Numbat)</li>
-  <li>Warns about deprecated multiple queue statements in a submit file</li>
-  <li>Fix bug where plugins could not signify to retry a file transfer</li>
-  <li>The ‘condor_upgrade_check’ script checks for proper token file permissions</li>
-  <li>Fix bug where the ‘condor_upgrade_check’ script crashes on older platforms</li>
-  <li>The bundled version of apptainer was moved to libexec in the tarball</li>
+  <li>Remote <code>condor_history</code> queries now work the same as local queries</li>
+  <li>Improve error handling when submitting to a remote scheduler via ssh</li>
+  <li>Fix bug on Windows where <code>condor_procd</code> may crash when suspending a job</li>
+  <li>Fix Python binding crash when submitting a DAG which has empty lines</li>
 </ul>
 
         </div>
