@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="robots" content="noindex">
-
+    
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/htcondor/assets/images/favicons/apple-touch-icon.png">
@@ -29,7 +28,7 @@
         
 
         
-            <link rel="canonical" href="https://htcondor.org/experimental/ospool/byoc/example_job.html">
+            <link rel="canonical" href="https://htcondor.org/featured-users/2024-07-23-abstracts-open-european-htcondor-workshop.html">
         
 
         
@@ -727,44 +726,54 @@
 </header>
 
 <main id="main-copy" tabindex="-1">
-    <div class="bg-light mb-4">
-    <hr class="m-0">
-    <div class="container-xxl py-2">
-        <span class="fs-3">an example job</span>
+    
+
+
+
+    <div class="bg-light">
+    <hr class="my-0">
+    <div class="container-xxl">
+        <div class="row">
+            <div class="col-auto">
+                <div class="d-flex my-2">
+                    <span class="fs-4 my-auto">Software News</span>
+                </div>
+            </div>
+            <div class="col-auto d-flex">
+                <div class="d-flex my-2">
+                    <div class="mt-auto mb-1">
+                        <span class="fs-6 mt-auto"><a class="text-decoration-none" href="/htcondor/new.html">View all</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto d-flex">
+                <div class="d-flex my-2">
+                    <div class="mt-auto mb-1">
+                        <span class="fs-6 mt-auto"><a class="text-decoration-none" href="/htcondor/news-archive.html">View Archives</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <hr class="m-0">
+    <hr class="my-0">
 </div>
-<div class="container-xxl pb-4">
-    <div class="row">
-        <div  class="col-12 col-lg-10 col-xl-9 col-xxl-8">
-            <p>You can copy and paste the following submit file; name the file
-<code>example.submit</code> to go along with the recipes.  It needs
-the <code>busybox.sif</code> file to run; see below.</p>
 
-<pre><code>universe                = container
-# singularity pull busybox.sif docker://busybox:latest
-container_image         = busybox.sif
-executable              = /bin/sleep
-arguments               = 1200
+<div class="container-xxl py-4">
+    <div id="news-container" class="row justify-content-center">
+        <div class="col-12 col-lg-10 col-xl-9 col-xxl-8">
+            <h1>European HTCondor Workshop: Abstract Submission Open</h1>
+            <span class="fs-3 text-muted">July 23, 2024</span>
+            
+            <div class="mt-4 fs-5"><p>Share your experiences with HTCSS at the European HTCondor Workshop in Amsterdam!</p>
 
-should_transfer_files   = YES
-output                  = example.output
-error                   = example.err
-log                     = example.log
-
-queue 1
-</code></pre>
-
-<p>You can use <code>singularity pull</code> to obtain <code>busybox.sif</code> from Docker Hub;
-run this command in the same directory that you created the submit file in:</p>
-
-<pre><code>$ singularity pull busybox.sif docker://busybox:latest
-</code></pre>
-
-
+<p>See this <a href="https://www-auth.cs.wisc.edu/lists/htcondor-users/2024-July/msg00085.shtml">recent post</a> in htcondor-users for details.</p>
+</div>
         </div>
     </div>
 </div>
+
+
 </main>
 <footer id="footer" class="bg-light pt-4 mt-auto">
     <div class="container-xxl">
