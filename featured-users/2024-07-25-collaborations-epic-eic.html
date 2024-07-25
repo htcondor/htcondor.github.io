@@ -28,7 +28,7 @@
         
 
         
-            <link rel="canonical" href="https://htcondor.org/instructions/ubuntu/16/stable/">
+            <link rel="canonical" href="https://htcondor.org/featured-users/2024-07-25-collaborations-epic-eic.html">
         
 
         
@@ -726,63 +726,77 @@
 </header>
 
 <main id="main-copy" tabindex="-1">
-    <div class="container-xxl py-4">
-    <p><span class="text-danger">This page is deprecated, visit <a href="https://htcondor.org/downloads/htcondor">the HTCondor download page</a> for updated instructions.</span></p>
-<hr />
+    
 
-<h1>Install Instructions</h1>
 
-<!-- Page body -->
 
-<h3>Ubuntu 16.04 (Xenial Xerus)</h3>
-<ol>
-    <li>
-        Setup the repository
-        <ol type="a">
-            <li>
-                Install the HTCondor repository key
-                <pre>$ wget -qO - https://research.cs.wisc.edu/htcondor/ubuntu/HTCondor-Release.gpg.key | sudo apt-key add -</pre>
-            </li>
-            <li>
-                Add the HTCondor repository (running as the root user)
-                <pre># echo "deb http://research.cs.wisc.edu/htcondor/ubuntu/8.8/xenial xenial contrib" &gt;&gt; /etc/apt/sources.list
-# echo "deb-src http://research.cs.wisc.edu/htcondor/ubuntu/8.8/xenial xenial contrib" &gt;&gt; /etc/apt/sources.list</pre>
-            </li>
-        </ol>
-    </li>
-    <li>
-        Install HTCondor
-        <pre>$ sudo apt-get update
-$ sudo apt-get install htcondor # or minihtcondor</pre>
-    </li>
-    <li>
-        Start it running
-        <pre># systemctl start condor
-# systemctl enable condor</pre>
-    </li>
-    <li>
-        Check that it is running
-        <pre>$ ps ax | grep condor</pre>
-		Note that if condor is NOT running, the only output of this ps command will look like this:
-		<pre>$ ps auxww | grep condor
-user    1466  0.0  0.0  14736  1048 pts/1    S+   13:05   0:00 grep condor</pre>
-		If condor is running, you will see several lines of output, something like this:
-		<pre>user    1433  0.0  0.0  14736  1092 pts/1    S+   13:05   0:00 grep condor
-user    6404  0.0  0.0  72488 12956 ?        Ss    2020   0:55 condor_master -f
-user   27159  0.0  0.0  27888  6084 ?        S     2020   1:11 condor_procd -A /var/log/procd_pipe -L /var/log/ProcLog -R 1000000 -S 60 -D -C 28297
-user   27201  0.0  0.0  60744 12620 ?        Ss    2020   4:04 condor_collector
-user   27202  0.0  0.0  62016 14124 ?        Ss    2020   0:35 condor_schedd
-user   27203  0.0  0.0  60784 12576 ?        Ss    2020   2:20 condor_negotiator
-user   27204  0.0  0.3 103864 55784 ?        Ss    2020   3:14 condor_startd
-</pre>
-    </li>
-</ol>
-
-<p>
-    Instructions on how to install other Linux distributions can be found on the <a href="/htcondor/instructions">Install Instructions page</a>.
-</p>
-
+    <div class="bg-light">
+    <hr class="my-0">
+    <div class="container-xxl">
+        <div class="row">
+            <div class="col-auto">
+                <div class="d-flex my-2">
+                    <span class="fs-4 my-auto">Featured User</span>
+                </div>
+            </div>
+            <div class="col-auto d-flex">
+                <div class="d-flex my-2">
+                    <div class="mt-auto mb-1">
+                        <span class="fs-6 mt-auto"><a class="text-decoration-none" href="/htcondor/featured-users.html">View all</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="my-0">
 </div>
+
+<div class="container-xxl py-4">
+    <div id="news-container" class="row justify-content-center">
+        <div class="col-12 col-lg-10 col-xl-9 col-xxl-8">
+            <h1>Collaborations Between Two National Laboratories and the OSG Consortium Propel Nuclear and High-Energy Physics Forward</h1>
+            <div class="row justify-content-between">
+                
+                <div class="col-auto">
+                    <span class="fs-4 text-muted">Cristina Encarnacion</span>
+                </div>
+                
+                <div class="col-auto">
+                    <span class="fs-4 text-muted">July 25, 2024</span>
+                </div>
+            </div>
+
+            
+            <div class="mt-4 fs-5"><figure>
+<img style="width:100%" src="https://raw.githubusercontent.com/CHTC/Articles/main/images/epic-eic-collab.jpg" alt=" Electron Beam Ion Source / Brookhaven National Laboratory" />
+<figcaption>Electron Beam Ion Source / Brookhaven National Laboratory</figcaption>
+</figure>
+
+<p>Seeking to unlock the secrets of the “glue” binding visible matter in the universe, the <a href="https://www.bnl.gov/eic/epic.php">ePIC Collaboration</a> stands at the forefront of innovation. Led by a collective of hundreds of scientists and engineers, the Electron-Proton/Ion Collider (ePIC) Collaboration was formed to design, build, and operate the first experiment at the <a href="https://www.bnl.gov/eic/">Electron-Ion Collider</a> (EIC). This experiment aims to construct the world’s most advanced particle detector, capable of analyzing collisions between electrons and protons or other atomic nuclei.</p>
+
+<p>“They are building a detector that can slide seamlessly into EIC’s infrastructure. When these collisions occur, they will capture a wealth of physics data that advances our understanding of high-energy nuclear interactions. The outcomes of these collisions allow us to explore new frontiers in physics” reports Pascal Paschos, the OSG Consortium Facilitator who supports the work of ePIC. Paschos oversees the collaborations’ access to computational capacity necessary to conduct these experiments.</p>
+
+<p>The EIC, developed by the collaboration between <a href="https://www.bnl.gov/about/">Brookhaven National Lab</a> (BNL) and <a href="https://www.jlab.org/">Jefferson Lab</a> (JLab), will be the world’s first electron-nucleus collider of its kind. It features two intersecting accelerators—one generating a powerful polarized electron beam and the other a high-energy beam of polarized protons or heavier atomic nuclei. However, ePIC faces the challenge of validating the detector design for integration with the EIC. Paschos explains, “To validate the detector design, throughput capacity is required to model and experimentally simulate the detector. The goal is to evaluate how the detector would respond to signals generated from theoretical collisions included in their parameter files.”</p>
+
+<p>“This project isn’t new,” adds <a href="http://wouterdeconinck.com/">Dr. Wouter Deconinck</a>, associate professor at the University of Manitoba and Deputy Software and Computing Coordinator (SCC) for Operations at ePIC. “Concepts for an electron-ion collider have been in development for 20 or 30 years, aiming to include a polarized ion beam.” Drawing on his experience at the <a href="https://en.wikipedia.org/wiki/HERA_(particle_accelerator)">HERA</a> electron-proton collider and post-graduate work in electron polarimetry, Deconinck, alongside BNL postdoctoral fellow <a href="https://www.bnl.gov/staff/srahman1">Sakib Rahman</a>, explains, “Since 2008, we’ve been evaluating the computing and software stacks needed for an electron-ion collider. Planning for operation into the 2030s necessitates future-proof and modular development to incorporate emerging technologies.”</p>
+
+<p>Achieving a unified system is one important goal for the project. ePIC requires an infrastructure capable of simulating and gathering essential data for their design. One option was the <a href="https://osg-htc.org/services/open_science_pool.html">OSPool</a>, a shared computing capacity available to researchers affiliated with US academic institutions. Deconinck and Rahman considered other computing infrastructures for these simulation jobs. Deconinck notes, “We evaluated the OSPool and compared it with the EIC pool of resources available at JLab, BNL and the <a href="https://alliancecan.ca/en">Digital Research Alliance of Canada</a>  (the Alliance.) Both pools were capable of handling about 2000 jobs at a time.” Ultimately selecting the OSPool, Deconinck notes,“We saw it as a way to convince JLab to allocate jobs to the OSPool indirectly, transferring jobs to the Alliance, and continuing to submit to the OSPool. The primary advantage was achieving a unified interface across all these sites.”</p>
+
+<p>Rahman also emphasizes OSPool’s role in the integrated system, stating, “Previously, someone had to create accounts on every site to submit jobs. Now, running production campaigns, others need an account on one <a href="https://path-cc.io/about/">PATh</a> operated Access Point, with their work credited to ePIC. This detachment from individual operators and alignment with the project as a whole significantly reduces onboarding time.”</p>
+
+<p>Scalability is also an essential requirement of the project. “Typically, we consider the time to simulate one event, estimated at 10-15 seconds per event using standard computing software,” Deconinck explains. “Based on this and statistical projections for the number of events to analyze, we calculate our total computing needs. For each reaction channel, we typically examine 5 to 10-20 million events to determine if a detector configuration yields desired results.”</p>
+
+<p>Deconinck also reports that “One aspect I found immensely valuable was the initial interaction with the OSPool. Upon setting up an account, I received personalized attention from the OSG Research Computing Facilitation team, with someone guiding me through the process and inquiring about my approach. What truly made a significant impact were the office hours provided. There were weeks where I attended these sessions twice, and without fail, there was always someone available to offer assistance and feedback. This support was instrumental in getting us started.”</p>
+
+<p>The OSPool enables Deconinck, Rahman, and teams to collaborate seamlessly worldwide in partnership with 173 institutions. “The engagement of ePIC with the OSG fabric of services brings two major laboratories into the fold, helping coordinate between them for the delivery of science,” adds Paschos. “The collaboration itself extends beyond individual PIs aiming to advance scientific outcomes; it encompasses engagement at all levels, from technical teams to geographically diverse points of interest.”</p>
+
+<p>Collaboration is the cornerstone of success in multi-institutional projects like these. The synergy between the OSPool, two major national laboratories, and international teams exemplifies the power of collective effort in propelling physics science forward. Overcoming challenges and achieving groundbreaking discoveries requires a village of dedicated scientists, engineers, and collaborators from diverse backgrounds. Much like the “glue” binding visible matter, teamwork unites the ePIC Collaboration, magnifying their impact beyond the lab. Their journey powered by the OSPool capacity underscores the transformative power of cooperation and sharing in unraveling the mysteries of our universe.</p>
+</div>
+        </div>
+    </div>
+</div>
+
+
 </main>
 <footer id="footer" class="bg-light pt-4 mt-auto">
     <div class="container-xxl">
