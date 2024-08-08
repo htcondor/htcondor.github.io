@@ -829,17 +829,18 @@
 
 <div id="feature-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">23.8.1</span> Feature Release</h3>
-        <p>June 27, 2024</p>
+        <h3><span class="text-secondary">23.9.6</span> Feature Release</h3>
+        <p>August  8, 2024</p>
         <div>
             <ul>
-  <li>Add new condor-ap package to facilitate Access Point installation</li>
-  <li>HTCondor Docker images are now based on Alma Linux 9</li>
-  <li>HTCondor Docker images are now available for the arm64 CPU architecture</li>
-  <li>The user can now choose which submit method DAGMan will use</li>
-  <li>Can add custom attributes to the User ClassAd with <code>condor_qusers -edit</code></li>
-  <li>Add use-projection option to <code>condor_gangliad</code> to reduce memory footprint</li>
-  <li>Fix bug where interactive submit does not work on cgroup v2 systems (EL9)</li>
+  <li>Add config knob to not have cgroups count kernel memory for jobs on EL9</li>
+  <li>Remove support for numeric unit suffixes (k,M,G) in ClassAd expressions</li>
+  <li>In submit files, request_disk &amp; request_memory still accept unit suffixes</li>
+  <li>Hide GPUs not allocated to the job on cgroup v2 systems such as EL9</li>
+  <li>DAGMan can now produce credentials when using direct submission</li>
+  <li>Singularity jobs have a contained home directory when file transfer is on</li>
+  <li>Avoid using IPv6 link local addresses when resolving hostname to IP addr</li>
+  <li>New ‘htcondor credential’ command to aid in debugging</li>
 </ul>
 
         </div>
