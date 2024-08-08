@@ -864,14 +864,15 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">23.0.12</span> Long Term Support Release</h3>
-        <p>June 13, 2024</p>
+        <h3><span class="text-secondary">23.0.14</span> Long Term Support Release</h3>
+        <p>August  8, 2024</p>
         <div>
             <ul>
-  <li>Remote <code>condor_history</code> queries now work the same as local queries</li>
-  <li>Improve error handling when submitting to a remote scheduler via ssh</li>
-  <li>Fix bug on Windows where <code>condor_procd</code> may crash when suspending a job</li>
-  <li>Fix Python binding crash when submitting a DAG which has empty lines</li>
+  <li>Docker and Container jobs run on EPs that match AP’s CPU architecture</li>
+  <li>Fixed premature cleanup of credentials by the condor_credd</li>
+  <li>Fixed bug where a malformed SciToken could cause a condor_schedd crash</li>
+  <li>Fixed crash in condor_annex script</li>
+  <li>Fixed daemon crash after IDTOKEN request is approved by the collector</li>
 </ul>
 
         </div>
