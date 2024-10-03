@@ -1031,6 +1031,50 @@
 
       
         <div class="d-flex flex-row">
+          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-10-1">23.10.1</a></b>
+          <span class="px-1">-</span>
+          <span>October  3, 2024</span>
+        </div>
+      
+      <div class="mt-2">
+        <ul>
+  <li>Improvements to disk usage enforcement when using LVM
+    <ul>
+      <li>Can encrypt job sandboxes when using LVM</li>
+      <li>More precise tracking of disk usage when using LVM</li>
+      <li>Reduced disk usage tracking overhead</li>
+    </ul>
+  </li>
+  <li>Improvements tracking CPU and memory usage with cgroup v2 (on EL9)
+    <ul>
+      <li>Don’t count kernel cache pages against job’s memory usage</li>
+      <li>Avoid rare inclusion of previous job’s CPU and peak memory usage</li>
+    </ul>
+  </li>
+  <li>HTCondor now re-checks DNS before re-connecting to a collector</li>
+  <li>HTCondor now writes out per job epoch history</li>
+  <li>HTCondor can encrypt network connections without requiring authentication</li>
+  <li>htcondor CLI can now show status for local server, AP, and CM</li>
+  <li>htcondor CLI can now display OAUTH2 credentials</li>
+  <li>Uses job’s sandbox to convert image format for Singularity/Apptainer</li>
+  <li>Bug fix to not lose GPUs in Docker jobs on systemd reconfig</li>
+  <li>Bug fix for PID namespaces and <code>condor_ssh_to_job</code> on EL9</li>
+</ul>
+
+      </div>
+    
+      
+
+
+
+
+
+
+
+
+
+      
+        <div class="d-flex flex-row">
           <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-9-6">23.9.6</a></b>
           <span class="px-1">-</span>
           <span>August  8, 2024</span>
