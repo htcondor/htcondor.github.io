@@ -1006,12 +1006,29 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">23.0.17</span> Long Term Support Release</h3>
-        <p>October 24, 2024</p>
+        <h3><span class="text-secondary">24.0.1</span> Long Term Support Release</h3>
+        <p>November  1, 2024</p>
         <div>
-            <ul>
-  <li>Bug fix for PID namespaces and condor_ssh_to_job on EL9</li>
-  <li>Augment condor_upgrade_check to find unit suffixes in ClassAd expressions</li>
+            <p>Improvements from the HTCondor 23.x feature series</p>
+<ul>
+  <li>Improved tracking and enforcement of disk usage by using LVM</li>
+  <li>Enhancements to the htcondor CLI tool</li>
+  <li>cgroup v2 support for tracking and enforcement of CPU and memory usage</li>
+  <li>Leverage cgroups to hide GPUs not allocated to the job</li>
+  <li>DAGMan can now produce job credentials when using direct submit</li>
+  <li>New submit commands to aid in matching specific GPU requirements</li>
+  <li>New implementation of the Python bindings, htcondor2 and classad2</li>
+  <li>Improved default security configuration</li>
+  <li>Significant reduction in memory and CPU usage on the Central Manager</li>
+</ul>
+
+<p>Additional highlights:</p>
+<ul>
+  <li>Support for GPUs using AMD’s HIP 6 library</li>
+  <li>Fix bugs when -divide or -repeat was used in GPU detection</li>
+  <li>Proper error message and hold when Docker emits multi-line error message</li>
+  <li>Fix issue where an unresponsive libvirtd blocked an EP from starting up</li>
+  <li>The htcondor CLI now works on Windows</li>
 </ul>
 
         </div>
@@ -1036,10 +1053,10 @@
             channels.
         </p>
         <p>
-            Consultation of the <a href="https://htcondor.readthedocs.io/en/lts/version-history/lts-versions-23-0.html">Detailed Notes</a> recommended prior to upgrading.
+            Consultation of the <a href="https://htcondor.readthedocs.io/en/lts/version-history/lts-versions-24-0.html">Detailed Notes</a> recommended prior to upgrading.
         </p>
         <div>
-            <a class="btn btn-primary me-3" href="https://htcondor.readthedocs.io/en/23.0/getting-htcondor/index.html">Installation Guide</a>
+            <a class="btn btn-primary me-3" href="https://htcondor.readthedocs.io/en/24.0/getting-htcondor/index.html">Installation Guide</a>
             <a class="btn btn-primary" href="/htcondor/htcondor/release-highlights/index.html#long-term-support-channel">Release Notes</a>
         </div>
     </div>
