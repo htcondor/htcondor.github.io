@@ -985,7 +985,7 @@
         <h3>Feature Channel</h3>
       </div>
       <div class="col-auto d-flex ps-sm-0">
-        <b class="my-auto"><a class="text-secondary" href="https://htcondor.readthedocs.io/en/latest/version-history/feature-versions-23-x.html">Detailed Notes &#11023;</a></b>
+        <b class="my-auto"><a class="text-secondary" href="https://htcondor.readthedocs.io/en/latest/version-history/feature-versions-24-x.html">Detailed Notes &#11023;</a></b>
       </div>
     </div>
     <div class="my-2">
@@ -1031,367 +1031,17 @@
 
       
         <div class="d-flex flex-row">
-          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-10-2">23.10.2</a></b>
+          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/24.x/version-history/feature-versions-24-x.html#version-24-1-1">24.1.1</a></b>
           <span class="px-1">-</span>
           <span>November  1, 2024</span>
         </div>
       
       <div class="mt-2">
         <ul>
-  <li>Fix for output file transfer errors obscuring input file transfer errors</li>
-</ul>
-
-      </div>
-    
-      
-
-
-
-
-
-
-
-
-
-      
-        <div class="d-flex flex-row">
-          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-10-1">23.10.1</a></b>
-          <span class="px-1">-</span>
-          <span>October  3, 2024</span>
-        </div>
-      
-      <div class="mt-2">
-        <ul>
-  <li>Improvements to disk usage enforcement when using LVM
-    <ul>
-      <li>Can encrypt job sandboxes when using LVM</li>
-      <li>More precise tracking of disk usage when using LVM</li>
-      <li>Reduced disk usage tracking overhead</li>
-    </ul>
-  </li>
-  <li>Improvements tracking CPU and memory usage with cgroup v2 (on EL9)
-    <ul>
-      <li>Don’t count kernel cache pages against job’s memory usage</li>
-      <li>Avoid rare inclusion of previous job’s CPU and peak memory usage</li>
-    </ul>
-  </li>
-  <li>HTCondor now re-checks DNS before re-connecting to a collector</li>
-  <li>HTCondor now writes out per job epoch history</li>
-  <li>HTCondor can encrypt network connections without requiring authentication</li>
-  <li>htcondor CLI can now show status for local server, AP, and CM</li>
-  <li>htcondor CLI can now display OAUTH2 credentials</li>
-  <li>Uses job’s sandbox to convert image format for Singularity/Apptainer</li>
-  <li>Bug fix to not lose GPUs in Docker jobs on systemd reconfig</li>
-  <li>Bug fix for PID namespaces and <code>condor_ssh_to_job</code> on EL9</li>
-</ul>
-
-      </div>
-    
-      
-
-
-
-
-
-
-
-
-
-      
-        <div class="d-flex flex-row">
-          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-9-6">23.9.6</a></b>
-          <span class="px-1">-</span>
-          <span>August  8, 2024</span>
-        </div>
-      
-      <div class="mt-2">
-        <ul>
-  <li>Add config knob to not have cgroups count kernel memory for jobs on EL9</li>
-  <li>Remove support for numeric unit suffixes (k,M,G) in ClassAd expressions</li>
-  <li>In submit files, request_disk &amp; request_memory still accept unit suffixes</li>
-  <li>Hide GPUs not allocated to the job on cgroup v2 systems such as EL9</li>
-  <li>DAGMan can now produce credentials when using direct submission</li>
-  <li>Singularity jobs have a contained home directory when file transfer is on</li>
-  <li>Avoid using IPv6 link local addresses when resolving hostname to IP addr</li>
-  <li>New ‘htcondor credential’ command to aid in debugging</li>
-</ul>
-
-      </div>
-    
-      
-
-
-
-
-
-
-
-
-
-      
-        <div class="d-flex flex-row">
-          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-8-1">23.8.1</a></b>
-          <span class="px-1">-</span>
-          <span>June 27, 2024</span>
-        </div>
-      
-      <div class="mt-2">
-        <ul>
-  <li>Add new condor-ap package to facilitate Access Point installation</li>
-  <li>HTCondor Docker images are now based on Alma Linux 9</li>
-  <li>HTCondor Docker images are now available for the arm64 CPU architecture</li>
-  <li>The user can now choose which submit method DAGMan will use</li>
-  <li>Can add custom attributes to the User ClassAd with <code>condor_qusers -edit</code></li>
-  <li>Add use-projection option to <code>condor_gangliad</code> to reduce memory footprint</li>
-  <li>Fix bug where interactive submit does not work on cgroup v2 systems (EL9)</li>
-</ul>
-
-      </div>
-    
-      
-
-
-
-
-
-
-
-
-
-      
-        <div class="d-flex flex-row">
-          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-7-2">23.7.2</a></b>
-          <span class="px-1">-</span>
-          <span>May 21, 2024</span>
-        </div>
-      
-      <div class="mt-2">
-        <ul>
-  <li>Warns about deprecated multiple queue statements in a submit file</li>
-  <li>The semantics of <code>skip_if_dataflow</code> have been improved</li>
-  <li>Removing large DAGs is now non-blocking, preserving schedd performance</li>
-  <li>Periodic policy expressions are now checked during input file transfer</li>
-  <li>Local universe jobs can now specify a container image</li>
-  <li>File transfer plugins can now advertise extra attributes</li>
-  <li>DAGMan can rescue and abort if pending jobs are missing from the job queue</li>
-  <li>Fix so <code>condor_submit -interactive</code> works on cgroup v2 execution points</li>
-</ul>
-
-      </div>
-    
-      
-
-
-
-
-
-
-
-
-
-      
-        <div class="d-flex flex-row">
-          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-6-2">23.6.2</a></b>
-          <span class="px-1">-</span>
-          <span>April 25, 2024</span>
-        </div>
-      
-      <div class="mt-2">
-        <ul>
-  <li>Fix bug where file transfer plugin error was not in hold reason code</li>
-</ul>
-
-      </div>
-    
-      
-
-
-
-
-
-
-
-
-
-      
-        <div class="d-flex flex-row">
-          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-6-1">23.6.1</a></b>
-          <span class="px-1">-</span>
-          <span>April 15, 2024</span>
-        </div>
-      
-      <div class="mt-2">
-        <ul>
-  <li>Add the ability to force vanilla universe jobs to run in a container</li>
-  <li>Add the ability to override the entrypoint for a Docker image</li>
-  <li>condor_q -better-analyze includes units for memory and disk quantities</li>
-</ul>
-
-      </div>
-    
-      
-
-
-
-
-
-
-
-
-
-      
-        <div class="d-flex flex-row">
-          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-5-2">23.5.2</a></b>
-          <span class="px-1">-</span>
-          <span>March 14, 2024</span>
-        </div>
-      
-      <div class="mt-2">
-        <ul>
-  <li>Old ClassAd based syntax is disabled by default for the job router</li>
-  <li>Can efficiently manage/enforce disk space using LVM partitions</li>
-  <li>GPU discovery is enabled on all Execution Points by default</li>
-  <li>Prevents accessing unallocated GPUs using cgroup v1 enforcement</li>
-  <li>New <code>condor_submit</code> commands for constraining GPU properties</li>
-  <li>Add ability to transfer EP’s starter log back to the Access Point</li>
-  <li>Can use VOMS attributes when mapping identities of SSL connections</li>
-  <li>The CondorVersion string contains the source git SHA</li>
-</ul>
-
-      </div>
-    
-      
-
-
-
-
-
-
-
-
-
-      
-        <div class="d-flex flex-row">
-          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-4-0">23.4.0</a></b>
-          <span class="px-1">-</span>
-          <span>February  8, 2024</span>
-        </div>
-      
-      <div class="mt-2">
-        <ul>
-  <li>condor_submit warns about unit-less request_disk and request_memory</li>
-  <li>Separate condor-credmon-local RPM package provides local SciTokens issuer</li>
-  <li>Fix bug where NEGOTIATOR_SLOT_CONSTRAINT was ignored since version 23.3.0</li>
-  <li>The htcondor command line tool can process multiple event logs at once</li>
-  <li>Prevent Docker daemon from keeping a duplicate copy of the job’s stdout</li>
-</ul>
-
-      </div>
-    
-      
-
-
-
-
-
-
-
-
-
-      
-        <div class="d-flex flex-row">
-          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-3-1">23.3.1</a></b>
-          <span class="px-1">-</span>
-          <span>January 23, 2024</span>
-        </div>
-      
-      <div class="mt-2">
-        <ul>
-  <li>HTCondor tarballs now contain <a href="https://github.com/PelicanPlatform/pelican/releases/tag/v7.4.0">Pelican 7.4.0</a></li>
-</ul>
-
-      </div>
-    
-      
-
-
-
-
-
-
-
-
-
-      
-        <div class="d-flex flex-row">
-          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-3-0">23.3.0</a></b>
-          <span class="px-1">-</span>
-          <span>January  4, 2024</span>
-        </div>
-      
-      <div class="mt-2">
-        <ul>
-  <li>Restore limited support for Enterprise Linux 7 systems</li>
-  <li>Additional assistance converting old syntax job routes to new syntax</li>
-  <li>Able to capture output to debug DAGMan PRE and POST scripts</li>
-  <li>Execution Points advertise when jobs are running with cgroup enforcement</li>
-  <li>All the fixes from HTCondor 23.0.3 LTS</li>
-</ul>
-
-      </div>
-    
-      
-
-
-
-
-
-
-
-
-
-      
-        <div class="d-flex flex-row">
-          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-2-0">23.2.0</a></b>
-          <span class="px-1">-</span>
-          <span>November 29, 2023</span>
-        </div>
-      
-      <div class="mt-2">
-        <ul>
-  <li>Add <code>periodic_vacate</code> submit command to restart jobs that are stuck</li>
-  <li>Execution Points now advertise whether or not the execute directory is on rotational storage</li>
-  <li>Add termination log events that report the time a job was running and the time that a job occupied a slot</li>
-  <li>Files written by HTCondor are now written in binary mode on Windows</li>
-  <li>HTCondor now uses the Pelican Platform for OSDF file transfers</li>
-</ul>
-
-      </div>
-    
-      
-
-
-
-
-
-
-
-
-
-      
-        <div class="d-flex flex-row">
-          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-1-0">23.1.0</a></b>
-          <span class="px-1">-</span>
-          <span>October 31, 2023</span>
-        </div>
-      
-      <div class="mt-2">
-        <ul>
-  <li>Add HTCondor Python wheels in PyPI for the aarch64 CPU architecture</li>
-  <li>Enhanced filtering with ‘condor_watch_q’</li>
-  <li>The Access Point can now be told to use a non-standard ssh port when sending jobs to a remote scheduling system (such as Slurm).</li>
-  <li>Laid groundwork to allow an Execution Point running without root access to accurately limit the job’s usage of CPU and Memory in real time via Linux kernel cgroups; this is particularly interesting for glidein pools.</li>
-  <li>HTCondor file transfers using HTTPS can now utilize CA certificates in a non-standard location</li>
+  <li>Can print contents of stored OAuth2 credential with htcondor CLI tool</li>
+  <li>In DAGMan, inline submit descriptions work when not submitting directly</li>
+  <li>By default, put Docker jobs on hold when CPU architecture doesn’t match</li>
+  <li>Detects and deletes invalid checkpoint and reschedules job</li>
 </ul>
 
       </div>
@@ -1420,6 +1070,383 @@
 
 
 
+      
+        
+
+
+
+
+
+
+
+
+
+        
+          <div class="d-flex flex-row">
+            <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-10-2">23.10.2</a></b>
+            <span class="px-1">-</span>
+            <span>November  1, 2024</span>
+          </div>
+          
+        <div class="mt-2">
+          <ul>
+  <li>Fix for output file transfer errors obscuring input file transfer errors</li>
+</ul>
+
+        </div>
+      
+        
+
+
+
+
+
+
+
+
+
+        
+          <div class="d-flex flex-row">
+            <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-10-1">23.10.1</a></b>
+            <span class="px-1">-</span>
+            <span>October  3, 2024</span>
+          </div>
+          
+        <div class="mt-2">
+          <ul>
+  <li>Improvements to disk usage enforcement when using LVM
+    <ul>
+      <li>Can encrypt job sandboxes when using LVM</li>
+      <li>More precise tracking of disk usage when using LVM</li>
+      <li>Reduced disk usage tracking overhead</li>
+    </ul>
+  </li>
+  <li>Improvements tracking CPU and memory usage with cgroup v2 (on EL9)
+    <ul>
+      <li>Don’t count kernel cache pages against job’s memory usage</li>
+      <li>Avoid rare inclusion of previous job’s CPU and peak memory usage</li>
+    </ul>
+  </li>
+  <li>HTCondor now re-checks DNS before re-connecting to a collector</li>
+  <li>HTCondor now writes out per job epoch history</li>
+  <li>HTCondor can encrypt network connections without requiring authentication</li>
+  <li>htcondor CLI can now show status for local server, AP, and CM</li>
+  <li>htcondor CLI can now display OAUTH2 credentials</li>
+  <li>Uses job’s sandbox to convert image format for Singularity/Apptainer</li>
+  <li>Bug fix to not lose GPUs in Docker jobs on systemd reconfig</li>
+  <li>Bug fix for PID namespaces and <code>condor_ssh_to_job</code> on EL9</li>
+</ul>
+
+        </div>
+      
+        
+
+
+
+
+
+
+
+
+
+        
+          <div class="d-flex flex-row">
+            <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-9-6">23.9.6</a></b>
+            <span class="px-1">-</span>
+            <span>August  8, 2024</span>
+          </div>
+          
+        <div class="mt-2">
+          <ul>
+  <li>Add config knob to not have cgroups count kernel memory for jobs on EL9</li>
+  <li>Remove support for numeric unit suffixes (k,M,G) in ClassAd expressions</li>
+  <li>In submit files, request_disk &amp; request_memory still accept unit suffixes</li>
+  <li>Hide GPUs not allocated to the job on cgroup v2 systems such as EL9</li>
+  <li>DAGMan can now produce credentials when using direct submission</li>
+  <li>Singularity jobs have a contained home directory when file transfer is on</li>
+  <li>Avoid using IPv6 link local addresses when resolving hostname to IP addr</li>
+  <li>New ‘htcondor credential’ command to aid in debugging</li>
+</ul>
+
+        </div>
+      
+        
+
+
+
+
+
+
+
+
+
+        
+          <div class="d-flex flex-row">
+            <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-8-1">23.8.1</a></b>
+            <span class="px-1">-</span>
+            <span>June 27, 2024</span>
+          </div>
+          
+        <div class="mt-2">
+          <ul>
+  <li>Add new condor-ap package to facilitate Access Point installation</li>
+  <li>HTCondor Docker images are now based on Alma Linux 9</li>
+  <li>HTCondor Docker images are now available for the arm64 CPU architecture</li>
+  <li>The user can now choose which submit method DAGMan will use</li>
+  <li>Can add custom attributes to the User ClassAd with <code>condor_qusers -edit</code></li>
+  <li>Add use-projection option to <code>condor_gangliad</code> to reduce memory footprint</li>
+  <li>Fix bug where interactive submit does not work on cgroup v2 systems (EL9)</li>
+</ul>
+
+        </div>
+      
+        
+
+
+
+
+
+
+
+
+
+        
+          <div class="d-flex flex-row">
+            <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-7-2">23.7.2</a></b>
+            <span class="px-1">-</span>
+            <span>May 21, 2024</span>
+          </div>
+          
+        <div class="mt-2">
+          <ul>
+  <li>Warns about deprecated multiple queue statements in a submit file</li>
+  <li>The semantics of <code>skip_if_dataflow</code> have been improved</li>
+  <li>Removing large DAGs is now non-blocking, preserving schedd performance</li>
+  <li>Periodic policy expressions are now checked during input file transfer</li>
+  <li>Local universe jobs can now specify a container image</li>
+  <li>File transfer plugins can now advertise extra attributes</li>
+  <li>DAGMan can rescue and abort if pending jobs are missing from the job queue</li>
+  <li>Fix so <code>condor_submit -interactive</code> works on cgroup v2 execution points</li>
+</ul>
+
+        </div>
+      
+        
+
+
+
+
+
+
+
+
+
+        
+          <div class="d-flex flex-row">
+            <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-6-2">23.6.2</a></b>
+            <span class="px-1">-</span>
+            <span>April 25, 2024</span>
+          </div>
+          
+        <div class="mt-2">
+          <ul>
+  <li>Fix bug where file transfer plugin error was not in hold reason code</li>
+</ul>
+
+        </div>
+      
+        
+
+
+
+
+
+
+
+
+
+        
+          <div class="d-flex flex-row">
+            <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-6-1">23.6.1</a></b>
+            <span class="px-1">-</span>
+            <span>April 15, 2024</span>
+          </div>
+          
+        <div class="mt-2">
+          <ul>
+  <li>Add the ability to force vanilla universe jobs to run in a container</li>
+  <li>Add the ability to override the entrypoint for a Docker image</li>
+  <li>condor_q -better-analyze includes units for memory and disk quantities</li>
+</ul>
+
+        </div>
+      
+        
+
+
+
+
+
+
+
+
+
+        
+          <div class="d-flex flex-row">
+            <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-5-2">23.5.2</a></b>
+            <span class="px-1">-</span>
+            <span>March 14, 2024</span>
+          </div>
+          
+        <div class="mt-2">
+          <ul>
+  <li>Old ClassAd based syntax is disabled by default for the job router</li>
+  <li>Can efficiently manage/enforce disk space using LVM partitions</li>
+  <li>GPU discovery is enabled on all Execution Points by default</li>
+  <li>Prevents accessing unallocated GPUs using cgroup v1 enforcement</li>
+  <li>New <code>condor_submit</code> commands for constraining GPU properties</li>
+  <li>Add ability to transfer EP’s starter log back to the Access Point</li>
+  <li>Can use VOMS attributes when mapping identities of SSL connections</li>
+  <li>The CondorVersion string contains the source git SHA</li>
+</ul>
+
+        </div>
+      
+        
+
+
+
+
+
+
+
+
+
+        
+          <div class="d-flex flex-row">
+            <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-4-0">23.4.0</a></b>
+            <span class="px-1">-</span>
+            <span>February  8, 2024</span>
+          </div>
+          
+        <div class="mt-2">
+          <ul>
+  <li>condor_submit warns about unit-less request_disk and request_memory</li>
+  <li>Separate condor-credmon-local RPM package provides local SciTokens issuer</li>
+  <li>Fix bug where NEGOTIATOR_SLOT_CONSTRAINT was ignored since version 23.3.0</li>
+  <li>The htcondor command line tool can process multiple event logs at once</li>
+  <li>Prevent Docker daemon from keeping a duplicate copy of the job’s stdout</li>
+</ul>
+
+        </div>
+      
+        
+
+
+
+
+
+
+
+
+
+        
+          <div class="d-flex flex-row">
+            <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-3-1">23.3.1</a></b>
+            <span class="px-1">-</span>
+            <span>January 23, 2024</span>
+          </div>
+          
+        <div class="mt-2">
+          <ul>
+  <li>HTCondor tarballs now contain <a href="https://github.com/PelicanPlatform/pelican/releases/tag/v7.4.0">Pelican 7.4.0</a></li>
+</ul>
+
+        </div>
+      
+        
+
+
+
+
+
+
+
+
+
+        
+          <div class="d-flex flex-row">
+            <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-3-0">23.3.0</a></b>
+            <span class="px-1">-</span>
+            <span>January  4, 2024</span>
+          </div>
+          
+        <div class="mt-2">
+          <ul>
+  <li>Restore limited support for Enterprise Linux 7 systems</li>
+  <li>Additional assistance converting old syntax job routes to new syntax</li>
+  <li>Able to capture output to debug DAGMan PRE and POST scripts</li>
+  <li>Execution Points advertise when jobs are running with cgroup enforcement</li>
+  <li>All the fixes from HTCondor 23.0.3 LTS</li>
+</ul>
+
+        </div>
+      
+        
+
+
+
+
+
+
+
+
+
+        
+          <div class="d-flex flex-row">
+            <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-2-0">23.2.0</a></b>
+            <span class="px-1">-</span>
+            <span>November 29, 2023</span>
+          </div>
+          
+        <div class="mt-2">
+          <ul>
+  <li>Add <code>periodic_vacate</code> submit command to restart jobs that are stuck</li>
+  <li>Execution Points now advertise whether or not the execute directory is on rotational storage</li>
+  <li>Add termination log events that report the time a job was running and the time that a job occupied a slot</li>
+  <li>Files written by HTCondor are now written in binary mode on Windows</li>
+  <li>HTCondor now uses the Pelican Platform for OSDF file transfers</li>
+</ul>
+
+        </div>
+      
+        
+
+
+
+
+
+
+
+
+
+        
+          <div class="d-flex flex-row">
+            <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/23.x/version-history/feature-versions-23-x.html#version-23-1-0">23.1.0</a></b>
+            <span class="px-1">-</span>
+            <span>October 31, 2023</span>
+          </div>
+          
+        <div class="mt-2">
+          <ul>
+  <li>Add HTCondor Python wheels in PyPI for the aarch64 CPU architecture</li>
+  <li>Enhanced filtering with ‘condor_watch_q’</li>
+  <li>The Access Point can now be told to use a non-standard ssh port when sending jobs to a remote scheduling system (such as Slurm).</li>
+  <li>Laid groundwork to allow an Execution Point running without root access to accurately limit the job’s usage of CPU and Memory in real time via Linux kernel cgroups; this is particularly interesting for glidein pools.</li>
+  <li>HTCondor file transfers using HTTPS can now utilize CA certificates in a non-standard location</li>
+</ul>
+
+        </div>
       
         
 
