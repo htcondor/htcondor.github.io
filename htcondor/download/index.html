@@ -977,31 +977,11 @@
 
 <div id="feature-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">23.10.1</span> Feature Release</h3>
-        <p>October  3, 2024</p>
+        <h3><span class="text-secondary">23.10.2</span> Feature Release</h3>
+        <p>November  1, 2024</p>
         <div>
             <ul>
-  <li>Improvements to disk usage enforcement when using LVM
-    <ul>
-      <li>Can encrypt job sandboxes when using LVM</li>
-      <li>More precise tracking of disk usage when using LVM</li>
-      <li>Reduced disk usage tracking overhead</li>
-    </ul>
-  </li>
-  <li>Improvements tracking CPU and memory usage with cgroup v2 (on EL9)
-    <ul>
-      <li>Don’t count kernel cache pages against job’s memory usage</li>
-      <li>Avoid rare inclusion of previous job’s CPU and peak memory usage</li>
-    </ul>
-  </li>
-  <li>HTCondor now re-checks DNS before re-connecting to a collector</li>
-  <li>HTCondor now writes out per job epoch history</li>
-  <li>HTCondor can encrypt network connections without requiring authentication</li>
-  <li>htcondor CLI can now show status for local server, AP, and CM</li>
-  <li>htcondor CLI can now display OAUTH2 credentials</li>
-  <li>Uses job’s sandbox to convert image format for Singularity/Apptainer</li>
-  <li>Bug fix to not lose GPUs in Docker jobs on systemd reconfig</li>
-  <li>Bug fix for PID namespaces and <code>condor_ssh_to_job</code> on EL9</li>
+  <li>Fix for output file transfer errors obscuring input file transfer errors</li>
 </ul>
 
         </div>
