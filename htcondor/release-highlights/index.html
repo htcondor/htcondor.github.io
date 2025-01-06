@@ -5818,6 +5818,43 @@ issues are in the Vulnerability Reports:</p>
 
           
             <div class="d-flex flex-row">
+              <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/lts/version-history/lts-versions-23-0.html#version-23-0-19">23.0.19</a></b>
+              <span class="px-1">-</span>
+              <span>January  6, 2025</span>
+            </div>
+          
+          <div class="mt-2">
+            <ul>
+  <li>Numerous updates in memory tracking with cgroups
+    <ul>
+      <li>Fix bug in reporting peak memory</li>
+      <li>Made cgroup v1 and v2 memory tracking consistent with each other</li>
+      <li>Fix bug where cgroup v1 usage included disk cache pages</li>
+      <li>Fix bug where cgroup v1 jobs killed by OOM were not held</li>
+      <li>Polls cgroups for memory usage more often</li>
+      <li>Can configure to always hold jobs killed by OOM</li>
+    </ul>
+  </li>
+  <li>Make condor_adstash work with OpenSearch Python Client v2.x</li>
+  <li>Avoid OAUTH credmon errors by only signaling it when necessary</li>
+  <li>Restore case insensitivity to ‘condor_status -subsystem’</li>
+  <li>Fix rare condor_schedd crash when a $$() macro could not be expanded</li>
+</ul>
+
+          </div>
+      
+        
+
+
+
+
+
+
+
+
+
+          
+            <div class="d-flex flex-row">
               <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/lts/version-history/lts-versions-23-0.html#version-23-0-18">23.0.18</a></b>
               <span class="px-1">-</span>
               <span>November 19, 2024</span>
