@@ -1015,16 +1015,25 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">24.0.2</span> Long Term Support Release</h3>
-        <p>November 26, 2024</p>
+        <h3><span class="text-secondary">24.0.3</span> Long Term Support Release</h3>
+        <p>January  6, 2025</p>
         <div>
             <ul>
-  <li>Add <code>STARTER_ALWAYS_HOLD_ON_OOM</code> to minimize confusion about memory usage</li>
-  <li>Fix bug that caused <code>condor_ssh_to_job</code> <code>sftp</code> and <code>scp</code> modes to fail</li>
-  <li>Fix <code>KeyboardIdle</code> attribute in dynamic slots that could prevent job start</li>
-  <li>No longer signals the OAuth credmon when there is no work to do</li>
-  <li>Fix rare <code>condor_schedd</code> crash when a <code>$$()</code> macro could not be expanded</li>
-  <li>By default, put Docker jobs on hold when CPU architecture doesn’t match</li>
+  <li>Numerous updates in memory tracking with cgroups
+    <ul>
+      <li>Fix bug in reporting peak memory</li>
+      <li>Made cgroup v1 and v2 memory tracking consistent with each other</li>
+      <li>Fix bug where cgroup v1 usage included disk cache pages</li>
+      <li>Fix bug where cgroup v1 jobs killed by OOM were not held</li>
+      <li>Polls cgroups for memory usage more often</li>
+      <li>Can configure to always hold jobs killed by OOM</li>
+    </ul>
+  </li>
+  <li>Make condor_adstash work with OpenSearch Python Client v2.x</li>
+  <li>Restore case insensitivity to ‘condor_status -subsystem’</li>
+  <li>Fix bug where jobs would match but not start when using KeyboardIdle</li>
+  <li>Fix bug when trying to avoid IPv6 link local addresses</li>
+  <li>EPs spawned by ‘htcondor annex’ no longer crash on startup</li>
 </ul>
 
         </div>
