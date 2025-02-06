@@ -1014,6 +1014,43 @@
 
       
         <div class="d-flex flex-row">
+          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/24.x/version-history/feature-versions-24-x.html#version-24-4-0">24.4.0</a></b>
+          <span class="px-1">-</span>
+          <span>February  6, 2025</span>
+        </div>
+      
+      <div class="mt-2">
+        <ul>
+  <li>Improved validation and cleanup of EXECUTE directories</li>
+  <li>For batch grid universe, the PATH comes from the job ad and worker node</li>
+  <li>Improved <code>condor_q -better-analyze</code> for pools with partitionable slots</li>
+  <li>The EP advertizes if Singularity is using user namespaces</li>
+  <li>The EP advertizes average and total bytes transferred to and from jobs</li>
+  <li>The <code>condor_credmon</code> now utilizes the shared port daemon</li>
+  <li><code>condor_upgrade_check</code> tests for PASSWORD authentication identity change</li>
+  <li>Fix bug where STARTD_ENFORCE_DISK_LIMITS would excessively save metadata</li>
+  <li>Fix bug where <code>container_service_names</code> did not work</li>
+  <li>Fix rare startd crash when collector queries time out and DNS is slow</li>
+  <li>New <code>arc_data_staging</code> submit command to add DataStaging block to ARC ADL</li>
+  <li>Fix bug where the negotiator could crash when matching offline ads</li>
+  <li>Fix memory leak in SCHEDD_CRON script that produce standard output</li>
+  <li>Fix bug where the schedd could crash if cron script runs during shutdown</li>
+</ul>
+
+      </div>
+    
+      
+
+
+
+
+
+
+
+
+
+      
+        <div class="d-flex flex-row">
           <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/24.x/version-history/feature-versions-24-x.html#version-24-3-0">24.3.0</a></b>
           <span class="px-1">-</span>
           <span>January  6, 2025</span>
