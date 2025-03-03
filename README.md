@@ -11,7 +11,8 @@ This git repository contains the source code for the refactored HTCondor website
 
 At the website root:
 
-```
+```shell
+git submodule update --init --recursive --remote
 docker compose up
 ```
 
