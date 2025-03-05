@@ -857,18 +857,14 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">24.0.4</span> Long Term Support Release</h3>
-        <p>February  6, 2025</p>
+        <h3><span class="text-secondary">24.0.5</span> Long Term Support Release</h3>
+        <p>March  5, 2025</p>
         <div>
             <ul>
-  <li><code>condor_upgrade_check</code> tests for PASSWORD authentication identity change</li>
-  <li>Fix bug where STARTD_ENFORCE_DISK_LIMITS would excessively save metadata</li>
-  <li>Fix bug where container_service_names did not work</li>
-  <li>Fix rare startd crash when collector queries time out and DNS is slow</li>
-  <li>New <code>arc_data_staging</code> submit command to add DataStaging block to ARC ADL</li>
-  <li>Fix bug where the negotiator could crash when matching offline ads</li>
-  <li>Fix memory leak in SCHEDD_CRON script that produce standard output</li>
-  <li>Fix bug where the schedd could crash if cron script runs during shutdown</li>
+  <li>Fix bug where chirp would not work in container jobs using Docker</li>
+  <li>HTCondor tarballs now contain Pelican 7.13.0</li>
+  <li>Fix memory leak caused by periodic evaluation of bad ClassAd expressions</li>
+  <li>Fixes for bugs affecting grid jobs</li>
 </ul>
 
         </div>
