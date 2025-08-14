@@ -939,21 +939,11 @@
 
 <div id="feature-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">24.10.2</span> Feature Release</h3>
-        <p>July 28, 2025</p>
+        <h3><span class="text-secondary">24.10.3</span> Feature Release</h3>
+        <p>August 14, 2025</p>
         <div>
             <ul>
-  <li>Remove support for old JobRouter syntax</li>
-  <li>New <code>condor_dag_checker</code> tool finds syntax and logic errors before run</li>
-  <li>New <code>condor_q -hold-codes</code> produces a summary of held jobs</li>
-  <li><code>condor_status -lvm</code> reports current disk usage by slots on the EPs</li>
-  <li>Fix bug where <code>condor_q</code> would truncate job counts to six digits</li>
-  <li>Fix bug where suspended jobs did not change state to idle when vacated</li>
-  <li>Fix bug where the vacate reason was not propagated back to the user</li>
-  <li>HTCondor tarballs now contain Pelican 7.17.2</li>
-  <li>Fix bug where <code>condor_ssh_to_job</code> failed when EP scratch path is too long</li>
-  <li>Fix incorrect time reported by <code>htcondor status</code> for long running jobs</li>
-  <li>Fix bug where <code>.job.ad</code>, <code>.machine.ad</code> files were missing when LVM is in use</li>
+  <li>Fix <code>condor_store_cred</code> bug that broke installing with <code>get_htcondor</code></li>
 </ul>
 
         </div>
