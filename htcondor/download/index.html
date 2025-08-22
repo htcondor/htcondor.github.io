@@ -968,15 +968,15 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">24.0.10</span> Long Term Support Release</h3>
-        <p>July 28, 2025</p>
+        <h3><span class="text-secondary">24.0.11</span> Long Term Support Release</h3>
+        <p>August 22, 2025</p>
         <div>
             <ul>
-  <li>Fix bug where the vacate reason was not propagated back to the user</li>
-  <li>HTCondor tarballs now contain Pelican 7.17.2</li>
-  <li>Fix bug where <code>condor_ssh_to_job</code> failed when EP scratch path is too long</li>
-  <li>Fix incorrect time reported by <code>htcondor status</code> for long running jobs</li>
-  <li>Fix bug where <code>.job.ad</code>, <code>.machine.ad</code> files were missing when LVM is in use</li>
+  <li>Initial support for Debian 13 (trixie)</li>
+  <li>Sets exit -code and -signal environment variables for Docker jobs</li>
+  <li>Fix issue where ImageSize was over-reported on the Windows platform</li>
+  <li>HTCondor tarballs now contain Pelican 7.18.1 and Apptainer 1.4.2</li>
+  <li>Fix <code>condor_token_request</code> to accept automatically-approved token</li>
 </ul>
 
         </div>
