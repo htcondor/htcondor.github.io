@@ -816,11 +816,19 @@
 
 <div id="feature-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">24.10.3</span> Feature Release</h3>
-        <p>August 12, 2025</p>
+        <h3><span class="text-secondary">24.11.2</span> Feature Release</h3>
+        <p>August 22, 2025</p>
         <div>
             <ul>
-  <li>Fix <code>condor_store_cred</code> bug that broke installing with <code>get_htcondor</code></li>
+  <li>Add job attributes to track why and how often a job is vacated</li>
+  <li>Add the ability to notify a user when their job first starts</li>
+  <li>Can now specify which Vault servers are trusted</li>
+  <li>Added <code>htcondor2.ping()</code> to the Python bindings</li>
+  <li>Initial support for Debian 13 (trixie)</li>
+  <li>Sets exit -code and -signal environment variables for Docker jobs</li>
+  <li>Fix issue where <code>ImageSize</code> was over-reported on the Windows platform</li>
+  <li>HTCondor tarballs now contain Pelican 7.18.1 and Apptainer 1.4.2</li>
+  <li>Fix <code>condor_token_request</code> to accept automatically-approved tokens</li>
 </ul>
 
         </div>
