@@ -3,14 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const queryButtons = [
         document.getElementById('news-toggle'),
         document.getElementById('featured-users-toggle'),
-        document.getElementById('tech-blog-toggle'),
     ];
 
     // The card groups for each category
     const cardGroups = [
         document.querySelectorAll('.news-card-news'),
         document.querySelectorAll('.news-card-feature'),
-        document.querySelectorAll('.news-card-tech-blog'),
     ];
 
     // The 'All' button to show all articles
