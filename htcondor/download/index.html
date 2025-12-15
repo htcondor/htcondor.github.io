@@ -975,14 +975,20 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">25.0.3</span> Long Term Support Release</h3>
-        <p>November  3, 2025</p>
+        <h3><span class="text-secondary">25.0.5</span> Long Term Support Release</h3>
+        <p>December 15, 2025</p>
         <div>
             <ul>
-  <li>Fix interoperability problem between HTCondor-CE 24 and 25 which manifests as a Job Router crash when upgrading the CE to HTCondor 25</li>
-  <li>Fix several issues when submitting jobs with itemdata in the htcondor2 Python bindings</li>
-  <li>Fix bug when using <code>max_idle</code> and <code>transfer_input_files</code> that could result in the <code>container_image</code> to be only transferred with the first job</li>
-  <li>Fix problem running PyTorch jobs on multiple GPUs with newer versions of the CUDA library by providing long GPU IDs in the <code>CUDA_VISIBLE_DEVICES</code> environment variable</li>
+  <li>Initial support for Ubuntu 24.04 on the ARM64 platform</li>
+  <li><code>condor_submit</code> checks that <code>output_destination</code> is properly specified</li>
+  <li>Fix bug where AP would fail to read job credential files</li>
+  <li>Fix bugs that could causes a crash in the authentication code</li>
+  <li>HTCondor tarballs now contain Pelican 7.21.1
+    <ul>
+      <li>User interface improvements for the HTCondor plugin</li>
+    </ul>
+  </li>
+  <li>HTCondor tarballs now contain Apptainer 1.4.4</li>
 </ul>
 
         </div>
