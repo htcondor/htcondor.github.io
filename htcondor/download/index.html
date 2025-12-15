@@ -940,17 +940,24 @@
 
 <div id="feature-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">25.4.0</span> Feature Release</h3>
-        <p>November 13, 2025</p>
+        <h3><span class="text-secondary">25.5.1</span> Feature Release</h3>
+        <p>December 15, 2025</p>
         <div>
             <ul>
-  <li>Job scratch space is now in a sub-directory of the execute directory</li>
-  <li>HTCondor EPs can now refresh credentials during output transfers</li>
-  <li>HTCondor will now create intermediate directories with output remaps</li>
-  <li><code>condor_watch_q</code> now correctly accounts for unmaterialized jobs</li>
-  <li>Now able to control maximum jobs running by user on an AP</li>
-  <li>HTCondor now tracks when jobs are vacated prior to running</li>
-  <li>Disk space allocated to jobs now more closely matches the request</li>
+  <li>The negotiator can now use its own concept of slot weight (not the EP’s)</li>
+  <li>A stuck LVM logical volume will cause the EP slot to be broken and
+then later unbroken if and when the logical volume cleanup succeeds</li>
+  <li>Made the AP more efficient at building resource requests for matchmaking</li>
+  <li>Initial support for Ubuntu 24.04 on the ARM64 platform</li>
+  <li><code>condor_submit</code> checks that <code>output_destination</code> is properly specified</li>
+  <li>Fix bug where AP would fail to read job credential files</li>
+  <li>Fix bugs that could causes a crash in the authentication code</li>
+  <li>HTCondor tarballs now contain Pelican 7.21.1
+    <ul>
+      <li>User interface improvements for the HTCondor plugin</li>
+    </ul>
+  </li>
+  <li>HTCondor tarballs now contain Apptainer 1.4.4</li>
 </ul>
 
         </div>
