@@ -998,6 +998,51 @@
 
       
         <div class="d-flex flex-row">
+          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/25.x/version-history/feature-versions-25-x.html#version-25-6-1">25.6.1</a></b>
+          <span class="px-1">-</span>
+          <span>January 30, 2026</span>
+        </div>
+      
+      <div class="mt-2">
+        <ul>
+  <li>DAGMan now uses the new DAG file parser used by <code>condor_dag_checker</code></li>
+  <li>The condor keyboard daemon now checks idle time via systemd and Mutter</li>
+  <li>Can now specify DAGMan rescue file by name</li>
+  <li>Adminstrators can now require units on <code>retry_request_memory</code></li>
+  <li>Initial support for openSUSE 16</li>
+  <li>Make HTCondor Python wheel usable with the <code>python-slim</code> Docker image</li>
+  <li>Fix problem specifying scope or audience with a Vault-managed credential</li>
+  <li>Fix late materialization bug when job transform sets immutable attribute</li>
+  <li>Fix problem where a backfill slot would refuse claims</li>
+  <li>Fix floating point memory or disk request not fitting into some slots</li>
+  <li>Fix <code>condor_rooster</code> crash when unhibernate rank was not constant</li>
+  <li>Fix memory leak in the <code>htcondor2.JobEventLog.events()</code> Python method</li>
+  <li><code>condor_history -long</code> now prints attributes in alphabetical order</li>
+  <li>Fix LVM setup to not timeout when creating a large volume</li>
+  <li>LVM creation no longer saves meta data which eventually fills the disk</li>
+  <li>HTCondor tarballs now contain Pelican 7.22.0
+    <ul>
+      <li>More robust error classification in the client</li>
+      <li>Fixed authentication loop issue in the client</li>
+    </ul>
+  </li>
+  <li>HTCondor tarballs now contain Apptainer 1.4.5</li>
+</ul>
+
+      </div>
+    
+      
+
+
+
+
+
+
+
+
+
+      
+        <div class="d-flex flex-row">
           <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/25.x/version-history/feature-versions-25-x.html#version-25-5-1">25.5.1</a></b>
           <span class="px-1">-</span>
           <span>December 15, 2025</span>
