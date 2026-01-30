@@ -6684,6 +6684,47 @@ issues are in the Vulnerability Reports:</p>
 
       
         <div class="d-flex flex-row">
+          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/lts/version-history/lts-versions-25-0.html#version-25-0-6">25.0.6</a></b>
+          <span class="px-1">-</span>
+          <span>January 30, 2026</span>
+        </div>
+      
+      <div class="mt-2">
+        <ul>
+  <li>Initial support for openSUSE 16</li>
+  <li>Make HTCondor Python wheel usable with the <code>python-slim</code> Docker image</li>
+  <li>Fix problem specifying scope or audience with a Vault-managed credential</li>
+  <li>Fix late materialization bug when job transform sets immutable attribute</li>
+  <li>Fix problem where a backfill slot would refuse claims</li>
+  <li>Fix floating point memory or disk request not fitting into some slots</li>
+  <li>Fix <code>condor_rooster</code> crash when unhibernate rank was not constant</li>
+  <li>Fix memory leak in the <code>htcondor2.JobEventLog.events()</code> Python method</li>
+  <li><code>condor_history -long</code> now prints attributes in alphabetical order</li>
+  <li>Fix LVM setup to not timeout when creating a large volume</li>
+  <li>LVM creation no longer saves meta data which eventually fills the disk</li>
+  <li>HTCondor tarballs now contain Pelican 7.22.0
+    <ul>
+      <li>More robust error classification in the client</li>
+      <li>Fixed authentication loop issue in the client</li>
+    </ul>
+  </li>
+  <li>HTCondor tarballs now contain Apptainer 1.4.5</li>
+</ul>
+
+      </div>
+    
+      
+
+
+
+
+
+
+
+
+
+      
+        <div class="d-flex flex-row">
           <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/lts/version-history/lts-versions-25-0.html#version-25-0-5">25.0.5</a></b>
           <span class="px-1">-</span>
           <span>December 15, 2025</span>
