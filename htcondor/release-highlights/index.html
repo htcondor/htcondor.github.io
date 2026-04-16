@@ -1000,6 +1000,53 @@
 
       
         <div class="d-flex flex-row">
+          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/25.x/version-history/feature-versions-25-x.html#version-25-8-2">25.8.2</a></b>
+          <span class="px-1">-</span>
+          <span>April 16, 2026</span>
+        </div>
+      
+      <div class="mt-2">
+        <ul>
+  <li>Fix detection and reporting of NVIDIA MIG GPU attributes</li>
+  <li>Add <code>--rocm</code> flag to Apptainer GPU jobs to support AMD GPUs</li>
+  <li>Fix bug where jobs went on hold, but should be rerun, when using Pelican</li>
+  <li>Can now use <code>condor_rm -transfer</code> to fetch whatever output is available</li>
+  <li>Can now use <code>condor_q -aaf</code> to append columns to the standard output</li>
+  <li>Can now run <code>condor_top --history</code> to get fast response from stored data</li>
+  <li><code>htcondor dag status</code> now includes information about file transfers</li>
+  <li><code>htcondor job status</code> and <code>condor_q</code> now report cool down state information</li>
+  <li><code>condor_run</code> no longer passes <code>getenv = true</code> to the submit file</li>
+  <li>Fix <code>condor_ssh_to_job</code> for setuid Apptainer or Singularity runtimes</li>
+  <li>The negotiator now knows the user’s floor to avoid improper preemption</li>
+  <li>The <code>condor_shadow</code> now logs information about reconnect attempts</li>
+  <li><code>condor_config_val</code> can now report configuration option’s default value</li>
+  <li>Fix crash when a user provided Docker script produces unexpected output</li>
+  <li>Now properly reports NVIDIA MIG GPU device names</li>
+  <li>Fix performance problem in the htcondor2 Python ClassAd parser</li>
+  <li>Fix <code>AllowedExecuteDuration</code> to be reliably enforced when no file transfer</li>
+  <li>Batch grid universe jobs now tolerate a dot in the username</li>
+  <li>Fix huge reported job execution times when an AP restarts</li>
+  <li>HTCondor tarballs now contain Pelican 7.24.0
+    <ul>
+      <li>Update error classification to provide better error information</li>
+    </ul>
+  </li>
+</ul>
+
+      </div>
+    
+      
+
+
+
+
+
+
+
+
+
+      
+        <div class="d-flex flex-row">
           <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/25.x/version-history/feature-versions-25-x.html#version-25-7-2">25.7.2</a></b>
           <span class="px-1">-</span>
           <span>March 12, 2026</span>
