@@ -871,23 +871,19 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">25.0.8</span> Long Term Support Release</h3>
-        <p>March 12, 2026</p>
+        <h3><span class="text-secondary">25.0.9</span> Long Term Support Release</h3>
+        <p>April 16, 2026</p>
         <div>
             <ul>
-  <li>Improve AMD GPU detection when using RCOM6/HIP libraries</li>
-  <li>Fix for new jobs getting kicked off LVM EP due to quantization mismatch</li>
-  <li><code>condor_submit</code> now reports an error for circular requirement expressions</li>
-  <li><code>condor_status</code> now correctly reports offline GPUs</li>
-  <li>Can use a string for <code>since</code> with <code>htcondor.Schedd.history()</code></li>
-  <li>Fix for backfill GPUs disappearing on reconfig</li>
-  <li>Enable use of in-memory SciTokens cache, if disk cache not usable</li>
-  <li>Fix <code>condor_submit</code> using different executables with late materialization</li>
-  <li>HTCondor tarballs now contain Pelican 7.23.0
+  <li>Fix crash when a user provided Docker script produces unexpected output</li>
+  <li>Now properly reports NVIDIA MIG GPU device names</li>
+  <li>Fix performance problem in the htcondor2 Python ClassAd parser</li>
+  <li>Fix <code>AllowedExecuteDuration</code> to be reliably enforced when no file transfer</li>
+  <li>Batch grid universe jobs now tolerate a dot in the username</li>
+  <li>Fix huge reported job execution times when an AP restarts</li>
+  <li>HTCondor tarballs now contain Pelican 7.24.0
     <ul>
-      <li>Can retrieve Pelican configuration variables from HTCondor ClassAds</li>
-      <li>There is now a CacheHit field in transfer output ClassAd</li>
-      <li><code>PELICAN_CLIENT_PREFERREDCACHES</code> environment variable no longer ignored</li>
+      <li>Update error classification to provide better error information</li>
     </ul>
   </li>
 </ul>
