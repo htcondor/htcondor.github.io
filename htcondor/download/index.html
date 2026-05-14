@@ -998,21 +998,16 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">25.0.9</span> Long Term Support Release</h3>
-        <p>April 16, 2026</p>
+        <h3><span class="text-secondary">25.0.10</span> Long Term Support Release</h3>
+        <p>May 14, 2026</p>
         <div>
             <ul>
-  <li>Fix crash when a user provided Docker script produces unexpected output</li>
-  <li>Now properly reports NVIDIA MIG GPU device names</li>
-  <li>Fix performance problem in the htcondor2 Python ClassAd parser</li>
-  <li>Fix <code>AllowedExecuteDuration</code> to be reliably enforced when no file transfer</li>
-  <li>Batch grid universe jobs now tolerate a dot in the username</li>
-  <li>Fix huge reported job execution times when an AP restarts</li>
-  <li>HTCondor tarballs now contain Pelican 7.24.0
-    <ul>
-      <li>Update error classification to provide better error information</li>
-    </ul>
-  </li>
+  <li>Add support for Ubuntu 26.04 (Resolute Raccoon)</li>
+  <li>Fixed Access Point spooled X.509 job proxy refresh</li>
+  <li>Fixed reporting of <code>RemoteUserCPU</code> in parallel universe</li>
+  <li><code>condor_ssh_to_job</code> can now execute one-shot commands when using containers</li>
+  <li><code>condor_ssh_to_job</code> now enters the proper cgroup when using containers</li>
+  <li>HTCondor tarballs now contain Pelican 7.24.2</li>
 </ul>
 
         </div>
