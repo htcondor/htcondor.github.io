@@ -1000,6 +1000,44 @@
 
       
         <div class="d-flex flex-row">
+          <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/25.x/version-history/feature-versions-25-x.html#version-25-12-2">25.12.2</a></b>
+          <span class="px-1">-</span>
+          <span>July 21, 2026</span>
+        </div>
+      
+      <div class="mt-2">
+        <p>This release contains an important fix for a security issue.
+Affected users should update as soon as possible.</p>
+
+<p>More details on the security issue are in the Vulnerability Report:
+https://htcondor.org/security/vulnerabilities/HTCONDOR-2026-0001</p>
+
+<ul>
+  <li>Maintains a job index to speed up condor history queries</li>
+  <li>Can now set a duration for a user’s floor or priority factor</li>
+  <li>DAGMan will go into cool-down if it fails to launch</li>
+  <li>Improved column headers for <code>condor_top</code></li>
+  <li>Audit log is now enabled by default on the Access Point</li>
+  <li>Fix rare job router crash when removing a recently routed job</li>
+  <li>Fix a bug that could cause the <code>arc_gahp</code> to crash</li>
+  <li>Reduce the size of Python wheels by 84% by removing debug symbols</li>
+  <li>Fix issue where tools could infinitely loop when using trust on first use</li>
+</ul>
+
+      </div>
+    
+      
+
+
+
+
+
+
+
+
+
+      
+        <div class="d-flex flex-row">
           <b><a class="text-decoration-none" href="https://htcondor.readthedocs.io/en/25.x/version-history/feature-versions-25-x.html#version-25-11-1">25.11.1</a></b>
           <span class="px-1">-</span>
           <span>July 21, 2026</span>

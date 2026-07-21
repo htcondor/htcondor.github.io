@@ -946,7 +946,7 @@
 
 <div id="feature-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">25.11.1</span> Feature Release</h3>
+        <h3><span class="text-secondary">25.12.2</span> Feature Release</h3>
         <p>July 21, 2026</p>
         <div>
             <p>This release contains an important fix for a security issue.
@@ -956,7 +956,15 @@ Affected users should update as soon as possible.</p>
 https://htcondor.org/security/vulnerabilities/HTCONDOR-2026-0001</p>
 
 <ul>
-  <li>Fixed 25.11.0 bug that causes unbounded growth in the accountant log</li>
+  <li>Maintains a job index to speed up condor history queries</li>
+  <li>Can now set a duration for a user’s floor or priority factor</li>
+  <li>DAGMan will go into cool-down if it fails to launch</li>
+  <li>Improved column headers for <code>condor_top</code></li>
+  <li>Audit log is now enabled by default on the Access Point</li>
+  <li>Fix rare job router crash when removing a recently routed job</li>
+  <li>Fix a bug that could cause the <code>arc_gahp</code> to crash</li>
+  <li>Reduce the size of Python wheels by 84% by removing debug symbols</li>
+  <li>Fix issue where tools could infinitely loop when using trust on first use</li>
 </ul>
 
         </div>
