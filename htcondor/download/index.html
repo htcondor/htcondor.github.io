@@ -986,20 +986,15 @@
 </div>
 <div id="long-term-support-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">25.0.12</span> Long Term Support Release</h3>
-        <p>July 21, 2026</p>
+        <h3><span class="text-secondary">25.0.13</span> Long Term Support Release</h3>
+        <p>August 20, 2026</p>
         <div>
-            <p>This release contains an important fix for a security issue.
-Affected users should update as soon as possible.</p>
-
-<p>More details on the security issue are in the Vulnerability Report:
-https://htcondor.org/security/vulnerabilities/HTCONDOR-2026-0001</p>
-
-<ul>
-  <li>Fix rare job router crash when removing a recently routed job</li>
-  <li>Fix a bug that could cause the <code>arc_gahp</code> to crash</li>
-  <li>Reduce the size of Python wheels by 84% by removing debug symbols</li>
-  <li>Fix issue where tools could infinitely loop when using trust on first use</li>
+            <ul>
+  <li>Fix bug where <code>condor_q</code> crashes when given <code>-batch</code> and <code>-af</code> arguments</li>
+  <li>Fix bug where FS authentication fails when <code>TCP_FORWARDING_HOST</code> is set</li>
+  <li>Fix bug where <code>condor_history</code> might not find a specific cluster or proc</li>
+  <li>HTCondor tarballs now contain Apptainer 1.5.3 and Pelican 7.26.0</li>
+  <li>Removing Pelican server code reduces tarball size by 10 megabytes</li>
 </ul>
 
         </div>
