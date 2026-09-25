@@ -945,14 +945,21 @@
 
 <div id="feature-channel" class="mb-4 card">
     <div class="card-body">
-        <h3><span class="text-secondary">25.13.3</span> Feature Release</h3>
-        <p>September 23, 2026</p>
+        <h3><span class="text-secondary">25.14.1</span> Feature Release</h3>
+        <p>September 24, 2026</p>
         <div>
-            <p>This release contains an important fix for a security issue.
-Affected users should update as soon as possible.</p>
-
-<p>More details on the security issue are in the Vulnerability Report:
-https://htcondor.org/security/vulnerabilities/HTCONDOR-2026-0002</p>
+            <ul>
+  <li>HTCondor no longer accepts multiple <code>queue</code> statements in a submit file</li>
+  <li>The credmon can now obtain and renew OAuth2 access tokens from Pelican</li>
+  <li>HTCondor now detects AMD GPUs that use ROCM 7</li>
+  <li>Container universe adds the detected GPU flag the container command line</li>
+  <li>New self-service annex mode that works with any Slurm cluster</li>
+  <li>New metric daemon that can export metrics to Prometheus and Ganglia</li>
+  <li>Improvements to <code>condor_adstash</code> (see version history)</li>
+  <li><code>condor_rm</code> now accepts the <code>-held</code> option</li>
+  <li><code>condor_watch_q</code> now restores the terminal after exiting</li>
+  <li>Fix <code>condor_q</code> crash when using both <code>-batch</code> and <code>-af</code></li>
+</ul>
 
         </div>
         <hr>
